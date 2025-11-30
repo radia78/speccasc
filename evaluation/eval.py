@@ -4,7 +4,7 @@ and should output a csv file to 'results/[decoding-strategy]-[task]-[model-name]
 """
 from datasets import load_dataset, load_dataset_builder
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from prompts import GSM8K_PROMPT
+from prompts import GSM8K_PROMPT, WMT_DE_EN_PROMPT, CNN_DM_PROMPT
 import pandas as pd
 import time, tqdm, torch, os
 
@@ -21,7 +21,17 @@ def load_benchmark(
 
         return ds['question']
     
-    # TODO: Add the machine translation dataset
+    if benchmark_dataset == 'wmt_de_en':
+        add_preamble = lambda sample: {'question': WMT_DE_EN_PROMPT.format(de=sample['de']), 'answer': sample['en']}
+        ds = load_dataset('wmt/wmt19', 'de-en', split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
+        
+        return ds['question']
+    
+    if benchmark_dataset == 'cnn_dm':
+        add_preamble = lambda sample: {'question': CNN_DM_PROMPT.format(article=sample['article']), 'answer': sample['highlights']}
+        ds = load_dataset("abisee/cnn_dailymail", "3.0.0", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
+
+        return ds['question']
 
 # Load the preamble/prompt and experiment artifacts
 def run_eval(
