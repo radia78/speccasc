@@ -4,7 +4,7 @@ and should output a csv file to 'results/[decoding-strategy]-[task]-[model-name]
 """
 from datasets import load_dataset, load_dataset_builder
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from prompts import GSM8K_PROMPT, WMT_DE_EN_PROMPT, CNN_DM_PROMPT
+from prompts import GSM8K_PROMPT, WMT_DE_EN_PROMPT, CNN_DM_PROMPT, NATURAL_QA_PROMPT
 import pandas as pd
 import time, tqdm, torch, os
 
@@ -30,6 +30,12 @@ def load_benchmark(
     if benchmark_dataset == 'cnn_dm':
         add_preamble = lambda sample: {'question': CNN_DM_PROMPT.format(article=sample['article']), 'answer': sample['highlights']}
         ds = load_dataset("abisee/cnn_dailymail", "3.0.0", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
+
+        return ds['question']
+    
+    if benchmark_dataset == 'natural_qa':
+        add_preamble = lambda sample: {'question': NATURAL_QA_PROMPT.format(query=sample['query']), 'answer': sample['answer']}
+        ds = load_dataset("sentence-transformers/natural-questions", split='train').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
 
         return ds['question']
 
