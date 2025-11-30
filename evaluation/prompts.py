@@ -115,3 +115,99 @@ answer: "Battle of Picacho Pass Twelve Union cavalry troopers and one scout (rep
 query: {query}
 answer:
 """
+
+TRIVIA_QA_PROMPT = """
+question: "Which American-born Sinclair won the Nobel Prize for Literature in 1930?"
+answer: "Sinclair Lewis"
+
+question: "Who was the only Spice Girl not to have a middle name?"
+answer: "Posh Spice"
+
+question: "Which is the largest of the Japanese Volcano Islands?"
+answer: "Iwo Jima"
+
+question: "On which Caribbean island did Princess Diana spend he first Christmas after her divorce was announced?"
+answer: "Barbuda"
+
+question: "In which decade was Arnold Schwarzenegger born?"
+answer: "1950s"
+
+question: "In which branch of the arts is Patricia Neary famous?"
+answer: "Ballet"
+
+question: "Which innovation for the car was developed by Prince Henry of Prussia in 1911?"
+answer: "Windshield wipers"
+
+question: "Who won Super Bowl XX?"
+answer: "Chicago Bears"
+
+question: {question}
+answer:
+"""
+
+WEBQUESTIONS_PROMPT = """
+question: "what country is the grand bahama island in?"
+answer: "Bahamas"
+
+question: "where did saki live?"
+answer: "United Kingdom"
+
+question: "what time zone am i in cleveland ohio?"
+answer "North American Eastern Time Zone"
+
+question: "who did the Philippines gain independence from?"
+answer: "United States of America"
+
+question: "what high school did president bill clinton attend?"
+answer: "Hot Springs High School"
+
+question: "what year lebron james came to the nba?"
+answer: "2003-04 NBA season"
+
+question: "what sport do the toronto maple leafs play?"
+answer: "Ice Hockey"
+
+question: "what is the name of the first harry potter novel?"
+answer: "Harry Potter and the Philosopher's Stone"
+
+question: {question}
+answer:
+"""
+
+SQUAD_2_PROMPT = """
+context: "In 2005, Beyoncé teamed up with House of Brands, a shoe company, to produce a range of footwear for House of Deréon. In January 2008, Starwave Mobile launched Beyoncé Fashion Diva, a "high-style" mobile game with a social networking component, featuring the House of Deréon collection. In July 2009, Beyoncé and her mother launched a new junior apparel label, Sasha Fierce for Deréon, for back-to-school selling. The collection included sportswear, outerwear, handbags, footwear, eyewear, lingerie and jewelry. It was available at department stores including Macy's and Dillard's, and specialty stores Jimmy Jazz and Against All Odds. On May 27, 2010, Beyoncé teamed up with clothing store C&A to launch Deréon by Beyoncé at their stores in Brazil. The collection included tailored blazers with padded shoulders, little black dresses, embroidered tops and shirts and bandage dresses."
+question: "What type of accessory company did Beyonce partner with in 2005?"
+answer: "shoe"
+
+context: "From September 1823 to 1826 Chopin attended the Warsaw Lyceum, where he received organ lessons from the Czech musician Wilhelm Würfel during his first year. In the autumn of 1826 he began a three-year course under the Silesian composer Józef Elsner at the Warsaw Conservatory, studying music theory, figured bass and composition.[n 3] Throughout this period he continued to compose and to give recitals in concerts and salons in Warsaw. He was engaged by the inventors of a mechanical organ, the "eolomelodicon", and on this instrument in May 1825 he performed his own improvisation and part of a concerto by Moscheles. The success of this concert led to an invitation to give a similar recital on the instrument before Tsar Alexander I, who was visiting Warsaw; the Tsar presented him with a diamond ring. At a subsequent eolomelodicon concert on 10 June 1825, Chopin performed his Rondo Op. 1. This was the first of his works to be commercially published and earned him his first mention in the foreign press, when the Leipzig Allgemeine Musikalische Zeitung praised his "wealth of musical ideas"."
+question: "What is the title of his first commercially successful work?"
+answer: "Rondo Op. 1."
+
+context: "As evident in his imperial edicts, the Hongwu Emperor was well aware of the Buddhist link between Tibet and China and wanted to foster it. Rolpe Dorje, 4th Karmapa Lama (1340–1383) rejected the Hongwu Emperor's invitation, although he did send some disciples as envoys to the court in Nanjing. The Hongwu Emperor also entrusted his guru Zongluo, one of many Buddhist monks at court, to head a religious mission into Tibet in 1378–1382 in order to obtain Buddhist texts."
+question: "Who did Rolpe Dorje send as envoys to court in Nanjing?"
+answer: "disciples"
+
+context: "At the time the store was introduced, purchased audio files used the AAC format with added encryption, based on the FairPlay DRM system. Up to five authorized computers and an unlimited number of iPods could play the files. Burning the files with iTunes as an audio CD, then re-importing would create music files without the DRM. The DRM could also be removed using third-party software. However, in a deal with Apple, EMI began selling DRM-free, higher-quality songs on the iTunes Stores, in a category called "iTunes Plus." While individual songs were made available at a cost of US$1.29, 30¢ more than the cost of a regular DRM song, entire albums were available for the same price, US$9.99, as DRM encoded albums. On October 17, 2007, Apple lowered the cost of individual iTunes Plus songs to US$0.99 per song, the same as DRM encoded tracks. On January 6, 2009, Apple announced that DRM has been removed from 80% of the music catalog, and that it would be removed from all music by April 2009."
+question: "When the iTunes store was launched, what type of file format was used?"
+answer: "AAC"
+
+context: "The Legend of Zelda: Twilight Princess is an action-adventure game focused on combat, exploration, and item collection. It uses the basic control scheme introduced in Ocarina of Time, including context-sensitive action buttons and L-targeting (Z-targeting on the Wii), a system that allows the player to keep Link's view focused on an enemy or important object while moving and attacking. Link can walk, run, and attack, and will automatically jump when running off of or reaching for a ledge.[c] Link uses a sword and shield in combat, complemented with secondary weapons and items, including a bow and arrows, a boomerang, bombs, and the Clawshot (similar to the Hookshot introduced earlier in the The Legend of Zelda series).[d] While L-targeting, projectile-based weapons can be fired at a target without the need for manual aiming.[c]"
+question: "What 2 main weapons does Link use in combat?"
+answer: "sword and shield"
+
+context: "Bond travels to Austria to find White, who is dying of thallium poisoning. He admits to growing disenchanted with Quantum and tells Bond to find and protect his daughter, Dr. Madeline Swann, who will take him to L'Américain; this will in turn lead him to Spectre. White then commits suicide. Bond locates Swann at the Hoffler Klinik, but she is abducted by Hinx. Bond rescues her and the two meet Q, who discovers that Sciarra's ring links Oberhauser to Bond's previous missions, identifying Le Chiffre, Dominic Greene and Raoul Silva as Spectre agents. Swann reveals that L'Américain is a hotel in Tangier."
+question: "Where is L'Americain located?"
+answer: "Tangier"
+
+context: "The 2008 Sichuan earthquake or the Great Sichuan earthquake, measured at 8.0 Ms and 7.9 Mw, and occurred at 02:28:01 PM China Standard Time at epicenter (06:28:01 UTC) on May 12 in Sichuan province, killed 69,197 people and left 18,222 missing."
+question: "What time of the day did the quake happen?"
+answer: "02:28:01 PM China Standard Time"
+
+context: "At the end of the Second Anglo-Dutch War, the English gained New Amsterdam (New York) in North America in exchange for Dutch control of Run, an Indonesian island. Several intertribal wars among the Native Americans and some epidemics brought on by contact with the Europeans caused sizable population losses for the Lenape between the years 1660 and 1670. By 1700, the Lenape population had diminished to 200."
+question: "After which war did England gain New York in exchange for Run, an Indonesian island?"
+answer: "Second Anglo-Dutch War"
+
+context: {context}
+question: {question}
+answer:
+"""
