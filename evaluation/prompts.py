@@ -86,3 +86,128 @@ highlights: "Gloss taking backseat to bold colors in lipsticks . Exfoliate lips 
 article: {article}
 highlights:
 """
+
+NATURAL_QA_PROMPT = """
+query: "when did richmond last play in a preliminary final"
+answer: "Richmond Football Club Richmond began 2017 with 5 straight wins, a feat it had not achieved since 1995. A series of close losses hampered the Tigers throughout the middle of the season, including a 5-point loss to the Western Bulldogs, 2-point loss to Fremantle, and a 3-point loss to the Giants. Richmond ended the season strongly with convincing victories over Fremantle and St Kilda in the final two rounds, elevating the club to 3rd on the ladder. Richmond's first final of the season against the Cats at the MCG attracted a record qualifying final crowd of 95,028; the Tigers won by 51 points. Having advanced to the first preliminary finals for the first time since 2001, Richmond defeated Greater Western Sydney by 36 points in front of a crowd of 94,258 to progress to the Grand Final against Adelaide, their first Grand Final appearance since 1982. The attendance was 100,021, the largest crowd to a grand final since 1986. The Crows led at quarter time and led by as many as 13, but the Tigers took over the game as it progressed and scored seven straight goals at one point. They eventually would win by 48 points – 16.12 (108) to Adelaide's 8.12 (60) – to end their 37-year flag drought.[22] Dustin Martin also became the first player to win a Premiership medal, the Brownlow Medal and the Norm Smith Medal in the same season, while Damien Hardwick was named AFL Coaches Association Coach of the Year. Richmond's jump from 13th to premiers also marked the biggest jump from one AFL season to the next."
+
+query: "when did jack and the beanstalk take place"
+answer: "Jack and the Beanstalk According to researchers at the universities in Durham and Lisbon, the story originated more than 5,000 years ago, based on a widespread archaic story form which is now classified by folklorists as ATU 328 The Boy Who Stole Ogre's Treasure.[7]"
+
+query: "character sketch of hamlet in the play hamlet"
+answer: "Prince Hamlet Prince Hamlet is the title character and protagonist of William Shakespeare's tragedy Hamlet. He is the Prince of Denmark, nephew to the usurping Claudius, and son of King Hamlet, the previous King of Denmark. At the beginning of the play, he struggles with whether, and how, to avenge the murder of his father, and struggles with his own sanity along the way. By the end of the tragedy, Hamlet has caused the deaths of Polonius, Laertes, Claudius, and two acquaintances of his from the University of Wittenberg Rosencrantz and Guildenstern. He is also indirectly involved in the deaths of his love Ophelia (drowning) and of his mother Gertrude (poisoned by Claudius by mistake)."
+
+query: "who made the song my achy breaky heart"
+answer: "Achy Breaky Heart "Achy Breaky Heart" is a country song written by Don Von Tress. Originally titled "Don't Tell My Heart" and performed by The Marcy Brothers in 1991, its name was later changed to "Achy Breaky Heart" and performed by Billy Ray Cyrus on his 1992 album Some Gave All. The song is Cyrus' debut single and signature song, it made him famous and has been his most successful song. It became the first single ever to achieve triple Platinum status in Australia[1] and also 1992's best-selling single in the same country.[2][3] In the United States it became a crossover hit on pop and country radio, peaking at number 4 on the Billboard Hot 100 and topping the Hot Country Songs chart, becoming the first country single to be certified Platinum since Kenny Rogers and Dolly Parton's "Islands in the Stream" in 1983.[4] The single topped in several countries, and after being featured on Top of the Pops in the United Kingdom, peaked at number 3 on the UK Singles Chart. It remains Cyrus's biggest hit single in the U.S. to date, and his only one to reach the top 10 of the Billboard Hot 100. Thanks to the video of this hit, there was the explosion of the line dance into the mainstream, becoming a craze.[5][6][7][8] The song is considered by some as one of the worst songs of all time, featuring at number two in VH1 and Blender's list of the "50 Most Awesomely Bad Songs Ever."[9]However it is recognized as a transitional period in country music where Cyrus brought renewed interest in a dying breed of music amongst younger listeners."
+
+query: "who plays sonny's father in general hospital"
+answer: "Ron Hale Ron Hale (born January 2, 1946) is an American actor best known for his role as Dr. Roger Coleridge on the ABC soap opera Ryan's Hope for its entire run (1975â€“1989). He played the recurring role of Mike Corbin, the father of mobster Sonny Corinthos in the ABC soap opera General Hospital."
+
+query: "who is known as a father of indian cricket"
+answer: "M. Suryanarayan M. Suryanarayan (1930 â€“ 2010) was an Indian first-class cricketer who was born on February 1, 1930 during Madras presidency.[1][2] M. Suryanarayan is the first son of M.Baliah Naidu and the Grandson of Buchi Babu Naidu who is also known as the 'Father of South Indian Cricket' the doyen of Madras Cricket. He was also a member of the First Ranji Trophy triumph team of Tamilnadu in 1954-1955, which the Madras team won against Holkar. He was a right-handed batsman and a right-arm medium bowler. The Hindu describing his Cricket, once said: " His batting resembles very closely that of his father -dashing and carefree -and his cover-drive, a joy to watch, has amazing impetus..."And it added that he had "enriched Madras sport as his father had". His only younger brother M.M Kumar represented in the Ranji Trophy."
+
+query: "does kirby vacuum still sell door to door"
+answer: "Kirby Company The Kirby Company is a manufacturer of vacuum cleaners and home cleaning accessories, based in Cleveland, Ohio, United States. It is a division of The Scott Fetzer Company (also known as Scott & Fetzer) which in turn is part of Berkshire Hathaway. Dealers are located in over 50 countries throughout the world. Kirby's products are only sold via in-home door-to-door demonstrations[1] and the company is a member of the Direct Selling Association. All of the vacuum cleaners are built in either Ohio or Texas."
+
+query: "who won the battle of picacho pass in arizona"
+answer: "Battle of Picacho Pass Twelve Union cavalry troopers and one scout (reported to be mountain man Pauline Weaver but in reality Tucson resident John W. Jones), commanded by Lieutenant James Barrett of the 1st California Cavalry, were conducting a sweep of the Picacho Peak area, looking for Confederates reported to be nearby. The Arizona Confederates were commanded by Sergeant Henry Holmes. Barrett was under orders not to engage them, but to wait for the main column to come up. However, "Lt. Barrett acting alone rather than in concert, surprised the Rebels and should have captured them without firing a shot, if the thing had been conducted properly." Instead, in midafternoon the lieutenant "led his men into the thicket single file without dismounting them. The first fire from the enemy emptied four saddles, when the enemy retired farther into the dense thicket and had time to reload. ... Barrett followed them, calling on his men to follow him." Three of the Confederates surrendered. Barrett secured one of the prisoners and had just remounted his horse when a bullet struck him in the neck, killing him instantly. Fierce and confused fighting continued among the mesquite and arroyos for 90 minutes, with two more Union fatalities and three troopers wounded. Exhausted and leaderless, the Californians broke off the fight and the Arizona Rangers, minus three who surrendered, mounted and carried warning of the approaching Union army to Tucson. Barrett's disobedience of orders had cost him his life and lost any chance of a Union surprise attack on Tucson."
+
+query: {query}
+answer:
+"""
+
+TRIVIA_QA_PROMPT = """
+question: "Which American-born Sinclair won the Nobel Prize for Literature in 1930?"
+answer: "Sinclair Lewis"
+
+question: "Who was the only Spice Girl not to have a middle name?"
+answer: "Posh Spice"
+
+question: "Which is the largest of the Japanese Volcano Islands?"
+answer: "Iwo Jima"
+
+question: "On which Caribbean island did Princess Diana spend he first Christmas after her divorce was announced?"
+answer: "Barbuda"
+
+question: "In which decade was Arnold Schwarzenegger born?"
+answer: "1950s"
+
+question: "In which branch of the arts is Patricia Neary famous?"
+answer: "Ballet"
+
+question: "Which innovation for the car was developed by Prince Henry of Prussia in 1911?"
+answer: "Windshield wipers"
+
+question: "Who won Super Bowl XX?"
+answer: "Chicago Bears"
+
+question: {question}
+answer:
+"""
+
+WEBQUESTIONS_PROMPT = """
+question: "what country is the grand bahama island in?"
+answer: "Bahamas"
+
+question: "where did saki live?"
+answer: "United Kingdom"
+
+question: "what time zone am i in cleveland ohio?"
+answer "North American Eastern Time Zone"
+
+question: "who did the Philippines gain independence from?"
+answer: "United States of America"
+
+question: "what high school did president bill clinton attend?"
+answer: "Hot Springs High School"
+
+question: "what year lebron james came to the nba?"
+answer: "2003-04 NBA season"
+
+question: "what sport do the toronto maple leafs play?"
+answer: "Ice Hockey"
+
+question: "what is the name of the first harry potter novel?"
+answer: "Harry Potter and the Philosopher's Stone"
+
+question: {question}
+answer:
+"""
+
+SQUAD_2_PROMPT = """
+context: "In 2005, Beyoncé teamed up with House of Brands, a shoe company, to produce a range of footwear for House of Deréon. In January 2008, Starwave Mobile launched Beyoncé Fashion Diva, a "high-style" mobile game with a social networking component, featuring the House of Deréon collection. In July 2009, Beyoncé and her mother launched a new junior apparel label, Sasha Fierce for Deréon, for back-to-school selling. The collection included sportswear, outerwear, handbags, footwear, eyewear, lingerie and jewelry. It was available at department stores including Macy's and Dillard's, and specialty stores Jimmy Jazz and Against All Odds. On May 27, 2010, Beyoncé teamed up with clothing store C&A to launch Deréon by Beyoncé at their stores in Brazil. The collection included tailored blazers with padded shoulders, little black dresses, embroidered tops and shirts and bandage dresses."
+question: "What type of accessory company did Beyonce partner with in 2005?"
+answer: "shoe"
+
+context: "From September 1823 to 1826 Chopin attended the Warsaw Lyceum, where he received organ lessons from the Czech musician Wilhelm Würfel during his first year. In the autumn of 1826 he began a three-year course under the Silesian composer Józef Elsner at the Warsaw Conservatory, studying music theory, figured bass and composition.[n 3] Throughout this period he continued to compose and to give recitals in concerts and salons in Warsaw. He was engaged by the inventors of a mechanical organ, the "eolomelodicon", and on this instrument in May 1825 he performed his own improvisation and part of a concerto by Moscheles. The success of this concert led to an invitation to give a similar recital on the instrument before Tsar Alexander I, who was visiting Warsaw; the Tsar presented him with a diamond ring. At a subsequent eolomelodicon concert on 10 June 1825, Chopin performed his Rondo Op. 1. This was the first of his works to be commercially published and earned him his first mention in the foreign press, when the Leipzig Allgemeine Musikalische Zeitung praised his "wealth of musical ideas"."
+question: "What is the title of his first commercially successful work?"
+answer: "Rondo Op. 1."
+
+context: "As evident in his imperial edicts, the Hongwu Emperor was well aware of the Buddhist link between Tibet and China and wanted to foster it. Rolpe Dorje, 4th Karmapa Lama (1340–1383) rejected the Hongwu Emperor's invitation, although he did send some disciples as envoys to the court in Nanjing. The Hongwu Emperor also entrusted his guru Zongluo, one of many Buddhist monks at court, to head a religious mission into Tibet in 1378–1382 in order to obtain Buddhist texts."
+question: "Who did Rolpe Dorje send as envoys to court in Nanjing?"
+answer: "disciples"
+
+context: "At the time the store was introduced, purchased audio files used the AAC format with added encryption, based on the FairPlay DRM system. Up to five authorized computers and an unlimited number of iPods could play the files. Burning the files with iTunes as an audio CD, then re-importing would create music files without the DRM. The DRM could also be removed using third-party software. However, in a deal with Apple, EMI began selling DRM-free, higher-quality songs on the iTunes Stores, in a category called "iTunes Plus." While individual songs were made available at a cost of US$1.29, 30¢ more than the cost of a regular DRM song, entire albums were available for the same price, US$9.99, as DRM encoded albums. On October 17, 2007, Apple lowered the cost of individual iTunes Plus songs to US$0.99 per song, the same as DRM encoded tracks. On January 6, 2009, Apple announced that DRM has been removed from 80% of the music catalog, and that it would be removed from all music by April 2009."
+question: "When the iTunes store was launched, what type of file format was used?"
+answer: "AAC"
+
+context: "The Legend of Zelda: Twilight Princess is an action-adventure game focused on combat, exploration, and item collection. It uses the basic control scheme introduced in Ocarina of Time, including context-sensitive action buttons and L-targeting (Z-targeting on the Wii), a system that allows the player to keep Link's view focused on an enemy or important object while moving and attacking. Link can walk, run, and attack, and will automatically jump when running off of or reaching for a ledge.[c] Link uses a sword and shield in combat, complemented with secondary weapons and items, including a bow and arrows, a boomerang, bombs, and the Clawshot (similar to the Hookshot introduced earlier in the The Legend of Zelda series).[d] While L-targeting, projectile-based weapons can be fired at a target without the need for manual aiming.[c]"
+question: "What 2 main weapons does Link use in combat?"
+answer: "sword and shield"
+
+context: "Bond travels to Austria to find White, who is dying of thallium poisoning. He admits to growing disenchanted with Quantum and tells Bond to find and protect his daughter, Dr. Madeline Swann, who will take him to L'Américain; this will in turn lead him to Spectre. White then commits suicide. Bond locates Swann at the Hoffler Klinik, but she is abducted by Hinx. Bond rescues her and the two meet Q, who discovers that Sciarra's ring links Oberhauser to Bond's previous missions, identifying Le Chiffre, Dominic Greene and Raoul Silva as Spectre agents. Swann reveals that L'Américain is a hotel in Tangier."
+question: "Where is L'Americain located?"
+answer: "Tangier"
+
+context: "The 2008 Sichuan earthquake or the Great Sichuan earthquake, measured at 8.0 Ms and 7.9 Mw, and occurred at 02:28:01 PM China Standard Time at epicenter (06:28:01 UTC) on May 12 in Sichuan province, killed 69,197 people and left 18,222 missing."
+question: "What time of the day did the quake happen?"
+answer: "02:28:01 PM China Standard Time"
+
+context: "At the end of the Second Anglo-Dutch War, the English gained New Amsterdam (New York) in North America in exchange for Dutch control of Run, an Indonesian island. Several intertribal wars among the Native Americans and some epidemics brought on by contact with the Europeans caused sizable population losses for the Lenape between the years 1660 and 1670. By 1700, the Lenape population had diminished to 200."
+question: "After which war did England gain New York in exchange for Run, an Indonesian island?"
+answer: "Second Anglo-Dutch War"
+
+context: {context}
+question: {question}
+answer:
+"""
