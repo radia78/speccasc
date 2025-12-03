@@ -12,7 +12,7 @@ import torch
 import jsonargparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from evaluation.eval import run_eval,load_benchmark
+from eval import run_eval,load_benchmark
 
 
 @torch.inference_mode()
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-    benchmark_data, stopping_criteria = load_benchmark(args.bn)
+    benchmark_data, stopping_criteria = load_benchmark(args.bn, tokenizer)
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
@@ -108,7 +108,8 @@ if __name__ == "__main__":
         model_id=args.mid,
         tokenizer=tokenizer,
         forward_func=forward_func,
-        bench_name=args.bn,
+        benchmark_name=args.bn,
+        dataset=benchmark_data,
         num_trials=args.ntt,
         device=args.d,
         run_name=args.rn,
