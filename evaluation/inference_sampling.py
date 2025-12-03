@@ -1,6 +1,6 @@
 import functools
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from eval import run_eval
+from eval import run_eval, load_benchmark
 import torch, jsonargparse
 
 """
@@ -22,11 +22,13 @@ def sampling_forward(
         temperature,
         top_p,
         top_k,
+        stopping_criteria,
 ):
     gen_kwargs = {
         "do_sample": True,
         "max_new_tokens": max_new_tokens,
         "temperature": temperature,
+        "stopping_criteria": stopping_criteria,
     }
 
     if top_p is not None:
@@ -66,8 +68,9 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-
+    benchmark_data, stopping_criteria = load_benchmark(args.bn)
     model.generation_config.pad_token_id = tokenizer.pad_token_id
+
     forward_func = functools.partial(
         sampling_forward,
         model=model,
@@ -75,6 +78,7 @@ if __name__ == "__main__":
         temperature=args.t,
         top_p=args.tp,
         top_k=args.tk,
+        stopping_criteria=stopping_criteria,
     )
 
     run_eval(
@@ -82,9 +86,8 @@ if __name__ == "__main__":
         tokenizer=tokenizer,
         forward_func=forward_func,
         benchmark_name=args.bn,
+        dataset=benchmark_data,
         num_trials=args.ntt,
         device=args.d,
         run_name=args.rn,
     )
-
-
