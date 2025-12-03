@@ -1,4 +1,4 @@
-mp: google/gemma-2-270m-it
+mp: google/gemma-3-270m-it
 mi: gemma-270m
 bn: gsm8k
 mt: 320

@@ -1,5 +1,5 @@
-mp: google/gemma-2-1b-it          # target model
-amp: google/gemma-2-270m-it       # assistant model
+mp: google/gemma-3-1b-it        # target model
+amp: google/gemma-3-270m-it       # assistant model
 mid: gemma-1b                     # model id for eval output
 bn: gsm8k
 mt: 320
