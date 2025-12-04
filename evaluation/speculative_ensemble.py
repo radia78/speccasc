@@ -1,14 +1,6 @@
 """
-Implementation of speculative cascades.
-I'm directly using HuggingFace's implementation with a slight modification.
-Credits to the HuggingFace team for the implementaion of speculative decoding. 
-Will properly utilize the license later on. For the time being, 
-I will directly link to the page where this code was directly taken:
-https://github.com/huggingface/transformers/blob/v4.57.1/src/transformers/generation/utils.py
-
-In particular, I'm modifying speculative sampling so that it 
-samples from the T distribution (qs and ps with deferral rule).
-In addition, I will modify this using my own method which is immaturely called speculative ensemble
+The idea is that we ensemble a distribution based on a high and low temperature based on the running mean of the perplexity
+and then decide to shift to a higher or lower temperature
 """
 import copy
 import torch
@@ -25,13 +17,13 @@ from transformers.generation.candidate_generator import (
 )
 from typing import Optional, Union
 
-def _speculative_cascades(
+def _speculative_sampling(
     candidate_input_ids,
     candidate_logits,
     candidate_length,
     new_logits,
-    deferral,
-    alpha,
+    epsilon,
+    beta,
     is_done_candidate,
 ):
     """
@@ -39,39 +31,21 @@ def _speculative_cascades(
     the selected tokens, as well as the number of candidate matches.
 
     NOTE: Unless otherwise stated, the variable names match those in the paper.
+
+    epsilon: The temperature "step" to move when encountering simple or challenging tokens
+    beta: The maximum running perplexity tolerated for the gamma sequence generated
     """
     new_candidate_input_ids = candidate_input_ids[:, -candidate_length:]
     # Gets the probabilities from the logits. q_i and p_i denote the assistant and model probabilities of the tokens
     # selected by the assistant, respectively.
+
+    # Entropy rule: Choose if entropy for timestep t exceeds a threshold
+    # NOTE: This rule is essentially just local optimization since the running entropy is measured over the gamma tokens generated
+    # PARADIGM: We "defer" to a lower temperature distribution if they are confident and defer to a higher temperature if they are "unsure"
+    entropy = -(new_logits.log_softmax(dim=-1) * new_logits.softmax(dim=-1)).sum(dim=-1)
+    entropy_mask = entropy.div(torch.arange(candidate_length + 1).unsqueeze(0)).unsqueeze(-1) < beta
+    pi = (~entropy_mask) * new_logits.div(1-epsilon).softmax(dim=-1) + entropy_mask * new_logits.div(1+epsilon).softmax(dim=-1)
     q = candidate_logits.softmax(dim=-1)
-    p = new_logits.softmax(dim=-1)
-
-    # Choose pi based on deferral rule
-    q_t = q[:, torch.arange(candidate_length), :]
-    p_t = p[:, torch.arange(candidate_length), :]
-
-    if deferral is None:
-        # Specified per paper
-        tv_distance = torch.clamp(p_t - q_t, min=0).sum(dim=-1).unsqueeze(-1)
-
-        # Deferral rule judging on q < p - alpha * dtv
-        selected_tokens_mask = q_t.max(dim=-1).values.unsqueeze(-1) < p_t.max(dim=-1).values.unsqueeze(-1) - alpha * tv_distance
-        pi = (~selected_tokens_mask) * q_t + selected_tokens_mask * p_t
-    
-    elif deferral == 'v1':
-        selected_tokens_mask = q_t < p_t.max(dim=-1).values.unsqueeze(-1) - alpha
-        eta = torch.sum(selected_tokens_mask * q_t, dim=-1).unsqueeze(-1)
-        pi = (~selected_tokens_mask) * q_t + eta * p_t
-
-    elif deferral == 'v2':
-        selected_tokens_mask = p_t < p_t.max(dim=-1).values.unsqueeze(-1) - alpha
-        eta = torch.sum(selected_tokens_mask * q_t, dim=-1).unsqueeze(-1)
-        pi = (~selected_tokens_mask) * q_t + eta * p_t
-
-    elif deferral == 'v3':
-        selected_tokens_mask = p_t < p_t.max(dim=-1).values.unsqueeze(-1) * (1 - alpha)
-        eta = torch.sum(selected_tokens_mask * q_t, dim=-1).unsqueeze(-1)
-        pi = (~selected_tokens_mask) * q_t + eta * p_t
 
     q_i = q[:, torch.arange(candidate_length), new_candidate_input_ids].squeeze(0, 1)
     pi_i = pi[:, torch.arange(candidate_length), new_candidate_input_ids].squeeze(0, 1)
@@ -104,7 +78,7 @@ def _speculative_cascades(
             pi_res = torch.clamp((pi_n_plus_1 - q_n_plus_1), min=0)
             pi_res.div_(pi_res.sum())
         else:
-            pi_res = p[:, n_matches, :]
+            pi_res = pi[:, n_matches, :]
         t = torch.multinomial(pi_res, num_samples=1).squeeze(1)[None, :]
 
         # The selected tokens include the matches (if any) plus the next sampled tokens
@@ -127,8 +101,8 @@ def _assisted_decoding(
     assistant_model: Optional["PreTrainedModel"] = None,
     assistant_tokenizer: Optional["PreTrainedTokenizerBase"] = None,
     tokenizer: Optional["PreTrainedTokenizerBase"] = None,
-    deferral: Optional[str | None] = None,
-    alpha: Optional[float] = 0.3,
+    epsilon: Optional[float] = 0.25,
+    beta: Optional[float] = 0.5,
     **model_kwargs,
 ) -> Union[GenerateNonBeamOutput, torch.LongTensor]:
     r"""
@@ -278,13 +252,13 @@ def _assisted_decoding(
         # Case 1: `do_sample=True` and we have logits for the candidates (originally from speculative decoding)
         # 👉 Apply algorithm 1 from the speculative decoding paper (https://huggingface.co/papers/2211.17192).
         if do_sample and candidate_logits is not None:
-            valid_tokens, n_matches = _speculative_cascades(
+            valid_tokens, n_matches = _speculative_sampling(
                 candidate_input_ids,
                 candidate_logits,
                 candidate_length,
                 new_logits,
-                deferral,
-                alpha,
+                epsilon,
+                beta,
                 is_done_candidate,
             )
 
@@ -415,42 +389,22 @@ def _assisted_decoding(
     
 if __name__ == "__main__":
     from transformers import AutoTokenizer, AutoModelForCausalLM
-    from transformers import StopStringCriteria
-    from transformers import StoppingCriteriaList
-    from functools import partial
+    import functools
     from time import time
-    from prompts import MBPP_STOP_STRINGS, MBPP_PROMPT
-    import types
+    from prompts import GSM8K_PROMPT
 
     draft_model = AutoModelForCausalLM.from_pretrained('google/gemma-3-270m-it', device_map='cpu')
-    target_model = AutoModelForCausalLM.from_pretrained('google/gemma-3-1B-it', device_map='cpu')
     tokenizer = AutoTokenizer.from_pretrained('google/gemma-3-1B-it')
 
-    test_cases = [
-        "assert get_total_number_of_sequences(10, 4) == 4",
-        "assert get_total_number_of_sequences(5, 2) == 6",
-        "assert get_total_number_of_sequences(16, 3) == 84"
-    ]
-
-    sample_input = tokenizer(
-        MBPP_PROMPT.format(
-                problem="Write a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.",
-                test_cases="\n".join(test_cases),
-            ), 
-            return_tensors='pt'
-        )
-    
-    stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, MBPP_STOP_STRINGS)])
-
+    sample_input = tokenizer(GSM8K_PROMPT.format(question="Anne had 3 apples, and then she doubled it the next day. How many apples does she have now?"), return_tensors='pt')
     t0 = time()
-    outputs = target_model.generate(
+    outputs = draft_model.generate(
         **sample_input,
         assistant_model=draft_model,
+        custom_generate=functools.partial(_assisted_decoding, assistant_model=draft_model, beta=0.4, epsilon=0.25), 
         do_sample=True,
         max_new_tokens=320,
-        custom_generate=partial(_assisted_decoding, assistant_model=draft_model, alpha=0.25, deferral='v3'),
-        stopping_criteria=stopping_criteria
     )
     t1 = time()
     print(f"Decoding time: {t1-t0}")
-    print(tokenizer.decode(outputs[0][sample_input.input_ids.shape[1]:], skip_special_tokens=True))
+    print(tokenizer.decode(outputs[0]))

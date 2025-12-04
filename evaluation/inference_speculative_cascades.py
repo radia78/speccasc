@@ -1,22 +1,17 @@
 """
-speculative decoding is expord via the
-assistant_model argument to the generate function
-
-This script will load the target model, loads a smaller assistant model, calls the function
-
+Inference script for speculative decoding
 """
-
 
 import functools
 import torch
 import jsonargparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from evaluation.eval import run_eval,load_benchmark
-
+from evaluation.eval import run_eval, load_benchmark
+from speculative_cascades import _assisted_decoding
 
 @torch.inference_mode()
-def speculative_forward(
+def spec_casc_forward(
         inputs,
         model,
         assistant_model,
@@ -24,11 +19,21 @@ def speculative_forward(
         temperature,
         top_p,
         top_k,
+        alpha,
+        deferral,
         num_assistant_tokens,
         num_assistant_tokens_schedule,
         assistant_confidence_threshold,
-        stopping_criteria,
+        stopping_critieria,
 ):
+    spec_casc_kwargs = {
+        "assistant_model": assistant_model,
+        "alpha": alpha,
+        "deferral": deferral,
+    }
+
+    speculative_cascades_func = functools.partial(_assisted_decoding, **spec_casc_kwargs)
+
     gen_kwargs = {
         "assistant_model": assistant_model,
         "do_sample": True,
@@ -37,7 +42,8 @@ def speculative_forward(
         "num_assistant_tokens": num_assistant_tokens,
         "num_assistant_tokens_schedule": num_assistant_tokens_schedule,
         "assistant_confidence_threshold": assistant_confidence_threshold,
-        "stopping_criteria": stopping_criteria,
+        "custom_generate": speculative_cascades_func,
+        "stoppping_criteria": stopping_critieria,
     }
 
     if top_p is not None:
@@ -71,7 +77,9 @@ if __name__ == "__main__":
     parser.add_argument("-nat", type=int, default=16) # num assistant tokens
     parser.add_argument("-nats", type=str, default="constant") # num assistant tokens schedule
     parser.add_argument("-act", type=float, default=0.8) # assistant confidence threshold
-    parser.add_argument("-rn", type=str, default="speculative") # run name
+    parser.add_argument("-alpha", type=float, default=0.3) # The deferral rate to the target model
+    parser.add_argument("-df", type=str, default=None) # The deferral method specified in the paper
+    parser.add_argument("-rn", type=str, default="spec_casc") # run name
     args = parser.parse_args()
 
     model = AutoModelForCausalLM.from_pretrained(
@@ -91,13 +99,15 @@ if __name__ == "__main__":
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
-        speculative_forward,
+        spec_casc_forward,
         model=model,
         assistant_model=assistant_model,
         max_new_tokens=args.mt,
         temperature=args.t,
         top_p=args.tp,
         top_k=args.tk,
+        alpha=args.alpha,
+        deferral=args.df,
         num_assistant_tokens=args.nat,
         num_assistant_tokens_schedule=args.nats,
         assistant_confidence_threshold=args.act,
@@ -108,10 +118,9 @@ if __name__ == "__main__":
         model_id=args.mid,
         tokenizer=tokenizer,
         forward_func=forward_func,
-        bench_name=args.bn,
+        benchmark_name=args.bn,
+        dataset=benchmark_data,
         num_trials=args.ntt,
         device=args.d,
         run_name=args.rn,
     )
-
-

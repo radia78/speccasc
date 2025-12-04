@@ -1,22 +1,17 @@
 """
-speculative decoding is expord via the
-assistant_model argument to the generate function
-
-This script will load the target model, loads a smaller assistant model, calls the function
-
+Inference script for speculative decoding
 """
-
 
 import functools
 import torch
 import jsonargparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from evaluation.eval import run_eval,load_benchmark
-
+from evaluation.eval import run_eval, load_benchmark
+from speculative_cascades import _assisted_decoding
 
 @torch.inference_mode()
-def speculative_forward(
+def spec_ensmb_forward(
         inputs,
         model,
         assistant_model,
@@ -24,11 +19,21 @@ def speculative_forward(
         temperature,
         top_p,
         top_k,
+        epsilon,
+        beta,
         num_assistant_tokens,
         num_assistant_tokens_schedule,
         assistant_confidence_threshold,
         stopping_criteria,
 ):
+    spec_casc_kwargs = {
+        "assistant_model": assistant_model,
+        "epsilon": epsilon,
+        "beta": beta,
+    }
+
+    speculative_cascades_func = functools.partial(_assisted_decoding, **spec_casc_kwargs)
+
     gen_kwargs = {
         "assistant_model": assistant_model,
         "do_sample": True,
@@ -37,6 +42,7 @@ def speculative_forward(
         "num_assistant_tokens": num_assistant_tokens,
         "num_assistant_tokens_schedule": num_assistant_tokens_schedule,
         "assistant_confidence_threshold": assistant_confidence_threshold,
+        "custom_generate": speculative_cascades_func,
         "stopping_criteria": stopping_criteria,
     }
 
@@ -58,7 +64,6 @@ if __name__ == "__main__":
     parser = jsonargparse.ArgumentParser()
     parser.add_argument("-c", action=jsonargparse.ActionConfigFile)
     parser.add_argument("-mp", type=str, required=True) # model path
-    parser.add_argument("-amp", type=str, required=True) # assistant model path
     parser.add_argument("-mid", type=str, required=True) # model id
     parser.add_argument("-bn", type=str, default="gsm8k") # bench name
     parser.add_argument("-mt", type=int, default=320) # max tokens
@@ -71,17 +76,13 @@ if __name__ == "__main__":
     parser.add_argument("-nat", type=int, default=16) # num assistant tokens
     parser.add_argument("-nats", type=str, default="constant") # num assistant tokens schedule
     parser.add_argument("-act", type=float, default=0.8) # assistant confidence threshold
-    parser.add_argument("-rn", type=str, default="speculative") # run name
+    parser.add_argument("-eps", type=float, default=0.25) # The +/- range of the given temperature
+    parser.add_argument("-beta", type=float, default=0.4) # The maximum entropy acceptable by the rule
+    parser.add_argument("-rn", type=str, default="spec_ensmb") # run name
     args = parser.parse_args()
 
     model = AutoModelForCausalLM.from_pretrained(
         args.mp,
-        dtype=getattr(torch, args.dt),
-        device_map=args.d,
-    )
-
-    assistant_model = AutoModelForCausalLM.from_pretrained(
-        args.amp,
         dtype=getattr(torch, args.dt),
         device_map=args.d,
     )
@@ -91,13 +92,15 @@ if __name__ == "__main__":
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
-        speculative_forward,
+        spec_ensmb_forward,
         model=model,
-        assistant_model=assistant_model,
+        assistant_model=model,
         max_new_tokens=args.mt,
         temperature=args.t,
         top_p=args.tp,
         top_k=args.tk,
+        epsilon=args.eps,
+        beta=args.beta,
         num_assistant_tokens=args.nat,
         num_assistant_tokens_schedule=args.nats,
         assistant_confidence_threshold=args.act,
@@ -109,9 +112,8 @@ if __name__ == "__main__":
         tokenizer=tokenizer,
         forward_func=forward_func,
         bench_name=args.bn,
+        dataset=benchmark_data,
         num_trials=args.ntt,
         device=args.d,
         run_name=args.rn,
     )
-
-
