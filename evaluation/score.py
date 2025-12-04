@@ -3,6 +3,7 @@ import re
 import argparse
 import os
 import glob
+import evaluate
 
 def extract_number(text):
     """
@@ -30,33 +31,24 @@ def extract_number(text):
     if match:
         return match.group(1).replace(',', '')
     
-    # 4. Fallback: Look for the very last number in the text
-    # This is risky but often necessary for weak models that just output the number
-    # We'll try to be a bit conservative and only take it if it's at the end of the string
-    # match = re.search(r"(-?[\d,]+(?:\.\d+)?)\s*$", text)
-    # if match:
-    #     return match.group(1).replace(',', '')
-
     return None
 
-def score_gsm8k(csv_path):
-    try:
-        df = pd.read_csv(csv_path)
-    except Exception as e:
-        print(f"Error reading {csv_path}: {e}")
-        return
+def clean_response(response):
+    """
+    Cleans the response by removing artifacts after the first newline.
+    """
+    if not isinstance(response, str):
+        return ""
+    if '\n' in response:
+        response = response.split('\n')[0]
+    return response
 
-    if 'answer' not in df.columns:
-        print(f"Skipping {os.path.basename(csv_path)}: 'answer' column not found. Please re-run inference with the updated eval.py.")
-        return
-
+def score_gsm8k(df, filename):
     correct = 0
     total = 0
     
-    results = []
-
     for _, row in df.iterrows():
-        response = str(row['response'])
+        response = clean_response(str(row['response']))
         ground_truth = str(row['answer'])
         
         pred = extract_number(response)
@@ -77,23 +69,55 @@ def score_gsm8k(csv_path):
             correct += 1
         
         total += 1
-        results.append({
-            'response': response,
-            'answer': ground_truth,
-            'pred_extracted': pred,
-            'gt_extracted': gt,
-            'is_correct': is_correct
-        })
         
     accuracy = correct / total if total > 0 else 0
-    print(f"File: {os.path.basename(csv_path)}")
-    print(f"Accuracy: {accuracy:.2%} ({correct}/{total})")
-    
-    # Optionally save detailed scoring results
-    # output_path = csv_path.replace('.csv', '_scored.csv')
-    # pd.DataFrame(results).to_csv(output_path, index=False)
-    
+    print(f"File: {filename}")
+    print(f"GSM8K Accuracy: {accuracy:.2%} ({correct}/{total})")
     return accuracy
+
+def score_cnndm(df, filename):
+    print(f"Scoring CNNDM for {filename}...")
+    rouge = evaluate.load('rouge')
+    predictions = [clean_response(str(r)) for r in df['response']]
+    references = [str(r) for r in df['answer']]
+    
+    results = rouge.compute(predictions=predictions, references=references)
+    print(f"File: {filename}")
+    print(f"Rouge-L: {results['rougeL']:.4f}")
+    return results['rougeL']
+
+def score_wmt(df, filename):
+    print(f"Scoring WMT for {filename}...")
+    bleu = evaluate.load('sacrebleu')
+    predictions = [clean_response(str(r)) for r in df['response']]
+    references = [[str(r)] for r in df['answer']] # sacrebleu expects list of lists for references
+    
+    results = bleu.compute(predictions=predictions, references=references)
+    print(f"File: {filename}")
+    print(f"BLEU: {results['score']:.4f}")
+    return results['score']
+
+def score_file(csv_path):
+    try:
+        df = pd.read_csv(csv_path)
+    except Exception as e:
+        print(f"Error reading {csv_path}: {e}")
+        return
+
+    if 'answer' not in df.columns:
+        print(f"Skipping {os.path.basename(csv_path)}: 'answer' column not found. Please re-run inference with the updated eval.py.")
+        return
+
+    filename = os.path.basename(csv_path)
+    
+    if 'gsm8k' in filename.lower():
+        score_gsm8k(df, filename)
+    elif 'cnn' in filename.lower():
+        score_cnndm(df, filename)
+    elif 'wmt' in filename.lower():
+        score_wmt(df, filename)
+    else:
+        print(f"Unknown benchmark for file: {filename}. Skipping. (Filename must contain 'gsm8k', 'cnn', or 'wmt')")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -101,12 +125,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     if os.path.isdir(args.path):
-        files = glob.glob(os.path.join(args.path, "*gsm8k*.csv"))
+        files = glob.glob(os.path.join(args.path, "*.csv"))
         if not files:
-            print(f"No GSM8K results found in {args.path}")
+            print(f"No CSV results found in {args.path}")
         for file in sorted(files):
-            score_gsm8k(file)
+            score_file(file)
     elif os.path.isfile(args.path):
-        score_gsm8k(args.path)
+        score_file(args.path)
     else:
         print(f"Invalid path: {args.path}")
