@@ -20,7 +20,7 @@ def extract_number(text):
     if match:
         return match.group(1).replace(',', '')
 
-    # 2. "The answer is <number>" (User specified format)
+    # 2. "The answer is <number>"
     # We look for the LAST occurrence of this pattern
     matches = re.findall(r"The answer is[:\s]*(-?[\d,]+(?:\.\d+)?)", text, re.IGNORECASE)
     if matches:
@@ -35,19 +35,29 @@ def extract_number(text):
 
 def clean_response(response):
     """
-    Cleans the response by removing artifacts after the first newline.
+    Cleans the response by removing artifacts.
+    The user noted that LLM outputs might contain "Q:" and extra examples.
+    We want to keep the main answer but stop before the model starts hallucinating new questions.
     """
     if not isinstance(response, str):
         return ""
-    if '\n' in response:
-        response = response.split('\n')[0]
-    return response
+    
+    # If the response contains "Q:", it might be starting a new example. 
+    # We should cut off everything after the last valid answer and before the next Q:
+    # But simply splitting by \n might be too aggressive if the model uses newlines for formatting.
+    
+    # Strategy:
+    # 1. If we see "Q:" or "Question:", cut off there.
+    if "Q:" in response:
+        response = response.split("Q:")[0]
+    
+    return response.strip()
 
 def score_gsm8k(df, filename):
     correct = 0
     total = 0
     
-    for _, row in df.iterrows():
+    for i, row in df.iterrows():
         response = clean_response(str(row['response']))
         ground_truth = str(row['answer'])
         
@@ -67,6 +77,10 @@ def score_gsm8k(df, filename):
         
         if is_correct:
             correct += 1
+        else:
+            # Debug print for incorrect answers to help diagnose
+            # print(f"Row {i}: Incorrect. Pred: {pred}, GT: {gt}")
+            pass
         
         total += 1
         
