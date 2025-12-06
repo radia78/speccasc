@@ -1,89 +1,134 @@
-response,wall_time
-" Let's break this down:
-* **First Generation:** 3 children - Great Grandma Jones.
-* **Second Generation:** 3 children x 3 grandchildren = 9 grandchildren.
-* **Third Generation:** 9 grandchildren x 3 babies = 27 great-grand babies.
+response,wall_time,answer
+"
+* First generation: 3 children x 3 grandchildren = 9 great-grandchildren
+* Second generation: 9 grandchildren x 3 babies = 27 great-great-grandchildren
 
-In total, there will be 27 great-grand babies. 
-",84.56910991668701
-" His coach wants him to run 1/5 times more: 5000 x (1/5) = 1000 meters more. So now he runs 5000 + 1000 = 6000 meters a day.  Over a month there are 6000 x 30 = 180,000 meters. 
-The answer is 180,000 meters.
-",88.98639488220215
-" Craig had 2 x 20 dollars = 40 dollars. He bought 6 squirt guns for 6 x 2 dollars = 12 dollars. He bought 3 packs of water balloons for 3 x 3 dollars = 9 dollars. In total, Craig spent 12 + 9 = 21 dollars. So, he has 40 - 21 dollars left = 19. The answer is 19.
-
-I think the concept is **subtraction**
-A: This is correct. The questions generally involve subtractive operations, such as finding the difference between a starting number and the change or difference after an action takes place. ",179.92160868644714
-" Let x represent the number of coffee mugs. Then 4x + 8 equals 40. So, 4x = 32 and x is 8.  The answer is 8.
+Great Grandma Jones has a total of 9 + 27 = 36 great-grand-babies to kiss.
 
 
+",50.74918603897095,"Three children each have three children, for a total of 3*3=<<3*3=9>>9 grandchildren.
+9 grandchildren each have 3 babies, for a total of 9*3=<<9*3=27>>27 great grand-babies
+#### 27"
+"5000 meters is his daily target. 1/5 of 5000 is 5000 / 5 = 1000 meters. He runs 5000 + 1000 = 6000 meters each day. For a month he runs 6000 meters/day * 30 days = 180,000 meters in total. The answer is 180,000. 
 
 
-",74.29018592834473
-" The first flower shop orders 20 roses per week, the second orders 15 roses, and the third orders 30. The total for a week is 20 + 15 + 30 = 65 roses. For a month, 65 roses a week is 65 x 4 = 260 roses.
-The answer is 260 roses.
+",47.82175421714783,"Tyson's coach wants him to run 1/5 * 5000 meters = <<5000/5=1000>>1000 more meters per day.
+When he took the coach's advice, he increased the training distance he runs per day to 5000 meters + 1000 meters = <<5000+1000=6000>>6000 meters.
+He covered 6000 meters/day * 30 days/month =<<6000*30=180000>>180000 meters in June on his training sessions.
+#### 180000"
+"20 dollars is 2 x 20 = 40 dollars. 6 squirt guns for $2 each is 6 x 2 = 12 dollars. 3 packs of water balloons for $3 each is 3 x 3 = 9 dollars.  His total expenses are 12 + 9 = 21 dollars. Craig has 40 - 21 = 19 dollars left. The answer is 19.
+
+These are just examples. If you had additional questions, please let me know and I will be happy to solve them. 
+",48.50988507270813,"Craig starts off with 2 * $20 = $<<2*20=40>>40.
+Craig spends 6 squirt guns * $2 = $<<6*2=12>>12 on squirt guns.
+Craig spends 3 packs of water balloons * $3 = $<<3*3=9>>9 on water balloons.
+Total Craig has spent $12 + $9 = $<<12+9=21>>21.
+Craig has $40 - $21 = $<<40-21=19>>19 remaining.
+#### 19"
+"4 times the number of coffee mugs is 4 * x = 40. So we can say that x = 40/4. 40 / 4 is 10. Then eight more than 10 is 10 + 8 = 18. The answer is 18.
+
+**Note:** These questions are designed to test basic arithmetic skills such as addition, subtraction, multiplication, and division. They also incorporate word problems and algebra concepts.",46.078474044799805,"Let m be the number of mugs
+8+4*m=40
+4*m=40-8=32
+4m=<<32=32>>32
+m=<<8=8>>8
+#### 8"
+"20 + 15 + 30 = 65 roses per week are required. In a month, that would be 65 * 4 = 260. Ford must have 260 - 40 = 220 roses left to supply all flower shops every month.
+",47.58098268508911,"The first flower shop needs 20 x 4 = <<20*4=80>>80 roses every month.
+The second flower shop needs 15 x 4= <<15*4=60>>60 roses every month.
+The third flower shop needs 30 x 4 = <<30*4=120>>120 roses every month.
+So the total number of roses that all the flower shop needs every month is 120 + 80 + 60 = <<120+80+60=260>>260.
+The total roses Ford grows every month is 40 x 4 = <<40*4=160>>160
+Therefore, the total number of roses he lacks is 260 - 160 = <<260-160=100>>100 to supply all the flower shops every month.
+#### 100"
+"
+- There are three children. 3 * 3 = 9 grandchildren
+- Each grandchild has 3 kids = 9 * 3 = 27 great grand-kids
+- Great Grandma Jones has 3 grandchildren so that would be 3 * 3 = 9 great grandchildren.
+- Great Grandma Jones has 9 great-grand-kids
+- The total will be 9 + 9 = 18.
 
 
-
-",122.14420199394226
-" This is a trick question! Great Grandma Jones has 3 children, 3 children of each child.  Grandchildren will be there 3 of them for each.  So there would be 3 x 3 = 9. The answer is 9.
-
-I tried to make the question very specific and easy to understand!
-",85.10321164131165
-" Tyson runs 5000 meters a day. His coach wants him to run 1/5 * 5000 = 1000 meters more a day. So he now runs 5000 + 1000 = 6000 meters. In a month, he will run 6000 * 30 days = 180,000 meters. The answer is 180,000 meters. 
-
-**You can use these examples to help you remember the solution steps.**
-",98.21283102035522
-" Craig had 2 twenty dollar bills, which is 2 x 20 = 40 dollars.  He buys 6 squirt guns at $2 each, totaling 6 x 2 = 12 dollars. He then buys 3 packs of water balloons for $3 each, which will be 3 x 3 = 9 dollars.  The total cost of the purchases is 12 + 9 = 21 dollars. He then has 40 - 21 = 19 dollars left. The answer is 19.
-
-
-
-It seems like you are having some trouble adding in this question format. Can you tell me what is making it difficult for you? 
  
-",110.58453440666199
-" Let’s use algebra to solve this problem. Let the number of coffee mugs be represented by “x”. 
-“Four times the number of coffee mugs is 4x”
-“Eight more than that is 4x + 8”
-“40 is equal to 4x + 8”
-“32 is equal to 4x”
-“x = 8” The answer is 8.
+",52.014716148376465,"Three children each have three children, for a total of 3*3=<<3*3=9>>9 grandchildren.
+9 grandchildren each have 3 babies, for a total of 9*3=<<9*3=27>>27 great grand-babies
+#### 27"
+"5000 meters are run every day. If he runs 1/5 more then he runs 5000 * (1/5) = 1000 more meters a day. 5000 meters + 1000 meters = 6000 meters.
+A month is 30 days. So over a month, he runs 6000 meters a day * 30 days = 180,000 meters. The answer is 180,000 meters.
 
 
-",79.62568020820618
-" Ford grows 40 roses a week. For the first flower shop, that is 20 roses. The second shop orders 15 roses and the third shop orders 30. In total, he sells 20 + 15 + 30 = 65 roses. The answer is 65 roses.
-
-
-
-
-",78.65296697616577
-" This is a little bit of a word puzzle.  Let's break it down:
-
-* **Great-Grandma Jones' children:** 3 children
-* **Great-Grandma's children's children:** 3 children each, so 3 * 3 = 9 grandchildren
-* **Great-Grandma's great-grandchildren:** 3 children each, so 9 * 3 = 27 great-grand-grandchildren.
-
-
-If there were 3 kids and they all have 3 kids each, then we have 3 * 3 = 9 children and 9 * 3 = 27 grandchildren. So there are 27 + 3 = 30 great-grand-grandchildren.
+",50.47635507583618,"Tyson's coach wants him to run 1/5 * 5000 meters = <<5000/5=1000>>1000 more meters per day.
+When he took the coach's advice, he increased the training distance he runs per day to 5000 meters + 1000 meters = <<5000+1000=6000>>6000 meters.
+He covered 6000 meters/day * 30 days/month =<<6000*30=180000>>180000 meters in June on his training sessions.
+#### 180000"
+"2 twenty dollar bills are 2 x 20 = 40 dollars. 6 squirt guns for 2 dollars each is 6 x 2 = 12 dollars. 3 packs of water balloons for 3 dollars each are 3 x 3 = 9 dollars. So he has 40 - 12 - 9 = 19 dollars left. The answer is 19.
 
 
 
-Let me know if you'd like more practice questions! 
-",116.05370664596558
-" Tyson runs 5000 meters each day. The coach wants him to run 1/5 times more. So he runs 5000 * (1/5) = 1000 more meters. Adding to the normal distance, his training runs would be 5000 + 1000 = 6000. He ran 6000 meters in June. The answer is 6000.
+",45.1961407661438,"Craig starts off with 2 * $20 = $<<2*20=40>>40.
+Craig spends 6 squirt guns * $2 = $<<6*2=12>>12 on squirt guns.
+Craig spends 3 packs of water balloons * $3 = $<<3*3=9>>9 on water balloons.
+Total Craig has spent $12 + $9 = $<<12+9=21>>21.
+Craig has $40 - $21 = $<<40-21=19>>19 remaining.
+#### 19"
+"4 times the number of coffee mugs is 40. 40 / 4 = 10 coffee mugs. Eight more than 10 coffee mugs is 10 + 8 = 18. The answer is 18. 
+",37.7887499332428,"Let m be the number of mugs
+8+4*m=40
+4*m=40-8=32
+4m=<<32=32>>32
+m=<<8=8>>8
+#### 8"
+"20 roses + 15 roses + 30 roses = 65 roses. Each week he needs to supply 65 roses. So each week he supplies 65 + (65 * 4) = 330 roses. The answer is 330. 
+",55.725996255874634,"The first flower shop needs 20 x 4 = <<20*4=80>>80 roses every month.
+The second flower shop needs 15 x 4= <<15*4=60>>60 roses every month.
+The third flower shop needs 30 x 4 = <<30*4=120>>120 roses every month.
+So the total number of roses that all the flower shop needs every month is 120 + 80 + 60 = <<120+80+60=260>>260.
+The total roses Ford grows every month is 40 x 4 = <<40*4=160>>160
+Therefore, the total number of roses he lacks is 260 - 160 = <<260-160=100>>100 to supply all the flower shops every month.
+#### 100"
+"
+This is a bit of a trick question! 
+ 
+It would be about 3. But Great Grandma Jones' children are likely to have more children and the family would grow larger. 
 
+Think about this in terms of generations.
 
-These are some basic algebra problems that a student could have to solve.
+",51.32337689399719,"Three children each have three children, for a total of 3*3=<<3*3=9>>9 grandchildren.
+9 grandchildren each have 3 babies, for a total of 9*3=<<9*3=27>>27 great grand-babies
+#### 27"
+"5000 meters x (1/5) = 1000 meters extra distance. 5000 meters + 1000 meters = 6000 meters. The answer is 6000 meters.
 
+I hope this helps! 😊 
+",56.923144817352295,"Tyson's coach wants him to run 1/5 * 5000 meters = <<5000/5=1000>>1000 more meters per day.
+When he took the coach's advice, he increased the training distance he runs per day to 5000 meters + 1000 meters = <<5000+1000=6000>>6000 meters.
+He covered 6000 meters/day * 30 days/month =<<6000*30=180000>>180000 meters in June on his training sessions.
+#### 180000"
+"2 twenty dollar bills is 2 * 20 = 40 dollars.  He spends 6 * 2 = 12 dollars on squirt guns.  He spends 3 * 3 = 9 dollars on water balloons. So he spent 12 + 9 = 21 dollars.  He has 40 - 21 dollars left. 40 - 21 = 19. The answer is 19.
 
-**Note:**
-Remember to use correct variable names like x, y, etc., and make sure to answer in the context of the question.",104.51650047302246
-" Craig started with 2 x 20 = 40 dollars.  He bought six squirt guns for 6 x 2 = 12 dollars. He bought 3 packs of water balloons for 3 x 3 = 9 dollars.  So his total spent was 12 + 9 = 21 dollars.  He has 40 - 21 dollars left. 
+",52.21178579330444,"Craig starts off with 2 * $20 = $<<2*20=40>>40.
+Craig spends 6 squirt guns * $2 = $<<6*2=12>>12 on squirt guns.
+Craig spends 3 packs of water balloons * $3 = $<<3*3=9>>9 on water balloons.
+Total Craig has spent $12 + $9 = $<<12+9=21>>21.
+Craig has $40 - $21 = $<<40-21=19>>19 remaining.
+#### 19"
+"
+* Let's think of a variable:  Let 'x' represent the number of coffee mugs.
+* Set up the equation: 4x + 8 = 40
+* Solve for 'x': 4x = 32; x = 8.
+* The teacher's lounge has 8 coffee mugs. 
+",41.420050859451294,"Let m be the number of mugs
+8+4*m=40
+4*m=40-8=32
+4m=<<32=32>>32
+m=<<8=8>>8
+#### 8"
+"40 roses per week. First flower shop orders 20 roses. Second flower shop orders 15 roses. The third flower shop orders 30 roses. So 40 + 20 + 15 + 30 = 105 roses in total. Ford lacks 105 - 40 = 65 roses to supply all the flower shops. The answer is 65.
 
-
-A and answer are different.
-",89.26047849655151
-" Let’s represent the number of mugs by the variable x. Four times the number of mugs is 4x. Eight more than that is 4x + 8. We know that 4x + 8 is equal to 40. So solve for x, which is (40 - 8) / 4. So the number of mugs is (32 / 4) = 8. The answer is 8.
-
-
-",84.60802817344666
-" Ford grows 40 roses per week. The first flower shop orders 20, the second 15, and the third 30. So in total 20 + 15 + 30 = 65 roses are ordered. So Ford needs to supply 65 - 40 = 25 roses more every week. In a month, he would have to supply 25 * 4 = 100 roses.  The answer is 100 roses.
-",95.25352716445923
+These are just a few examples.  You can always come up with your own problem!
+",51.073593854904175,"The first flower shop needs 20 x 4 = <<20*4=80>>80 roses every month.
+The second flower shop needs 15 x 4= <<15*4=60>>60 roses every month.
+The third flower shop needs 30 x 4 = <<30*4=120>>120 roses every month.
+So the total number of roses that all the flower shop needs every month is 120 + 80 + 60 = <<120+80+60=260>>260.
+The total roses Ford grows every month is 40 x 4 = <<40*4=160>>160
+Therefore, the total number of roses he lacks is 260 - 160 = <<260-160=100>>100 to supply all the flower shops every month.
+#### 100"
