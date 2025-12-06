@@ -87,7 +87,7 @@ def score_gsm8k(df, filename):
     accuracy = correct / total if total > 0 else 0
     print(f"File: {filename}")
     print(f"GSM8K Accuracy: {accuracy:.2%} ({correct}/{total})")
-    return accuracy
+    return {'accuracy': accuracy, 'correct': correct, 'total': total}
 
 def score_cnndm(df, filename):
     print(f"Scoring CNNDM for {filename}...")
@@ -98,7 +98,7 @@ def score_cnndm(df, filename):
     results = rouge.compute(predictions=predictions, references=references)
     print(f"File: {filename}")
     print(f"Rouge-L: {results['rougeL']:.4f}")
-    return results['rougeL']
+    return results
 
 def score_wmt(df, filename):
     print(f"Scoring WMT for {filename}...")
@@ -109,42 +109,79 @@ def score_wmt(df, filename):
     results = bleu.compute(predictions=predictions, references=references)
     print(f"File: {filename}")
     print(f"BLEU: {results['score']:.4f}")
-    return results['score']
+    return results
 
 def score_file(csv_path):
     try:
         df = pd.read_csv(csv_path)
     except Exception as e:
         print(f"Error reading {csv_path}: {e}")
-        return
+        return None
 
     if 'answer' not in df.columns:
         print(f"Skipping {os.path.basename(csv_path)}: 'answer' column not found. Please re-run inference with the updated eval.py.")
-        return
+        return None
 
     filename = os.path.basename(csv_path)
+    result = None
     
     if 'gsm8k' in filename.lower():
-        score_gsm8k(df, filename)
+        result = score_gsm8k(df, filename)
+        result['benchmark'] = 'gsm8k'
     elif 'cnn' in filename.lower():
-        score_cnndm(df, filename)
+        result = score_cnndm(df, filename)
+        result['benchmark'] = 'cnn_dm'
     elif 'wmt' in filename.lower():
-        score_wmt(df, filename)
+        result = score_wmt(df, filename)
+        result['benchmark'] = 'wmt_de_en'
     else:
         print(f"Unknown benchmark for file: {filename}. Skipping. (Filename must contain 'gsm8k', 'cnn', or 'wmt')")
+        return None
+        
+    result['filename'] = filename
+    return result
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("path", type=str, nargs='?', default="results", help="Path to CSV file or directory containing CSV files")
     args = parser.parse_args()
     
+    all_results = []
+    
     if os.path.isdir(args.path):
         files = glob.glob(os.path.join(args.path, "*.csv"))
         if not files:
             print(f"No CSV results found in {args.path}")
         for file in sorted(files):
-            score_file(file)
+            res = score_file(file)
+            if res:
+                all_results.append(res)
     elif os.path.isfile(args.path):
-        score_file(args.path)
+        res = score_file(args.path)
+        if res:
+            all_results.append(res)
     else:
         print(f"Invalid path: {args.path}")
+        
+    if all_results:
+        # Save to scores directory
+        scores_dir = "scores"
+        if not os.path.exists(scores_dir):
+            os.makedirs(scores_dir)
+            
+        output_df = pd.DataFrame(all_results)
+        
+        # Save summary
+        output_path = os.path.join(scores_dir, "summary_scores.csv")
+        output_df.to_csv(output_path, index=False)
+        print(f"\nSummary scores saved to {output_path}")
+        
+        # Save individual benchmark scores
+        for benchmark in output_df['benchmark'].unique():
+            bench_df = output_df[output_df['benchmark'] == benchmark]
+            # Drop columns that are completely empty (NaN) for this benchmark
+            bench_df = bench_df.dropna(axis=1, how='all')
+            
+            bench_path = os.path.join(scores_dir, f"{benchmark}_scores.csv")
+            bench_df.to_csv(bench_path, index=False)
+            print(f"Saved {benchmark} scores to {bench_path}")
