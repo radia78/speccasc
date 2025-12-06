@@ -39,7 +39,7 @@ def load_benchmark(
     
     if benchmark_dataset == 'wmt_de_en':
         add_preamble = lambda sample: {'question': WMT_DE_EN_PROMPT.format(de=sample['de']), 'answer': sample['en']}
-        ds = load_dataset('wmt/wmt19', 'de-en', split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
+        ds = load_dataset('wmt/wmt19', 'de-en', split='validation').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
         stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, WMT_DE_EN_STOP_STRINGS)])
         
         return ds, stopping_criteria
