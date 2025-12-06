@@ -41,7 +41,7 @@ English: Tragically, on 31 December, a day that most of us commemorate with cele
 German: Er hatte seine Mörder bei den Vorbereitungen auf einen Anschlag überrascht.
 English: He had disturbed his killers as they were preparing an attack.
 
-German: {german}
+German: {de}
 English:
 """
 WMT_DE_EN_STOP_STRINGS = ["\n", "German:"]

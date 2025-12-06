@@ -87,7 +87,7 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-    benchmark_data, stopping_criteria = load_benchmark(args.bn)
+    benchmark_data, stopping_criteria = load_benchmark(args.bn, tokenizer)
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
