@@ -173,6 +173,22 @@ if __name__ == "__main__":
         
         # Save summary
         output_path = os.path.join(scores_dir, "summary_scores.csv")
+        
+        # Reorder summary columns: benchmark, filename, then primary metrics, then rest
+        summary_cols = output_df.columns.tolist()
+        summary_order = ['benchmark', 'filename']
+        
+        # Add primary metrics if they exist
+        for metric in ['accuracy', 'rougeL', 'score']:
+            if metric in summary_cols:
+                summary_order.append(metric)
+                
+        # Add remaining columns
+        for c in summary_cols:
+            if c not in summary_order:
+                summary_order.append(c)
+                
+        output_df = output_df[summary_order]
         output_df.to_csv(output_path, index=False)
         print(f"\nSummary scores saved to {output_path}")
         
@@ -181,6 +197,28 @@ if __name__ == "__main__":
             bench_df = output_df[output_df['benchmark'] == benchmark]
             # Drop columns that are completely empty (NaN) for this benchmark
             bench_df = bench_df.dropna(axis=1, how='all')
+            
+            # Reorder columns: benchmark, filename, then primary metric, then rest
+            cols = bench_df.columns.tolist()
+            primary_metric = None
+            if benchmark == 'gsm8k':
+                primary_metric = 'accuracy'
+            elif benchmark == 'cnn_dm':
+                primary_metric = 'rougeL'
+            elif benchmark == 'wmt_de_en':
+                primary_metric = 'score' # BLEU score key from sacrebleu
+            
+            # Start with benchmark and filename
+            new_order = ['benchmark', 'filename']
+            if primary_metric and primary_metric in cols:
+                new_order.append(primary_metric)
+            
+            # Add remaining columns
+            for c in cols:
+                if c not in new_order:
+                    new_order.append(c)
+            
+            bench_df = bench_df[new_order]
             
             bench_path = os.path.join(scores_dir, f"{benchmark}_scores.csv")
             bench_df.to_csv(bench_path, index=False)
