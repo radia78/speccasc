@@ -1,0 +1,9 @@
+benchmark,filename,accuracy,correct,total
+gsm8k,sampling_t0.7_p0.95_k20-gemma-2-2b-it-gsm8k.csv,0.5333333333333333,8.0,15.0
+gsm8k,sampling_t0.7_p0.95_k50-gemma-2-2b-it-gsm8k.csv,0.4666666666666667,7.0,15.0
+gsm8k,sampling_t0.7_p0.9_k20-gemma-2-2b-it-gsm8k.csv,0.4666666666666667,7.0,15.0
+gsm8k,sampling_t0.7_p0.9_k50-gemma-2-2b-it-gsm8k.csv,0.2,3.0,15.0
+gsm8k,sampling_t1.0_p0.95_k20-gemma-2-2b-it-gsm8k.csv,0.5333333333333333,8.0,15.0
+gsm8k,sampling_t1.0_p0.95_k50-gemma-2-2b-it-gsm8k.csv,0.3333333333333333,5.0,15.0
+gsm8k,sampling_t1.0_p0.9_k20-gemma-2-2b-it-gsm8k.csv,0.4,6.0,15.0
+gsm8k,sampling_t1.0_p0.9_k50-gemma-2-2b-it-gsm8k.csv,0.4666666666666667,7.0,15.0

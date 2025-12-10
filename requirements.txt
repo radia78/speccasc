@@ -3,3 +3,8 @@ datasets
 transformers
 jsonargparse
 accelerate
+pandas
+rouge_score
+sacrebleu
+evaluate
+absl-py
