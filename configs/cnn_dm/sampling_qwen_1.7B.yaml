@@ -1,0 +1,12 @@
+mp: Qwen/Qwen3-1.7B
+mi: qwen-1.7B
+bn: cnn_dm
+mt: 128
+ntt: 3
+ss: 100
+dt: bfloat16
+d: cpu
+t: 1.0
+tp: 0.95
+tk: 50
+rn: sampling_qwen1.7B_t1
