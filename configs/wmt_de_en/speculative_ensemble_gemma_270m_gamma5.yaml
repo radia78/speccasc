@@ -1,0 +1,18 @@
+mp: google/gemma-3-270m-it        # target model
+mid: gemma-270m                     # model id for eval output
+bn: wmt_de_en
+mt: 80
+ntt: 3
+ss: 100
+dt: bfloat16
+d: cpu
+
+t: 1.0
+tp: 0.95
+tk: 50
+
+nat: 5                            # gamma = 5
+nats: constant
+act: 0.8                          # default from script
+
+rn: specensmb_gemma270m_gamma5
