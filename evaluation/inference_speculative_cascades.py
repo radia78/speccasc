@@ -7,7 +7,7 @@ import torch
 import jsonargparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from evaluation.eval import run_eval, load_benchmark
+from eval import run_eval, load_benchmark
 from speculative_cascades import _assisted_decoding
 
 @torch.inference_mode()
@@ -24,7 +24,7 @@ def spec_casc_forward(
         num_assistant_tokens,
         num_assistant_tokens_schedule,
         assistant_confidence_threshold,
-        stopping_critieria,
+        stopping_criteria,
 ):
     spec_casc_kwargs = {
         "assistant_model": assistant_model,
@@ -43,7 +43,7 @@ def spec_casc_forward(
         "num_assistant_tokens_schedule": num_assistant_tokens_schedule,
         "assistant_confidence_threshold": assistant_confidence_threshold,
         "custom_generate": speculative_cascades_func,
-        "stoppping_criteria": stopping_critieria,
+        "stopping_criteria": stopping_criteria,
     }
 
     if top_p is not None:
@@ -69,6 +69,7 @@ if __name__ == "__main__":
     parser.add_argument("-bn", type=str, default="gsm8k") # bench name
     parser.add_argument("-mt", type=int, default=320) # max tokens
     parser.add_argument("-ntt", type=int, default=5) # num trials
+    parser.add_argument("-ss", type=int, default=5) # sample size
     parser.add_argument("-dt", type=str, default="bfloat16") # torch dtype name e.g float16, bfloat16, float32
     parser.add_argument("-d", type=str, default="cpu") # device
     parser.add_argument("-t", type=float, default=0.8) # temperature
@@ -95,7 +96,11 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-    benchmark_data, stopping_criteria = load_benchmark(args.bn, tokenizer)
+    benchmark_data, stopping_criteria = load_benchmark(
+        benchmark_dataset=args.bn, 
+        tokenizer=tokenizer,
+        sample_size=args.ss
+    )
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(

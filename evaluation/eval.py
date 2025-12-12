@@ -48,6 +48,7 @@ def load_benchmark(
         add_preamble = lambda sample: {'question': CNN_DM_PROMPT.format(article=sample['article']), 'answer': sample['highlights']}
         ds = load_dataset("abisee/cnn_dailymail", "3.0.0", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
         stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, CNN_DM_STOP_STRINGS)])
+        print(ds)
 
         return ds, stopping_criteria
     
@@ -80,8 +81,8 @@ def load_benchmark(
         return ds, stopping_criteria
 
     if benchmark_dataset == "mbpp":
-        add_preamble = lambda sample: {'question': MBPP_PROMPT.format(context=sample['context'], question=sample['question']), 'answer': sample['answers']['text']}
-        ds = load_dataset("Muennighoff/mbpp", 'sanitized', split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
+        add_preamble = lambda sample: {'question': MBPP_PROMPT.format(problem=sample['prompt'], test_cases='\n'.join(sample['test_list'])), 'answer': sample['code']}
+        ds = load_dataset("google-research-datasets/mbpp", 'sanitized', split='train+test+validation+prompt').shuffle(shuffle_seed).map(add_preamble).remove_columns('test_imports').batch(batch_size=sample_size)
         stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, MBPP_STOP_STRINGS)])
 
         return ds, stopping_criteria

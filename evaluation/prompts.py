@@ -24,7 +24,7 @@ A: Olivia had 23 dollars. 5 bagels for 3 dollars each will be 5 x 3 = 15 dollars
 
 Q: {question}
 A: """
-Q_A_STOP_STRINGS = ["\nQ:", "\n\nQ:", "Q:"]
+Q_A_STOP_STRINGS = ['Q:', '\nQ:', '\n\n', '\n']
 
 WMT_DE_EN_PROMPT = """German: Ich erkläre die am Freitag, dem 15. Dezember 2000, unterbrochene Sitzungsperiode des Europäischen Parlaments für wieder aufgenommen.
 English: I declare resumed the session of the European Parliament adjourned on Friday, 15 December 2000.
@@ -93,7 +93,7 @@ Q: What type of accessory company did Beyonce partner with in 2005?
 A: shoe
 
 Title: {title}
-Background: {}
+Background: {background}
 Q: {question}
 A:
 """

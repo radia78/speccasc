@@ -5,6 +5,13 @@ import os
 import glob
 import evaluate
 
+from prompts import (
+    WMT_DE_EN_STOP_STRINGS,
+    MBPP_STOP_STRINGS,
+    CNN_DM_STOP_STRINGS,
+    Q_A_STOP_STRINGS
+)
+
 def extract_number(text):
     """
     Extracts the final numerical answer from the text.
@@ -33,7 +40,7 @@ def extract_number(text):
     
     return None
 
-def clean_response(response):
+def clean_qa_response(response):
     """
     Cleans the response by removing artifacts.
     The user noted that LLM outputs might contain "Q:" and extra examples.
@@ -53,12 +60,26 @@ def clean_response(response):
     
     return response.strip()
 
+def clean_mbpp_response(response):
+    """
+    Clean strings generated from different models for MBPP program generation
+    """
+
+    # Detect for any stop strings and then remove them as necessary
+    for stop_str in MBPP_STOP_STRINGS:
+        if stop_str in response:
+            response = response.strip(stop_str)
+
+    # It mind start yapping like crazy, so just find the match and group and strip!
+    program_cleaned_str = re.match(r'(?s).*?(?=\n[A-Z])', response)
+    return program_cleaned_str.group().strip()
+
 def score_gsm8k(df, filename):
     correct = 0
     total = 0
     
     for i, row in df.iterrows():
-        response = clean_response(str(row['response']))
+        response = clean_qa_response(str(row['response']))
         ground_truth = str(row['answer'])
         
         pred = extract_number(response)
@@ -111,6 +132,40 @@ def score_wmt(df, filename):
     print(f"BLEU: {results['score']:.4f}")
     return results
 
+def run_program(program: str, test_cases: list[str]):
+    # Input should be a row of the data frame
+    # Run the string function immediately to see if it actually works
+    try:
+        exec(program)
+        for t in test_cases:
+            exec(t)
+        return True
+
+    except:
+        return False
+    
+def score_mbpp(df, filename):
+    correct = 0
+    total = 0
+    
+    for _, row in df.iterrows():
+        response, test_cases = row['response'], list(row['test_cases'])
+        is_correct = run_program(response, test_cases)
+        
+        if is_correct:
+            correct += 1
+        else:
+            # Debug print for incorrect answers to help diagnose
+            # print(f"Row {i}: Incorrect. Pred: {pred}, GT: {gt}")
+            pass
+        
+        total += 1
+        
+    accuracy = correct / total if total > 0 else 0
+    print(f"File: {filename}")
+    print(f"MBPP Accuracy: {accuracy:.2%} ({correct}/{total})")
+    return {'accuracy': accuracy, 'correct': correct, 'total': total}
+
 def score_file(csv_path):
     try:
         df = pd.read_csv(csv_path)
@@ -134,6 +189,9 @@ def score_file(csv_path):
     elif 'wmt' in filename.lower():
         result = score_wmt(df, filename)
         result['benchmark'] = 'wmt_de_en'
+    elif 'mbpp' in filename.lower():
+        result = score_mbpp(df, filename)
+        result['benchmark'] = 'mbpp'
     else:
         print(f"Unknown benchmark for file: {filename}. Skipping. (Filename must contain 'gsm8k', 'cnn', or 'wmt')")
         return None

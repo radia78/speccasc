@@ -7,8 +7,8 @@ import torch
 import jsonargparse
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-from evaluation.eval import run_eval, load_benchmark
-from speculative_cascades import _assisted_decoding
+from eval import run_eval, load_benchmark
+from speculative_ensemble import _assisted_decoding
 
 @torch.inference_mode()
 def spec_ensmb_forward(
@@ -26,13 +26,13 @@ def spec_ensmb_forward(
         assistant_confidence_threshold,
         stopping_criteria,
 ):
-    spec_casc_kwargs = {
+    spec_ensmb_kwargs = {
         "assistant_model": assistant_model,
         "epsilon": epsilon,
         "beta": beta,
     }
 
-    speculative_cascades_func = functools.partial(_assisted_decoding, **spec_casc_kwargs)
+    speculative_ensemble_func = functools.partial(_assisted_decoding, **spec_ensmb_kwargs)
 
     gen_kwargs = {
         "assistant_model": assistant_model,
@@ -42,8 +42,8 @@ def spec_ensmb_forward(
         "num_assistant_tokens": num_assistant_tokens,
         "num_assistant_tokens_schedule": num_assistant_tokens_schedule,
         "assistant_confidence_threshold": assistant_confidence_threshold,
-        "custom_generate": speculative_cascades_func,
-        "stopping_criteria": stopping_criteria,
+        "custom_generate": speculative_ensemble_func,
+        "stopping_criteria": stopping_criteria
     }
 
     if top_p is not None:
@@ -68,6 +68,7 @@ if __name__ == "__main__":
     parser.add_argument("-bn", type=str, default="gsm8k") # bench name
     parser.add_argument("-mt", type=int, default=320) # max tokens
     parser.add_argument("-ntt", type=int, default=5) # num trials
+    parser.add_argument("-ss", type=int, default=5) # sample size
     parser.add_argument("-dt", type=str, default="bfloat16") # torch dtype name e.g float16, bfloat16, float32
     parser.add_argument("-d", type=str, default="cpu") # device
     parser.add_argument("-t", type=float, default=0.8) # temperature
@@ -88,7 +89,11 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-    benchmark_data, stopping_criteria = load_benchmark(args.bn, tokenizer)
+    benchmark_data, stopping_criteria = load_benchmark(
+        benchmark_dataset=args.bn, 
+        tokenizer=tokenizer,
+        sample_size=args.ss
+    )
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
@@ -111,7 +116,7 @@ if __name__ == "__main__":
         model_id=args.mid,
         tokenizer=tokenizer,
         forward_func=forward_func,
-        bench_name=args.bn,
+        benchmark_name=args.bn,
         dataset=benchmark_data,
         num_trials=args.ntt,
         device=args.d,

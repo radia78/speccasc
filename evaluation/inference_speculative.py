@@ -63,6 +63,7 @@ if __name__ == "__main__":
     parser.add_argument("-bn", type=str, default="gsm8k") # bench name
     parser.add_argument("-mt", type=int, default=320) # max tokens
     parser.add_argument("-ntt", type=int, default=5) # num trials
+    parser.add_argument("-ss", type=int, default=5) # sample size
     parser.add_argument("-dt", type=str, default="bfloat16") # torch dtype name e.g float16, bfloat16, float32
     parser.add_argument("-d", type=str, default="cpu") # device
     parser.add_argument("-t", type=float, default=0.8) # temperature
@@ -87,7 +88,11 @@ if __name__ == "__main__":
     )
 
     tokenizer = AutoTokenizer.from_pretrained(args.mp)
-    benchmark_data, stopping_criteria = load_benchmark(args.bn, tokenizer)
+    benchmark_data, stopping_criteria = load_benchmark(
+        args.bn, 
+        tokenizer,
+        sample_size=args.ss
+    )
     model.generation_config.pad_token_id = tokenizer.pad_token_id
 
     forward_func = functools.partial(
