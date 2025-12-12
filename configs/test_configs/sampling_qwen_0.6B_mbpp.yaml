@@ -1,0 +1,12 @@
+mp: Qwen/Qwen3-0.6B
+mi: qwen-0.6B
+bn: mbpp
+mt: 320
+ntt: 3
+ss: 3
+dt: bfloat16
+d: cpu
+t: 1.0
+tp: 0.95
+tk: 50
+rn: sampling_qwen0.6B_t1

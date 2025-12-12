@@ -1,0 +1,19 @@
+mp: google/gemma-3-1b-it        # target model
+amp: google/gemma-3-270m-it       # assistant model
+mid: gemma-1b                     # model id for eval output
+bn: gsm8k
+mt: 320
+ntt: 3
+ss: 3
+dt: bfloat16
+d: cpu
+
+t: 1.0
+tp: 0.95
+tk: 50
+
+nat: 5                            # gamma = 5
+nats: constant
+act: 0.8                          # default from script
+
+rn: speccasc_gemma1b_assist270m_gamma5_gsm8k

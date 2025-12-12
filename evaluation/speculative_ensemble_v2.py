@@ -388,16 +388,15 @@ def _assisted_decoding(
         return input_ids
     
 if __name__ == "__main__":
-    from transformers import AutoTokenizer, AutoModelForCausalLM, StopStringCriteria, StoppingCriteriaList
+    from transformers import AutoTokenizer, AutoModelForCausalLM
     import functools
     from time import time
-    from prompts import GSM8K_PROMPT, Q_A_STOP_STRINGS
+    from prompts import GSM8K_PROMPT
 
     draft_model = AutoModelForCausalLM.from_pretrained('google/gemma-3-270m-it', device_map='cpu')
-    tokenizer = AutoTokenizer.from_pretrained('google/gemma-3-270m-it')
-    stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, "\n")])
+    tokenizer = AutoTokenizer.from_pretrained('google/gemma-3-1B-it')
 
-    sample_input = tokenizer(GSM8K_PROMPT.format(question="If I have 3 apples and I double it the next day, how many apples do I have?"), return_tensors='pt')
+    sample_input = tokenizer(GSM8K_PROMPT.format(question="Anne had 3 apples, and then she doubled it the next day. How many apples does she have now?"), return_tensors='pt')
     t0 = time()
     outputs = draft_model.generate(
         **sample_input,
@@ -405,7 +404,6 @@ if __name__ == "__main__":
         custom_generate=functools.partial(_assisted_decoding, assistant_model=draft_model, beta=0.4, epsilon=0.25), 
         do_sample=True,
         max_new_tokens=320,
-        stopping_criteria=stopping_criteria,
     )
     t1 = time()
     print(f"Decoding time: {t1-t0}")

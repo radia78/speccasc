@@ -419,28 +419,15 @@ if __name__ == "__main__":
     from transformers import StoppingCriteriaList
     from functools import partial
     from time import time
-    from prompts import MBPP_STOP_STRINGS, MBPP_PROMPT
+    from prompts import GSM8K_PROMPT, Q_A_STOP_STRINGS
     import types
 
     draft_model = AutoModelForCausalLM.from_pretrained('google/gemma-3-270m-it', device_map='cpu')
     target_model = AutoModelForCausalLM.from_pretrained('google/gemma-3-1B-it', device_map='cpu')
     tokenizer = AutoTokenizer.from_pretrained('google/gemma-3-1B-it')
 
-    test_cases = [
-        "assert get_total_number_of_sequences(10, 4) == 4",
-        "assert get_total_number_of_sequences(5, 2) == 6",
-        "assert get_total_number_of_sequences(16, 3) == 84"
-    ]
-
-    sample_input = tokenizer(
-        MBPP_PROMPT.format(
-                problem="Write a function that takes in positive integers m and n and finds the number of possible sequences of length n, such that each element is a positive integer and is greater than or equal to twice the previous element but less than or equal to m.",
-                test_cases="\n".join(test_cases),
-            ), 
-            return_tensors='pt'
-        )
-    
-    stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, MBPP_STOP_STRINGS)])
+    stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, Q_A_STOP_STRINGS)])
+    sample_input = tokenizer(GSM8K_PROMPT.format(question="If I have 3 apples and I double it the next day, how many apples do I have?"), return_tensors='pt')
 
     t0 = time()
     outputs = target_model.generate(
