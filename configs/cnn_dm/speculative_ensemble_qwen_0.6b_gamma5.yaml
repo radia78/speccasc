@@ -1,0 +1,18 @@
+mp: Qwen/Qwen3-0.6B       # target model
+mid: qwen-0.6b                     # model id for eval output
+bn: cnn_dm
+mt: 128
+ntt: 3
+ss: 100
+dt: bfloat16
+d: cpu
+
+t: 1.0
+tp: 0.95
+tk: 50
+
+nat: 5                            # gamma = 5
+nats: constant
+act: 0.8                          # default from script
+
+rn: specensmb_qwen0.6b_gamma5
