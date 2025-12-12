@@ -36,6 +36,7 @@ def _speculative_sampling(
     beta: The maximum running perplexity tolerated for the gamma sequence generated
     """
     new_candidate_input_ids = candidate_input_ids[:, -candidate_length:]
+    device = new_candidate_input_ids.device
     # Gets the probabilities from the logits. q_i and p_i denote the assistant and model probabilities of the tokens
     # selected by the assistant, respectively.
 
@@ -43,7 +44,7 @@ def _speculative_sampling(
     # NOTE: This rule is essentially just local optimization since the running entropy is measured over the gamma tokens generated
     # PARADIGM: We "defer" to a lower temperature distribution if they are confident and defer to a higher temperature if they are "unsure"
     entropy = -(new_logits.log_softmax(dim=-1) * new_logits.softmax(dim=-1)).sum(dim=-1)
-    entropy_mask = entropy.div(torch.arange(candidate_length + 1).unsqueeze(0)).unsqueeze(-1) < beta
+    entropy_mask = entropy.div(torch.arange(candidate_length + 1, device=device).unsqueeze(0)).unsqueeze(-1) < beta
     pi = (~entropy_mask) * new_logits.div(1-epsilon).softmax(dim=-1) + entropy_mask * new_logits.div(1+epsilon).softmax(dim=-1)
     q = candidate_logits.softmax(dim=-1)
 
