@@ -9,5 +9,5 @@ python3 evaluation/inference_speculative.py -c configs/mbpp/speculative_qwen_0.6
 python3 evaluation/inference_speculative_cascades.py -c configs/mbpp/speculative_cascades_gemma_270m_1b_gamma5.yaml -d cuda
 python3 evaluation/inference_speculative_cascades.py -c configs/mbpp/speculative_cascades_qwen_0.6b_1.7b_gamma5.yaml -d cuda
 
-python3 evaluation/inference_speculative_ensemble.py -c configs/mbpp/speculative_ensemble_gemma_270m_1b_gamma5.yaml -d cuda
-python3 evaluation/inference_speculative_ensemble.py -c configs/mbpp/speculative_ensemble_qwen_0.6b_1.7b_gamma5.yaml -d cuda
+python3 evaluation/inference_speculative_ensemble.py -c configs/mbpp/speculative_ensemble_gemma_270m_gamma5.yaml -d cuda
+python3 evaluation/inference_speculative_ensemble.py -c configs/mbpp/speculative_ensemble_qwen_0.6b_gamma5.yaml -d cuda
