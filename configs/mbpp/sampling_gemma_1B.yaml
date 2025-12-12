@@ -1,12 +1,12 @@
 mp: google/gemma-3-1B-it
 mi: gemma-1B
-bn: wmt
-mt: 80
+bn: mbpp
+mt: 320
 ntt: 3
-ss: 500
+ss: 100
 dt: bfloat16
 d: cpu
 t: 1.0
 tp: 0.95
 tk: 50
-rn: sampling_gemma1b_t1_wmt
+rn: sampling_gemma1B_t1

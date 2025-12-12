@@ -3,10 +3,10 @@ mi: qwen-1.7B
 bn: gsm8k
 mt: 320
 ntt: 3
-ss: 500
+ss: 100
 dt: bfloat16
 d: cpu
 t: 1.0
 tp: 0.95
 tk: 50
-rn: sampling_qwen1.7B_t1_gsm8k
+rn: sampling_qwen1.7B_t1

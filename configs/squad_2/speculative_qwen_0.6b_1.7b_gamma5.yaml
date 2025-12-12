@@ -1,8 +1,8 @@
-mp: Qwen/Qwen3-1.7B       # target model
+mp: Qwen/Qwen3-1.7B      # target model
 amp: Qwen/Qwen3-0.6B       # assistant model
-mid: qwen-1.7b                     # model id for eval output
-bn: mbpp
-mt: 320
+mid: qwen-1.7b               # model id for eval output
+bn: squad_2
+mt: 5
 ntt: 3
 ss: 100
 dt: bfloat16
@@ -16,4 +16,4 @@ nat: 5                            # gamma = 5
 nats: constant
 act: 0.8                          # default from script
 
-rn: speccasc_qwen1.7b_assist0.6b_gamma5
+rn: spec_qwen1.7b_assist0.6b_gamma5

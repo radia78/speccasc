@@ -66,34 +66,13 @@ Summary:
 """
 CNN_DM_STOP_STRINGS = ["\nArticle:", "Article:"]
 
-NATURAL_QA_PROMPT = """Q: when did richmond last play in a preliminary final
-A: Richmond Football Club Richmond began 2017 with 5 straight wins, a feat it had not achieved since 1995. A series of close losses hampered the Tigers throughout the middle of the season, including a 5-point loss to the Western Bulldogs, 2-point loss to Fremantle, and a 3-point loss to the Giants. Richmond ended the season strongly with convincing victories over Fremantle and St Kilda in the final two rounds, elevating the club to 3rd on the ladder. Richmond's first final of the season against the Cats at the MCG attracted a record qualifying final crowd of 95,028; the Tigers won by 51 points. Having advanced to the first preliminary finals for the first time since 2001, Richmond defeated Greater Western Sydney by 36 points in front of a crowd of 94,258 to progress to the Grand Final against Adelaide, their first Grand Final appearance since 1982. The attendance was 100,021, the largest crowd to a grand final since 1986. The Crows led at quarter time and led by as many as 13, but the Tigers took over the game as it progressed and scored seven straight goals at one point. They eventually would win by 48 points – 16.12 (108) to Adelaide's 8.12 (60) – to end their 37-year flag drought.[22] Dustin Martin also became the first player to win a Premiership medal, the Brownlow Medal and the Norm Smith Medal in the same season, while Damien Hardwick was named AFL Coaches Association Coach of the Year. Richmond's jump from 13th to premiers also marked the biggest jump from one AFL season to the next.
-
-Q: {query}
-A:
-"""
-
-TRIVIA_QA_PROMPT = """Q: Which American-born Sinclair won the Nobel Prize for Literature in 1930?
-A: Sinclair Lewis
-
-Q: {question}
-A:
-"""
-
-WEBQUESTIONS_PROMPT = """Q: what country is the grand bahama island in?
-A: Bahamas
-
-Q: {question}
-A:
-"""
-
 SQUAD_2_PROMPT = """Title: Beyoncé
 Background: In 2005, Beyoncé teamed up with House of Brands, a shoe company, to produce a range of footwear for House of Deréon. In January 2008, Starwave Mobile launched Beyoncé Fashion Diva, a "high-style" mobile game with a social networking component, featuring the House of Deréon collection. In July 2009, Beyoncé and her mother launched a new junior apparel label, Sasha Fierce for Deréon, for back-to-school selling. The collection included sportswear, outerwear, handbags, footwear, eyewear, lingerie and jewelry. It was available at department stores including Macy's and Dillard's, and specialty stores Jimmy Jazz and Against All Odds. On May 27, 2010, Beyoncé teamed up with clothing store C&A to launch Deréon by Beyoncé at their stores in Brazil. The collection included tailored blazers with padded shoulders, little black dresses, embroidered tops and shirts and bandage dresses.
 Q: What type of accessory company did Beyonce partner with in 2005?
 A: shoe
 
 Title: {title}
-Background: {background}
+Background: {context}
 Q: {question}
 A:
 """

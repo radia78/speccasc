@@ -11,9 +11,6 @@ from prompts import (
     WMT_DE_EN_STOP_STRINGS, 
     CNN_DM_PROMPT, 
     CNN_DM_STOP_STRINGS,
-    NATURAL_QA_PROMPT, 
-    TRIVIA_QA_PROMPT, 
-    WEBQUESTIONS_PROMPT, 
     SQUAD_2_PROMPT,
     MBPP_PROMPT,
     MBPP_STOP_STRINGS
@@ -48,33 +45,11 @@ def load_benchmark(
         add_preamble = lambda sample: {'question': CNN_DM_PROMPT.format(article=sample['article']), 'answer': sample['highlights']}
         ds = load_dataset("abisee/cnn_dailymail", "3.0.0", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
         stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, CNN_DM_STOP_STRINGS)])
-        print(ds)
-
-        return ds, stopping_criteria
-    
-    if benchmark_dataset == 'natural_qa':
-        add_preamble = lambda sample: {'question': NATURAL_QA_PROMPT.format(query=sample['query']), 'answer': sample['answer']}
-        ds = load_dataset("sentence-transformers/natural-questions", split='train').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
-        stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, Q_A_STOP_STRINGS)])
-
-        return ds, stopping_criteria
-    
-    if benchmark_dataset == 'trivia_qa':
-        add_preamble = lambda sample: {'question': TRIVIA_QA_PROMPT.format(question=sample['question']), 'answer': sample['answer']['value']}
-        ds = load_dataset("mandarjoshi/trivia_qa", "rc", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
-        stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, Q_A_STOP_STRINGS)])
-        
-        return ds, stopping_criteria
-    
-    if benchmark_dataset == 'webquestions':
-        add_preamble = lambda sample: {'question': WEBQUESTIONS_PROMPT.format(question=sample['question']), 'answer': sample['answers']}
-        ds = load_dataset("stanfordnlp/web_questions", split='test').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
-        stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, Q_A_STOP_STRINGS)])
 
         return ds, stopping_criteria
     
     if benchmark_dataset == 'squad_2':
-        add_preamble = lambda sample: {'question': SQUAD_2_PROMPT.format(context=sample['context'], question=sample['question']), 'answer': sample['answers']['text']}
+        add_preamble = lambda sample: {'question': SQUAD_2_PROMPT.format(title=sample['title'], context=sample['context'], question=sample['question']), 'answer': sample['answers']['text']}
         ds = load_dataset("rajpurkar/squad_v2", split='validation').shuffle(shuffle_seed).map(add_preamble).batch(batch_size=sample_size)
         stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, Q_A_STOP_STRINGS)])
 
