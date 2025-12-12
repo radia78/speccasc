@@ -1,6 +1,6 @@
 mp: google/gemma-3-270m-it
 mi: gemma-270m
-bn: mbpp
+bn: gsm8k
 mt: 320
 ntt: 3
 ss: 100
@@ -9,4 +9,4 @@ d: cpu
 t: 1.0
 tp: 0.95
 tk: 50
-rn: sampling_gemma270m_t1_mbpp
+rn: sampling_gemma270m_t1

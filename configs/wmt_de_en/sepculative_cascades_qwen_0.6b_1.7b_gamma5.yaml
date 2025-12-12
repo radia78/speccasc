@@ -1,8 +1,8 @@
 mp: Qwen/Qwen3-1.7B       # target model
 amp: Qwen/Qwen3-0.6B       # assistant model
 mid: qwen-1.7b                     # model id for eval output
-bn: mbpp
-mt: 320
+bn: wmt_de_en
+mt: 80
 ntt: 3
 ss: 100
 dt: bfloat16
