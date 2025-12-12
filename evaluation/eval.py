@@ -76,6 +76,12 @@ def run_eval(
     responses = []
     wall_time = []
     ground_truths = []
+
+    if device == 'cpu':
+        sync = torch.cpu
+
+    elif device == 'cuda':
+        sync = torch.cuda
     
     for _ in range(num_trials):
         batch = next(iter(dataset))
@@ -88,11 +94,11 @@ def run_eval(
                 return_tensors='pt', 
                 return_attention_mask=True,
             ).to(device)
-            torch.cpu.synchronize()
+            sync.synchronize()
             t0 = time.time()
             output = forward_func(token_input)
             t1 = time.time()
-            torch.cpu.synchronize()
+            sync.synchronize()
             wall_time.append(t1-t0)
             responses.append(output)
             ground_truths.append(answers[i])
