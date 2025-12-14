@@ -398,7 +398,7 @@ if __name__ == "__main__":
     tokenizer = AutoTokenizer.from_pretrained('google/gemma-3-270m-it')
     stopping_criteria = StoppingCriteriaList([StopStringCriteria(tokenizer, "\n")])
 
-    sample_input = tokenizer(GSM8K_PROMPT.format(question="If I have 3 apples and I double it the next day, how many apples do I have?"), return_tensors='pt')
+    sample_input = tokenizer(GSM8K_PROMPT.format(question="I bought a shirt at 20% discount for $5.00. What was the original price before the discount?"), return_tensors='pt')
     t0 = time()
     outputs = draft_model.generate(
         **sample_input,

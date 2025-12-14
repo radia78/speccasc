@@ -1,0 +1,11 @@
+benchmark,filename,accuracy,correct,total
+mbpp,sampling_gemma1B_t1-gemma-1B-mbpp.csv,0.14,42.0,300.0
+mbpp,sampling_gemma270m_t1-gemma-270m-mbpp.csv,0.013333333333333334,4.0,300.0
+mbpp,sampling_qwen0.6B_t1-qwen-0.6B-mbpp.csv,0.08666666666666667,26.0,300.0
+mbpp,sampling_qwen1.7B_t1-qwen-1.7B-mbpp.csv,0.39,117.0,300.0
+mbpp,spec_gemma1b_assist270m_gamma5-gemma-1b-mbpp.csv,0.17,51.0,300.0
+mbpp,spec_qwen1.7b_assist0.6b_gamma5-qwen-1.7b-mbpp.csv,0.38,114.0,300.0
+mbpp,speccasc_gemma1b_assist270m_gamma5-gemma-1b-mbpp.csv,0.05,15.0,300.0
+mbpp,speccasc_qwen1.7b_assist0.6b_gamma5-qwen-1.7b-mbpp.csv,0.30666666666666664,92.0,300.0
+mbpp,specensmb_gemma270m_gamma5-gemma-270m-mbpp.csv,0.023333333333333334,7.0,300.0
+mbpp,specensmb_qwen0.6b_gamma5-qwen-0.6b-mbpp.csv,0.12333333333333334,37.0,300.0

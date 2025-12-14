@@ -1,0 +1,3777 @@
+response,wall_time,answer
+"assert count_char_position(""aE"") == 1
+assert count_char_position(""ABC"") == 1
+assert count_char_position(""abc"") == 1
+assert count_char_position(""abcde"") == 1
+assert count_char_position(""abcdef"") == 1
+import re
+def count_char_position(s):
+    try:
+        return len(s)
+    except:
+        return 0
+
+Write",4.872318744659424,"['assert count_char_position(""xbcefg"") == 2'
+ 'assert count_char_position(""ABcED"") == 3'
+ 'assert count_char_position(""AbgdeF"") == 5']"
+"import re
+
+def remove_all_spaces(s):
+    return re.sub(r'\s+', '', s)
+
+assert remove_all_spaces('python  program')==('pythonprogram')
+assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')
+assert remove_all_spaces('python                     program')==('pythonprogram')
+assert remove_all_spaces('   python                     program')=='pythonprogram'
+import string
+def remove_all_spaces(s):
+    return s.replace("" "", """")
+assert",5.624295949935913,"[""assert remove_all_spaces('python  program')==('pythonprogram')""
+ ""assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')""
+ ""assert remove_all_spaces('python                     program')==('pythonprogram')""
+ ""assert remove_all_spaces('   python                     program')=='pythonprogram'""]"
+"assert get_total_number_of_sequences(10, 10) == 1
+import random
+def get_total_number_of_sequences(m, n):
+    if m == 0 or n == 0:
+        return 0
+    return (m + n - 1) * (m + n - 2) // 2
+assert get_total_number_of_sequences(10, 4) == 4
+assert get_total_number_of_sequences(5, 2) == 6
+assert get_total_number_of_sequences(16, 3) == 84
+assert get_total_number_of_sequences(10, 10) == 1
+import random
+def get_total_number_of_sequences(m, n):
+    if m == 0 or n == 0:
+        return 0
+    return (m + n - 1) * (m + n - 2) // 2
+assert get_total_number_of_sequences(10, 4) == 4
+assert get_total_number_of_sequences(5, 2) == 6
+assert get_total_number_of_sequences(16, 3) == 84
+assert get_total_number_of_sequences(10, 10) == 1
+import random
+def get_total_",12.958335161209106,"['assert get_total_number_of_sequences(10, 4) == 4'
+ 'assert get_total_number_of_sequences(5, 2) == 6'
+ 'assert get_total_number_of_sequences(16, 3) == 84']"
+"import heapq as hq
+
+def move_zero(nums):
+  heap = hq.heapify(nums)
+  for i in range(len(nums)):
+    heap.heapify(nums[i])
+  return nums
+
+Write",2.588369369506836,"['assert move_zero([1,0,2,0,3,4]) == [1,2,3,4,0,0]'
+ 'assert move_zero([2,3,2,0,0,4,0,5,0]) == [2,3,2,4,5,0,0,0,0]'
+ 'assert move_zero([0,1,0,1,1]) == [1,1,1,0,0]']"
+assert,0.0970163345336914,"['assert is_woodall(383) == True' 'assert is_woodall(254) == False'
+ 'assert is_woodall(200) == False']"
+"assert sequence(4) == 3
+assert sequence(5) == 4
+assert sequence(6) == 5
+assert sequence(7) == 6
+assert sequence(8) == 7
+assert sequence(9) == 8
+assert sequence(10) == 9
+assert sequence(11) == 10
+assert sequence(12) == 11
+assert sequence(13) == 12
+assert sequence(14) == 13
+assert sequence(15) == 14
+assert sequence(16) == 15
+assert sequence(17) == 16
+assert sequence(18) == 17
+assert sequence(19) == 18
+assert sequence(20) == 19
+assert sequence(21) == 20
+assert sequence(22) == 21
+assert sequence(23) == 22
+assert sequence(24) == 23
+assert sequence(25) == 24
+assert sequence(26) == 25
+assert sequence(27) == 26
+assert sequence(28) == 27
+assert sequence(29) == 28
+assert",10.87249755859375,"['assert sequence(10) == 6' 'assert sequence(2) == 1'
+ 'assert sequence(3) == 2']"
+"import re
+def count_occurance(s):
+    if not s:
+        return 0
+    return len(s)
+assert",1.9296245574951172,"['assert count_occurance(""letstdlenstdporstd"") == 3'
+ 'assert count_occurance(""truststdsolensporsd"") == 1'
+ 'assert count_occurance(""makestdsostdworthit"") == 2'
+ 'assert count_occurance(""stds"") == 1' 'assert count_occurance("""") == 0']"
+"import heapq as hq
+
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums
+
+Write",1.7348051071166992,"['assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]']"
+"
+
+import math
+def check_value(dict, key):
+    try:
+        value = dict[key]
+        return True
+    except:
+        return False
+
+assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False
+assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True
+assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False
+```
+```python
+def check_value(dict, key):
+    try:
+        value = dict[key]
+        return True
+    except:
+        return False
+
+assert",8.989749193191528,"[""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False""]"
+"import heapq as hq
+def find_sum(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums[0]
+assert",2.133357048034668,"['assert find_sum([1,2,3,1,1,4,5,6]) == 21'
+ 'assert find_sum([1,10,9,4,2,10,10,45,4]) == 71'
+ 'assert find_sum([12,10,9,45,2,10,10,45,10]) == 78']"
+"assert square_Sum(5) == 225
+assert square_Sum(6) == 129
+assert square_Sum(7) == 441
+assert square_Sum(8) == 1024
+assert square_Sum(9) == 1296
+assert square_Sum(10) == 1436
+assert",3.5448877811431885,"['assert square_Sum(2) == 10' 'assert square_Sum(3) == 35'
+ 'assert square_Sum(4) == 84']"
+"import numpy as np
+def average_tuple(arr):
+    return np.mean(arr)
+
+Write",1.1159756183624268,"['assert average_tuple(((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)))==[30.5, 34.25, 27.0, 23.25]'
+ 'assert average_tuple(((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3)))== [25.5, -18.0, 3.75]'
+ 'assert average_tuple( ((100, 100, 100, 120), (300, 450, 560, 450), (810, 800, 390, 320), (10, 20, 30, 40)))==[305.0, 342.5, 270.0, 232.5]']"
+"```
+```python
+def find_common_elements(list1, list2, list3):
+    """"""
+    Finds the common elements between two lists.
+
+    Args:
+        list1: The first list.
+        list2: The second list.
+        list3: The third list.
+
+    Returns:
+        A list of common elements.
+    """"""
+    common_elements = []
+    for element in list1:
+        if element in list2 and element in list3:
+            common_elements.append(element)
+    return common_elements
+```
+```python
+def find_common_elements(list1, list2, list3):
+    """"""
+    Finds the common elements between two lists.
+
+    Args:
+        list1: The first list.
+        list2: The second list.
+        list3: The third list.
+
+    Returns:
+        A list of common elements.
+    """"""
+    common_elements = []
+    for element in list1:
+        if element in list2 and element in list3:
+            common_elements.append(element)
+    return common_elements
+```
+```python
+def find_common_elements(list1, list2, list3):
+    """"""
+    Finds the common elements between two lists.
+
+    Args:
+        list1: The first list.
+        list2: The second list.
+        list3: The third list.
+
+    ",12.77692699432373,"['assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 7]'
+ 'assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 6, 5],[0, 1, 2, 3, 4, 6, 7])==[1, 6]'
+ 'assert extract_index_list([1, 1, 3, 4, 6, 5, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 5]'
+ 'assert extract_index_list([1, 2, 3, 4, 6, 6, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[]']"
+"def max_Abs_Diff(array):
+    maximum = 0
+    for i in array:
+        maximum = max(maximum, i)
+    return maximum
+
+Write",1.630596160888672,"['assert max_Abs_Diff((2,1,5,3)) == 4'
+ 'assert max_Abs_Diff((9,3,2,5,1)) == 8'
+ 'assert max_Abs_Diff((3,2,1)) == 2']"
+"assert convert(10) == (10.0,0.0)
+assert convert(3.14) == (3.14,0.0)
+import math
+def convert(x, y):
+    return (x, y)
+
+assert convert(1, 2) == (1.0, 2.0)
+assert convert(4, 5) == (4.0, 5.0)
+assert convert(5, 6) == (5.0, 6.0)
+assert convert(10, 11) == (10.0, 11.0)
+assert convert(3.14, 3.14) == (3.14, 3.14)
+import math
+def convert(x, y):
+    return (x, y)
+
+assert",8.946698188781738,"['assert convert(1) == (1.0, 0.0)' 'assert convert(4) == (4.0,0.0)'
+ 'assert convert(5) == (5.0,0.0)']"
+"assert remove_lowercase(""The"")==('The')
+print",0.592648983001709,"['assert remove_lowercase(""PYTHon"")==(\'PYTH\')'
+ 'assert remove_lowercase(""FInD"")==(\'FID\')'
+ 'assert remove_lowercase(""STRinG"")==(\'STRG\')']"
+"def join_multiple_integers(nums):
+    return """".join(nums)
+
+Write",1.1483755111694336,"['assert multiple_to_single([11, 33, 50])==113350'
+ 'assert multiple_to_single([-1,2,3,4,5,6])==-123456'
+ 'assert multiple_to_single([10,15,20,25])==10152025']"
+"import numpy as np
+def union_elements(nums,n):
+    union = []
+    for i in range(n):
+        if nums[i] not in union:
+            union.append(nums[i])
+    return union
+assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)
+assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)
+assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)
+import numpy as np
+def union_elements(nums,n):
+    union = []
+    for i in range(n):
+        if nums[i] not in union:
+            union.append(nums[i])
+    return union
+assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10",12.849995613098145,"['assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)'
+ 'assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)'
+ 'assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)']"
+"assert sumofFactors(10) == 4
+import math
+def sumofFactors(n):
+    if n <= 1:
+        return 0
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return i
+    return 0
+
+Write",3.768780708312988,"['assert sumofFactors(18) == 26' 'assert sumofFactors(30) == 48'
+ 'assert sumofFactors(6) == 8']"
+"def all_Characters_Same(s):
+    try:
+        return all(c == 'a' for c in s)
+    except:
+        return False
+
+Write",1.7125458717346191,"['assert all_Characters_Same(""python"") == False'
+ 'assert all_Characters_Same(""aaa"") == True'
+ 'assert all_Characters_Same(""data"") == False']"
+"import collections
+def count_Pairs(nums):
+    count = 0
+    for i in range(len(nums)):
+        for j in range(len(nums)):
+            if nums[i] != nums[j]:
+                count += 1
+    return count
+
+write a python function to find the maximum value in a list of integers and return it.
+assert max(12, 15, 20) == 20
+assert max(1, 2, 3) == 3
+assert max(1, 2, 3, 4) == 4
+import math
+def max_value(nums):
+    return math.max(nums)
+
+write a python function to find the minimum value in a list of integers and return it.
+assert min(1, 2, 3) == 1
+assert min(1, 2, 3, 4) == 1
+assert min(1, 2, 3, 4, 5) == 1
+import heapq as hq
+def min_value(nums):
+    return min(nums)
+
+def find_min(nums):
+    return min(nums)
+
+write a python function to find the sum of all elements in a list of integers.
+assert sum(range(1, 10)) == 55
+assert sum(range(1, 10)) == 55
+assert sum(range(1, 1",14.903536796569824,"['assert count_Pairs([1,2,1],3) == 2'
+ 'assert count_Pairs([1,1,1,1],4) == 0'
+ 'assert count_Pairs([1,2,3,4,5],5) == 10']"
+"import re
+assert find_adverbs(""Another solution with a different approach"") == '21-28: different'
+import string
+def find_adverbs(text):
+    words = text.split()
+    adverbs = []
+    for word in words:
+        if word.endswith('ly'):
+            adverbs.append(word)
+    return adverbs
+
+Write",3.826849222183227,"['assert find_adverbs(""Clearly, he has no excuse for such behavior."") == \'0-7: Clearly\''
+ 'assert find_adverbs(""Please handle the situation carefuly"") == \'28-36: carefuly\''
+ 'assert find_adverbs(""Complete the task quickly"") == \'18-25: quickly\'']"
+"def find_lists(list_of_lists):
+  return len(list_of_lists)
+
+Write",1.205493688583374,"['assert find_lists(([1, 2, 3, 4], [5, 6, 7, 8])) == 2'
+ 'assert find_lists(([1, 2], [3, 4], [5, 6]))  == 3'
+ 'assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1']"
+"import ast and ast
+def is_Sub_Array(arr,sub_arr):
+  return ast.literal_eval(sub_arr) in arr
+assert",1.785834550857544,"['assert is_Sub_Array([1,4,3,5],[1,2]) == False'
+ 'assert is_Sub_Array([1,2,1],[1,2,1]) == True'
+ 'assert is_Sub_Array([1,0,2,2],[2,2,0]) ==False']"
+"```
+```python
+def bell_number(n):
+    if n == 0:
+        return 1
+    else:
+        return (n + 1) // 2
+#print",3.2361090183258057,"['assert bell_number(2)==2' 'assert bell_number(10)==115975'
+ 'assert bell_number(56)==6775685320645824322581483068371419745979053216268760300']"
+"import re
+
+def remove_dirty_chars(string, pattern):
+    try:
+        return re.sub(pattern, '', string)
+    except:
+        return string
+assert remove_dirty_chars(""probasscurve"", ""pros"") == 'bacuve'
+assert remove_dirty_chars(""digitalindia"", ""talent"") == 'digiidi'
+assert remove_dirty_chars(""exoticmiles"", ""toxic"") == 'emles'
+import re
+
+def remove_dirty_chars(string, pattern):
+    try:
+        return re.sub(pattern, '', string)
+    except:
+        return string
+assert remove_dirty_chars(""probasscurve"", ""pros"") == 'bacuve'
+assert remove_dirty_chars(""digitalindia"", ""talent"") == 'digiidi'
+assert remove_dirty_chars(""exoticmiles"", ""toxic"") == 'emles'
+import re
+
+def remove_dirty_chars(string, pattern):
+    try:
+        return re.sub(pattern, '', string)
+    except:
+        return string
+assert remove_dirty_chars(""probasscurve"", ""pros"") == 'bacuve'
+assert",11.01191258430481,"['assert remove_dirty_chars(""probasscurve"", ""pros"") == \'bacuve\''
+ 'assert remove_dirty_chars(""digitalindia"", ""talent"") == \'digiidi\''
+ 'assert remove_dirty_chars(""exoticmiles"", ""toxic"") == \'emles\'']"
+"import re
+assert new_tuple([""hello"", ""world"", ""hello""], ""best"") == ('hello', 'world', 'best')
+import time
+def time_function(n):
+  start = time.time()
+  for i in range(n):
+    if i % 2 == 0:
+      return (i, i)
+  return (0, 0)
+
+assert",3.850071668624878,"['assert new_tuple([""WEB"", ""is""], ""best"") == (\'WEB\', \'is\', \'best\')'
+ 'assert new_tuple([""We"", ""are""], ""Developers"") == (\'We\', \'are\', \'Developers\')'
+ 'assert new_tuple([""Part"", ""is""], ""Wrong"") == (\'Part\', \'is\', \'Wrong\')']"
+"import types
+def check_type(type_str):
+    try:
+        return type(type_str) == type(None)
+    except:
+        return False
+assert",1.8263089656829832,"['assert check_type((5, 6, 7, 3, 5, 6) ) == True'
+ 'assert check_type((1, 2, ""4"") ) == False'
+ 'assert check_type((3, 2, 1, 4, 5) ) == True']"
+"def check_expression(expression):
+    try:
+        if expression == ""()[]{}"":
+            return True
+        else:
+            return False
+    except:
+        return False
+
+Write",1.860933780670166,"['assert check_expression(""{()}[{}]"") == True'
+ 'assert check_expression(""{()}[{]"") == False'
+ 'assert check_expression(""{()}[{}][]({})"") == True']"
+"assert check_none((10, 4, 5, 6, 7)) == False
+import re
+
+def check_none(tup):
+    try:
+        return bool(tup)
+    except:
+        return False
+
+assert check_none((10, 4, 5, 6, 7)) == False
+assert check_none((10, 4, 5, 6, 8)) == True
+assert check_none((10, 4, 5, 6, 7)) == False
+assert check_none((10, 4, 5, 6, 8)) == True
+import re
+
+def check_none(tup):
+    try:
+        return bool(tup)
+    except:
+        return False
+
+assert check_none((10, 4, 5, 6, 7)) == False
+assert check_none((10, 4, 5, 6, 8)) == True
+assert check_none((10, 4, 5, 6, 7)) == False
+import re
+
+def check_none(tup):
+    try:
+        return bool(tup)
+    except:
+        return False
+
+assert",15.047006845474243,"['assert check_none((10, 4, 5, 6, None)) == True'
+ 'assert check_none((7, 8, 9, 11, 14)) == False'
+ 'assert check_none((1, 2, 3, 4, None)) == True']"
+assert,0.0983667373657226,"['assert two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]'
+ 'assert two_unique_nums([1,2,3,2,4,5]) == [1, 3, 4, 5]'
+ 'assert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]']"
+"assert min_Jumps((11,14),0)==0
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),10)==1
+assert",10.756958961486816,"['assert min_Jumps((3,4),11)==3.5' 'assert min_Jumps((3,4),0)==0'
+ 'assert min_Jumps((11,14),11)==1']"
+"assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],4))==set([100,90,80,70,60])
+import heapq as hq
+
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums
+
+Write",5.736240863800049,"['assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],2))==set([100,90])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],5))==set([100,90,80,70,60])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],3))==set([100,90,80])']"
+"def divisible_by_digits(n, num_digits):
+    if n == 0:
+        return 0
+    if n % 10 == 0:
+        return int(n)
+    else:
+        return int(n) - 1
+assert divisible_by_digits(1, 10)==1
+assert divisible_by_digits(1, 11)==1
+assert divisible_by_digits(20, 10)==20
+assert divisible_by_digits(25, 10)==25
+assert",5.55240273475647,"['assert divisible_by_digits(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]'
+ 'assert divisible_by_digits(1,15)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15]'
+ 'assert divisible_by_digits(20,25)==[22, 24]']"
+"import re
+
+def replace_spaces(text):
+    return re.sub(r'\s+', '%20', text)
+
+Write",1.2798120975494385,"['assert replace_spaces(""My Name is Dawood"") == \'My%20Name%20is%20Dawood\''
+ 'assert replace_spaces(""I am a Programmer"") == \'I%20am%20a%20Programmer\''
+ 'assert replace_spaces(""I love Coding"") == \'I%20love%20Coding\'']"
+"import re
+def sample_nam(names):
+  res = 0
+  for name in names:
+    if name.lower() == 'a':
+      res += 1
+  return res
+
+# Print the sample names
+print(sample_nam(['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith']))
+print(sample_nam([""php"", ""res"", ""Python"", ""abcd"", ""Java"", ""aaa""]))
+print(sample_nam([""abcd"", ""Python"", ""abba"", ""aba""]))
+print(sample_nam([""sally"", ""Dylan"", ""rebecca"", ""Diana"", ""Joanne"", ""keith""]))
+print(sample_nam([""sally"", ""Dylan"", ""rebecca"", ""Diana"", ""Joanne"", ""keith""]))
+print(sample_nam([""sally"", ""Dylan"", ""rebecca"", ""Diana"", ""Joanne"", ""keith""]))
+print",8.685323715209961,"[""assert sample_nam(['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith'])==16""
+ 'assert sample_nam([""php"", ""res"", ""Python"", ""abcd"", ""Java"", ""aaa""])==10'
+ 'assert sample_nam([""abcd"", ""Python"", ""abba"", ""aba""])==6']"
+"def multiply_num(num, denom):
+    try:
+        result = num * denom
+        return result
+    except:
+        return 0
+assert",1.5271995067596436,"['assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)']"
+assert,0.0995376110076904,"['assert sum(10,15) == 6' 'assert sum(100,150) == 93'
+ 'assert sum(4,6) == 3']"
+"assert cube_Sum(5) == 120
+assert",0.5813641548156738,"['assert cube_Sum(2) == 72' 'assert cube_Sum(3) == 288'
+ 'assert cube_Sum(4) == 800']"
+assert,0.10007905960083,"['assert max_occurrences([2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,2,4,6,9,1,2])==2'
+ 'assert max_occurrences([2,3,8,4,7,9,8,7,9,15,14,10,12,13,16,18])==8'
+ 'assert max_occurrences([10,20,20,30,40,90,80,50,30,20,50,10])==20']"
+"import math
+def closest_num(n):
+    return min(n, closest_num(n))
+  assert",1.2830641269683838,"['assert closest_num(11) == 10' 'assert closest_num(7) == 6'
+ 'assert closest_num(12) == 11']"
+"import heapq as hq
+def colon_tuplex(tupe,n):
+    return "" "".join(tupe)
+
+Write",1.3706307411193848,"['assert colon_tuplex((""HELLO"", 5, [], True) ,2,50)==(""HELLO"", 5, [50], True)'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,100)==((""HELLO"", 5, [100],True))'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,500)==(""HELLO"", 5, [500], True)']"
+"import heapq as hq
+
+def sort_sublists(list_of_lists):
+  return sorted(list_of_lists)
+
+Write",1.475819110870361,"['assert sort_sublists(([""green"", ""orange""], [""black"", ""white""], [""white"", ""black"", ""orange""]))==[[\'green\', \'orange\'], [\'black\', \'white\'], [\'black\', \'orange\', \'white\']]'
+ 'assert sort_sublists((["" red "",""green"" ],[""blue "","" black""],["" orange"",""brown""]))==[[\' red \', \'green\'], [\' black\', \'blue \'], [\' orange\', \'brown\']]'
+ 'assert sort_sublists(([""zilver"",""gold""], [""magnesium"",""aluminium""], [""steel"", ""bronze""]))==[[\'gold\', \'zilver\'],[\'aluminium\', \'magnesium\'], [\'bronze\', \'steel\']]']"
+"assert list_tuple([1, 2, 3, 4, 5, 6])==(1, 2, 3, 4, 5, 6)
+def list_tuple_to_tuple(list_):
+    return tuple(list_)
+
+assert",2.585618734359741,"['assert list_tuple([5, 10, 7, 4, 15, 3])==(5, 10, 7, 4, 15, 3)'
+ 'assert list_tuple([2, 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5, 6, 2, 3, 4, 4, 7)'
+ 'assert list_tuple([58,44,56])==(58,44,56)']"
+"import heapq as hq
+
+def diff(list1,list2):
+    diff_list = []
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            diff_list.append(i)
+    return diff_list
+assert diff([1,2,3,4,5], [6,7,1]) == [2,3,4,5,6]
+assert diff([1,2,3,4,5], [6,7,1]) == [2,3,4,5,6]
+assert",6.166507005691528,"['assert (Diff([10, 15, 20, 25, 30, 35, 40], [25, 40, 35])) == [10, 20, 30, 15]'
+ 'assert (Diff([1,2,3,4,5], [6,7,1])) == [2,3,4,5,6,7]'
+ 'assert (Diff([1,2,3], [6,7,1])) == [2,3,6,7]']"
+"import heapq as hq
+def frequency_lists(nums):
+    frequency = {}
+    for num in nums:
+        frequency[num] = frequency.get(num, 0) + 1
+    return frequency
+assert",2.2398006916046143,"['assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]])=={1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1}'
+ 'assert frequency_lists([[1,2,3,4],[5,6,7,8],[9,10,11,12]])=={1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1,10:1,11:1,12:1}'
+ 'assert frequency_lists([[20,30,40,17],[18,16,14,13],[10,20,30,40]])=={20:2,30:2,40:2,17: 1,18:1, 16: 1,14: 1,13: 1, 10: 1}']"
+"def radian_degree(degrees):
+s = degrees
+return s * (180 / 90)
+Write",1.3532609939575195,"['assert radian_degree(90)==1.5707963267948966'
+ 'assert radian_degree(60)==1.0471975511965976'
+ 'assert radian_degree(120)==2.0943951023931953']"
+"import math
+def cube_nums(nums):
+  result = []
+  for num in nums:
+    result.append(num * num * num)
+  return result
+assert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+assert cube_nums([10,20,30])==([1000, 8000, 27000])
+assert cube_nums([12,15])==([1728, 3375])
+import math
+def cube_nums(nums):
+  result = []
+  for num in nums:
+    result.append(num * num * num)
+  return result
+assert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+assert cube_nums([10,20,30])==([10",12.645849704742432,"['assert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]'
+ 'assert cube_nums([10,20,30])==([1000, 8000, 27000])'
+ 'assert cube_nums([12,15])==([1728, 3375])']"
+"assert unique_sublists([[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]])=={(1, 2, 3): 1, (4, 5, 6): 1, (7, 8, 9): 1, (10, 11, 12): 1}
+import numpy as np
+def sum_of_squares(x):
+    return (x**2)
+
+assert sum_of_squares([1, 2, 3]) == 5
+assert sum_of_squares([1, 2, 3]) == 14
+assert sum_of_squares([1, 2, 3]) == 14
+import pandas as pd
+def calculate_sum_of_squares(df):
+    return df.sum(axis=1)
+assert",10.217158794403076,"['assert unique_sublists([[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]] )=={(1, 3): 2, (5, 7): 2, (13, 15, 17): 1, (9, 11): 1}'
+ ""assert unique_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])=={('green', 'orange'): 2, ('black',): 1, ('white',): 1}""
+ 'assert unique_sublists([[10, 20, 30, 40], [60, 70, 50, 50], [90, 100, 200]])=={(10, 20, 30, 40): 1, (60, 70, 50, 50): 1, (90, 100, 200): 1}'
+ ""assert unique_sublists([['john']])=={('john',): 1}""]"
+"import string
+def count_reverse_pairs(s):
+    count = 0
+    for i in range(len(s)):
+        for j in range(i + 1, len(s)):
+            if s[i] == s[j]:
+                count += 1
+    return count
+
+Write",2.911794900894165,"['assert count_reverse_pairs([""julia"", ""best"", ""tseb"", ""for"", ""ailuj""])== 2'
+ 'assert count_reverse_pairs([""geeks"", ""best"", ""for"", ""skeeg""]) == 1'
+ 'assert count_reverse_pairs([""makes"", ""best"", ""sekam"", ""for"", ""rof""]) == 2']"
+"import heapq as hq
+
+def remove_elements(nums,list_to_remove):
+  result = []
+  for num in nums:
+    if num not in list_to_remove:
+      result.append(num)
+  return result
+
+Write",2.45487904548645,"['assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]']"
+"assert text_lowercase_underscore(""a_b_c_d"")==(True)
+assert text_lowercase_underscore(""a_b_c_d_e"")==(False)
+assert",1.930185079574585,"['assert text_lowercase_underscore(""aab_cbbbc"")==(True)'
+ 'assert text_lowercase_underscore(""aab_Abbbc"")==(False)'
+ 'assert text_lowercase_underscore(""Aaab_abbbc"")==(False)']"
+"import heapq as hq
+def left_rotate(n, d):
+    if n == 0:
+        return 0
+    if d == 0:
+        return n
+    d = d % 2
+    h = hq.ne divisible(n, d)
+    heapq.heapify(h)
+    return (h[0] << d) | h[1]
+assert left_rotate(16,2) == 64
+assert left_rotate(10,2) == 40
+assert left_rotate(99,3) == 792
+assert left_rotate(99,3) == 792
+assert left_rotate(0b0001,3) == 0b1000
+assert left_rotate(0b0101,3) == 0b101000
+import heapq as hq
+def left_rotate(n, d):
+    if n == 0:
+        return 0
+    if d == 0:
+        return n
+    d = d % 2
+    h = hq.ne divisible(n, d)
+    heapq.heapify(h)
+    return (h[0] << d) | h[1]
+assert left_rotate(16,2) == 64
+assert left_rotate(10,2) == 40
+assert",13.100953578948976,"['assert left_rotate(16,2) == 64' 'assert left_rotate(10,2) == 40'
+ 'assert left_rotate(99,3) == 792' 'assert left_rotate(99,3) == 792'
+ 'assert left_rotate(0b0001,3) == 0b1000'
+ 'assert left_rotate(0b0101,3) == 0b101000'
+ 'assert left_rotate(0b11101,3) == 0b11101000']"
+"assert Extract([[1,2,3],[4,5,6]]) == [1, 4, 5]
+import re
+assert re.search(r""1[0-9]"", ""123"") == True
+assert re.search(r""1[0-9]"", ""1234"") == False
+assert",3.266080856323242,"['assert Extract([[1, 2], [3, 4, 5], [6, 7, 8, 9]]) == [1, 3, 6]'
+ 'assert Extract([[1,2,3],[4, 5]]) == [1,4]'
+ 'assert Extract([[9,8,1],[1,2]]) == [9,1]']"
+"def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+import sys
+sys.argv == 1
+word_len(""Hadoop"") == True
+word_len(""great"") == True
+word_len(""structure"") == True
+def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+import sys
+sys.argv[0] == 1
+word_len(""Hadoop"") == True
+word_len(""great"") == True
+word_len(""structure"") == True
+def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+import sys
+sys.argv[0] == 1
+word_len(""Hadoop"") == True
+word_len(""great"") == True
+word_len(""structure"") == True
+def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+import sys
+sys.argv[0] == 1
+word_len(""Hadoop"") == True
+word_len(""great"") == True
+word_len(""structure"") == True
+def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+import sys
+sys.argv[0] == 1
+word_len(""Hadoop"") == True
+word",13.13438320159912,"['assert word_len(""Hadoop"") == False' 'assert word_len(""great"") == True'
+ 'assert word_len(""structure"") == True']"
+"assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1
+import heapq as hq
+
+def find_Element(nums, index, element):
+    try:
+        return nums[index]
+    except IndexError:
+        return element
+assert",3.142401695251465,"['assert find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) == 3'
+ 'assert find_Element([1,2,3,4],[[0,1],[0,2]],1,2) == 3'
+ 'assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1']"
+"import heapq as hq
+def sum_list(list1,list2):
+  return hq.accumulate(list1,list2)
+assert sum_list([1,2,3],[5,6,7]) == [6, 7, 10]
+assert sum_list([1,2,3],[5,6,7]) == [6, 7, 10]
+assert",4.335386037826538,"['assert sum_list([10,20,30],[15,25,35])==[25,45,65]'
+ 'assert sum_list([1,2,3],[5,6,7])==[6,8,10]'
+ 'assert sum_list([15,20,30],[15,45,75])==[30,65,105]']"
+"import heapq as hq
+
+def find_Max_Num(nums):
+    largest_num = 0
+    for num in nums:
+        if num > largest_num:
+            largest_num = num
+    return largest_num
+assert",2.3202106952667236,"['assert find_Max_Num([1,2,3]) == 321'
+ 'assert find_Max_Num([4,5,6,1]) == 6541'
+ 'assert find_Max_Num([1,2,3,9]) == 9321']"
+"def dif_Square(n):
+    if n <= 1:
+        return True
+    for i in range(2,n):
+        if (n % i == 0):
+            return True
+    return False
+
+Write",2.1309447288513184,"['assert dif_Square(5) == True' 'assert dif_Square(10) == False'
+ 'assert dif_Square(15) == True']"
+print,0.098374605178833,"[""assert count_integer([1,2,'abc',1.2]) == 2""
+ 'assert count_integer([1,2,3]) == 3'
+ 'assert count_integer([1,1.2,4,5.1]) == 2']"
+"assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 3) == 7
+assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 4) == 10
+import heapq as hq
+
+def find_kth(nums, k, arr):
+    heap = hq.heap_list(arr)
+    for i, num in enumerate(nums):
+        if num <= k:
+            heap.append(num)
+    return k
+
+Write",6.540101051330566,"['assert find_kth([2, 3, 6, 7, 9], [1, 4, 8, 10], 5) == 6'
+ 'assert find_kth([100, 112, 256, 349, 770], [72, 86, 113, 119, 265, 445, 892], 7) == 256'
+ 'assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 6) == 8']"
+assert,0.0986166000366211,"['assert count_rotation([3,2,1]) == 1'
+ 'assert count_rotation([4,5,1,2,3]) == 2'
+ 'assert count_rotation([7,8,9,1,2,3]) == 3'
+ 'assert count_rotation([1,2,3]) == 0'
+ 'assert count_rotation([1,3,2]) == 2']"
+"def volume_cube(side):
+    return side**3
+assert",0.6829040050506592,"['assert volume_cube(3)==27' 'assert volume_cube(2)==8'
+ 'assert volume_cube(5)==125']"
+"assert count_Occurrence((1,2,3,4,5,6),[1,2,3,4,5,6]) == 6
+assert",1.4337034225463867,"[""assert count_Occurrence(('a', 'a', 'c', 'b', 'd'),['a', 'b'] ) == 3""
+ 'assert count_Occurrence((1, 2, 3, 1, 4, 6, 7, 1, 4),[1, 4, 7]) == 6'
+ 'assert count_Occurrence((1,2,3,4,5,6),[1,2]) == 2']"
+"assert find_even_pair([2, 4, 6]) == 1
+assert",0.94917631149292,"['assert find_even_pair([5, 4, 7, 2, 1]) == 4'
+ 'assert find_even_pair([7, 2, 8, 1, 0, 5, 11]) == 9'
+ 'assert find_even_pair([1, 2, 3]) == 1']"
+assert,0.1001274585723877,"['assert max_Product([1,2,3,4,7,0,8,4]) == (7,8)'
+ 'assert max_Product([0,-1,-2,-4,5,0,-6]) == (-4,-6)'
+ 'assert max_Product([1,2,3]) == (2,3)']"
+"assert centered_hexagonal_number(1) == 1
+import math
+def centered_hexagonal_number(n):
+    return math.pow(n, 3)
+assert",1.8801586627960205,"['assert centered_hexagonal_number(10) == 271'
+ 'assert centered_hexagonal_number(2) == 7'
+ 'assert centered_hexagonal_number(9) == 217']"
+"import set
+def extract_singly(list_of_lists):
+    return set(list_of_lists)
+
+Write",1.4773168563842771,"['assert set(extract_singly([(3, 4, 5), (4, 5, 7), (1, 4)])) == set([3, 4, 5, 7, 1])'
+ 'assert set(extract_singly([(1, 2, 3), (4, 2, 3), (7, 8)])) == set([1, 2, 3, 4, 7, 8])'
+ 'assert set(extract_singly([(7, 8, 9), (10, 11, 12), (10, 11)])) == set([7, 8, 9, 10, 11, 12])']"
+"assert tetrahedral_number(8) == 140
+assert tetrahedral_number(9) == 204
+assert tetrahedral_number(10) == 356
+assert tetrahedral_number(11) == 462
+assert tetrahedral_number(12) == 568
+assert tetrahedral_number(13) == 704
+assert tetrahedral_number(14) == 840
+assert tetrahedral_number(15) == 1012
+assert tetrahedral_number(16) == 1248
+assert tetrahedral_number(17) == 1400
+assert tetrahedral_number(18) == 1600
+assert tetrahedral_number(19) == 1800
+assert tetrahedral_number(20) == 1900
+assert tetrahedral_number(21) == 1980
+assert tetrahedral_number(22) == 1980
+assert tetrahedral_number(23) == 1980
+assert tetrahedral_number(24) == 1980
+assert tetrahedral_number(25) == 2000
+assert tetrahedral_number(26) == 2000
+assert",11.699273824691772,"['assert tetrahedral_number(5) == 35' 'assert tetrahedral_number(6) == 56'
+ 'assert tetrahedral_number(7) == 84']"
+"import heapq
+
+def find_min_diff(nums):
+    if len(nums) < 2:
+        return 0
+    min_diff = float('inf')
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+            diff = abs(nums[i] - nums[j])
+            if diff < min_diff:
+                min_diff = diff
+    return min_diff
+assert",4.164143800735474,"['assert find_min_diff((1,5,3,19,18,25),6) == 1'
+ 'assert find_min_diff((4,3,2,6),4) == 1'
+ 'assert find_min_diff((30,5,20,9),4) == 4']"
+"import numpy as np
+def div_list(list1,list2):
+    result = []
+    for i in list1:
+        result.append(i)
+    for i in list2:
+        result.append(i)
+    return result
+assert",2.4588139057159424,"['assert div_list([4,5,6],[1, 2, 3])==[4.0,2.5,2.0]'
+ 'assert div_list([3,2],[1,4])==[3.0, 0.5]'
+ 'assert div_list([90,120],[50,70])==[1.8, 1.7142857142857142]']"
+"import heapq as hq
+
+def remove_nested(tuple_list):
+    try:
+        res = hq.heappop(tuple_list)
+        return res
+    except Exception as e:
+        print(e)
+        return tuple_list
+
+Write",2.643627882003784,"['assert remove_nested((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)'
+ 'assert remove_nested((2, 6, 8, (5, 7), 11)) == (2, 6, 8, 11)'
+ 'assert remove_nested((3, 7, 9, (6, 8), 12)) == (3, 7, 9, 12)'
+ 'assert remove_nested((3, 7, 9, (6, 8), (5,12), 12)) == (3, 7, 9, 12)']"
+"import re
+def replace_spaces(s):
+  return re.sub(r'\s+', '_', s)
+
+Write",1.27533221244812,"[""assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'""
+ ""assert replace_spaces('The_Avengers') == 'The Avengers'""
+ ""assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'""]"
+"assert find_length(""11111111111"") == 1
+import collections
+def find_length(s):
+    count0 = 0
+    count1 = 0
+    for char in s:
+        if char == '0':
+            count0 += 1
+        else:
+            count1 += 1
+    return count0 + count1
+assert",3.725189924240112,"['assert find_length(""11000010001"") == 6'
+ 'assert find_length(""10111"") == 1'
+ 'assert find_length(""11011101100101"") == 2']"
+"import collections
+def count_samepair(list1, list2):
+    count = 0
+    for i in range(len(list1)):
+        for j in range(len(list2)):
+            if list1[i] == list2[j]:
+                count += 1
+    return count
+
+Write",3.685226202011109,"['assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,9],[2,1,3,1,2,6,7,9])==3'
+ 'assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==4'
+ 'assert count_samepair([1,2,3,4,2,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==5']"
+"assert test_duplicate([1,11,11,11,11,11,11,11])==True
+def test_duplicate(arr):
+    s = set(arr)
+    if len(s) == 0:
+        return True
+    else:
+        return False
+
+Write",3.1000406742095947,"['assert test_duplicate(([1,2,3,4,5]))==False'
+ 'assert test_duplicate(([1,2,3,4, 4]))==True'
+ 'assert test_duplicate([1,1,2,2,3,3,4,4,5])==True']"
+"import heapq as hq
+
+def sum_range_list(nums, n, start, end):
+  try:
+    if start <= end:
+      return nums[start:end]
+    else:
+      return 0
+  except:
+    return 0
+assert",2.8615493774414062,"['assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 8, 10) == 29'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 5, 7) == 16'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 7, 10) == 38']"
+"import string
+def add_string(str,string_list):
+    res = """"
+    for s in string_list:
+        res += s
+    return res
+
+Write",1.8006713390350342,"[""assert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']""
+ ""assert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']""
+ ""assert add_string([5,6,7,8],'string{0}')==['string5', 'string6', 'string7', 'string8']""]"
+"import math
+def positive_count(nums):
+    return sum(1 for num in nums if num > 0) / len(nums)
+
+Write",2.1378707885742188,"['assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54'
+ 'assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.69'
+ 'assert positive_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.56']"
+"assert count_vowels('a' in 'a') == 1
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert count_vowels('a' in 'a') == 0
+assert",11.509350538253784,"[""assert count_vowels('bestinstareels') == 7""
+ ""assert count_vowels('partofthejourneyistheend') == 12""
+ ""assert count_vowels('amazonprime') == 5""]"
+assert,0.0973789691925048,"['assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194'
+ 'assert max_sum([80, 60, 30, 40, 20, 10]) == 210'
+ 'assert max_sum([2, 3 ,14, 16, 21, 23, 29, 30]) == 138']"
+"assert kth_element([1,2,3,4,5], 1) == 1
+import heapq as hq
+def kth_element(nums,n):
+  return hq.kth_element(nums,n)
+
+Write",2.698279619216919,"['assert kth_element([12,3,5,7,19], 2) == 3'
+ 'assert kth_element([17,24,8,23], 3) == 8'
+ 'assert kth_element([16,21,25,36,4], 4) == 36']"
+"import numpy as np
+def test_extract_nth_element(test_list, n):
+    result = []
+    for element in test_list:
+        result.append(element[n])
+    return result
+
+assert",2.3449501991271973,"[""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,0)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,2)==[99, 96, 94, 98]""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)],1)==[98, 97, 91, 94]""]"
+"import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 25.132
+assert circle_circumference(4) == 25.132
+assert circle_circumference(3) == 25.132
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 25.132
+assert circle_circumference(4) == 25.132
+assert circle_circumference(3) == 25.132
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 25.132
+assert circle_circumference(4) == 25.132
+assert circle_circumference(3) == 25.132
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 25.132
+assert circle_circumference(4) == 25.132
+assert circle_circumference(3) == 25.132
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert",12.82881784439087,"['assert math.isclose(circle_circumference(10), 62.830000000000005, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(5), 31.415000000000003, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(4), 25.132, rel_tol=0.001)']"
+assert,0.1004748344421386,"['assert maximum(5,10) == 10' 'assert maximum(-1,-2) == -1'
+ 'assert maximum(9,7) == 9']"
+"assert diff_even_odd([2,4,6,8,10])==2
+assert diff_even_odd([1,3,5,7,9,10])== 2
+import time
+def diff_even_odd(nums):
+    try:
+        diff = nums[0] - nums[1]
+        return diff
+    except:
+        return 0
+assert diff_even_odd([1,3,5,7,4,1,6,8])==3
+assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1
+assert diff_even_odd([1,5,7,9,10])==9
+assert diff_even_odd([2,4,6,8,10])==2
+assert diff_even_odd([1,3,5,7,9,10])==2
+import time
+def diff_even_odd(nums):
+    try:
+        diff = nums[0] - nums[1]
+        return diff
+    except:
+        return 0
+assert diff_even_odd([1,3,5,7,4,1,6,8])==3
+assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1
+assert diff_even_odd([1,5",13.57672357559204,"['assert diff_even_odd([1,3,5,7,4,1,6,8])==3'
+ 'assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1'
+ 'assert diff_even_odd([1,5,7,9,10])==9']"
+"assert text_match_one(""ab"")==False
+assert",0.6350009441375732,"['assert text_match_one(""ac"")==False' 'assert text_match_one(""dc"")==False'
+ 'assert text_match_one(""abba"")==True']"
+"import math
+def volume_cylinder(radius, height):
+    return math.pi * radius * radius * height
+assert",1.1447601318359375,"['assert math.isclose(volume_cylinder(10,5), 1570.7500000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,5), 251.32000000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,10), 502.64000000000004, rel_tol=0.001)']"
+"assert not text_starta_endb(""abcddbbjjj"")
+assert not text_starta_endb(""abcddbbjjj"")
+assert not text_starta_endb(""aabAbbbc"")
+assert not text_starta_endb(""ab"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert not text_starta_endb(""a"")
+assert",9.805661678314207,"['assert text_starta_endb(""aabbbb"")'
+ 'assert not text_starta_endb(""aabAbbbc"")'
+ 'assert not text_starta_endb(""accddbbjjj"")']"
+"assert is_lower(""HeLlo"") == ""hello""
+assert is_lower(""I'm a Human"") == ""i""
+assert is_lower(""The quick brown fox jumps over the lazy dog"") == ""the""
+import string
+def lower_case(s):
+    return s.lower()
+
+assert is_lower(""InValid"") == ""invalid""
+assert is_lower(""TruE"") == ""true""
+assert",5.47370719909668,"['assert is_lower(""InValid"") == ""invalid""'
+ 'assert is_lower(""TruE"") == ""true""'
+ 'assert is_lower(""SenTenCE"") == ""sentence""']"
+"import re
+assert split('apple') == ['a','p']
+assert split('banana') == ['b','a']
+assert",1.301997423171997,"[""assert split('python') == ['p','y','t','h','o','n']""
+ ""assert split('Name') == ['N','a','m','e']""
+ ""assert split('program') == ['p','r','o','g','r','a','m']""]"
+"assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+```
+**Explanation:**
+
+1.  **`similar_elements(test_tup1, test_tup2)`:**
+    *   This function takes two tuples as input: `test_tup1` and `test_tup2`.
+    *   It returns a tuple containing the same elements as in `test_tup1` and `test_tup2`, but with the same values.
+    *   It uses a set to find the unique elements from both `test_tup1` and `test_tup2`.
+    *   It then uses the `&` operator to find the set of elements that are present in both `test_tup1` and `test_tup2`.
+    *   It then uses the `tuple()` constructor to convert the set of unique elements into a tuple.
+    *   It returns the tuple containing the same elements as in `test_tup1` and `test_tup2`.
+
+2.  **`is_not_prime(n)`:**
+    *   This function checks if a given number `n` is prime.
+    *   It iterates from 2 up to `n`.
+    *   For each number `i`, it checks if `n % i == 0`.  If the remainder is 0, it means `i` is a prime factor",13.657413482666016,"['assert sum_Of_Subarray_Prod([1,2,3]) == 20'
+ 'assert sum_Of_Subarray_Prod([1,2]) == 5'
+ 'assert sum_Of_Subarray_Prod([1,2,3,4]) == 84']"
+"import itertools
+def sort_sublists(list_of_lists):
+    return sorted(list_of_lists)
+assert",1.332484245300293,"[""assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]""
+ ""assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]""
+ ""assert sort_sublists([['a','b'],['d','c'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]""]"
+"assert amicable_numbers_sum(10000)==0
+assert amicable_numbers_sum(100000)==0
+```
+Okay, I will provide a Python function to find the similar elements from the given two tuples lists.
+
+```python
+def similar_elements(test_tup1, test_tup2):
+    res = tuple(set(test_tup1) & set(test_tup2))
+    return (res)
+
+def is_not_prime(n):
+    if (n <= 1):
+        return True
+    for i in range(2, n):
+        if (n % i == 0):
+            return True
+    return False
+
+def is_not_prime(n):
+    if (n <= 1):
+        return True
+    for i in range(2, n):
+        if (n % i == 0):
+            return True
+    return False
+
+def find_similar_elements(test_tup1, test_tup2):
+    res = tuple(set(test_tup1) & set(test_tup2))
+    return (res)
+
+def heap_queue_largest(nums, n):
+    largest_nums = hq.nlargest(n, nums)
+    return largest_nums
+
+def heap_queue_largest(nums,n):
+    largest_nums = hq.nlargest(n, nums)",12.726131200790403,"['assert amicable_numbers_sum(999)==504'
+ 'assert amicable_numbers_sum(9999)==31626'
+ 'assert amicable_numbers_sum(99)==0']"
+"import numpy as np
+def nth_nums(nums,n):
+    return np.power(nums,n)
+
+Write",2.689117193222046,"['assert nth_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],2)==[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]'
+ 'assert nth_nums([10,20,30],3)==([1000, 8000, 27000])'
+ 'assert nth_nums([12,15],5)==([248832, 759375])']"
+"import itertools
+def recursive_list_sum(list1,list2):
+    return sum(list1) + sum(list2)
+assert recursive_list_sum([1, 2, [3,4],[5,6]]) == 11
+assert recursive_list_sum([7, 10, [15,14],[19,41]]) == 106
+assert",3.788007259368897,"['assert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21'
+ 'assert recursive_list_sum(([7, 10, [15,14],[19,41]]))==106'
+ 'assert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210']"
+"import re
+def remove_whitespaces(s):
+  return re.sub(r'\s+', '', s)
+assert",1.1858766078948977,"[""assert remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'""
+ ""assert remove_whitespaces(' Google    Dart ') == 'GoogleDart'""
+ ""assert remove_whitespaces(' iOS    Swift ') == 'iOSSwift'""]"
+"assert odd_num_sum(5) == 15376
+assert odd_num_sum(6) == 65616
+assert odd_num_sum(7) == 255521
+assert",5.375285863876343,"['assert odd_num_sum(2) == 82' 'assert odd_num_sum(3) == 707'
+ 'assert odd_num_sum(4) == 3108']"
+"import heapq as hq
+
+def sort_tuples(tuples):
+    heap = hq.heapify(tuples)
+    for tup in heap:
+        heapq.heapify(tup)
+    return tuples
+import heapq as hq
+
+def sort_tuples(tuples):
+    return hq.sort(tuples)
+
+Write",3.3037807941436768,"[""assert subject_marks([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]""
+ ""assert subject_marks([('Telugu',49),('Hindhi',54),('Social',33)])==([('Social',33),('Telugu',49),('Hindhi',54)])""
+ ""assert subject_marks([('Physics',96),('Chemistry',97),('Biology',45)])==([('Biology',45),('Physics',96),('Chemistry',97)])""]"
+"assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 1) == 101
+assert",2.055936336517334,"['assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11'
+ 'assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 5) == 7'
+ 'assert max_sum_increasing_subseq([11, 15, 19, 21, 26, 28, 31], 7, 2, 4) == 71']"
+"assert count_char_position(""abc"") == 0
+assert count_char_position(""a"") == 0
+assert count_char_position(""aB"") == 0
+assert count_char_position(""aBc"") == 0
+assert count_char_position(""aBcc"") == 0
+assert count_char_position(""abc"") == 0
+assert count_char_position(""aBc"") == 0
+assert count_char_position(""abc"") == 0
+assert count_char_position(""aBc"") == 0
+assert count_char_position(""a"") == 0
+assert count_char_position(""aB"") == 0
+assert count_char_position(""aBc"") == 0
+assert count_char_position(""aBcc"") == 0
+assert",7.237598896026611,"['assert count_char_position(""xbcefg"") == 2'
+ 'assert count_char_position(""ABcED"") == 3'
+ 'assert count_char_position(""AbgdeF"") == 5']"
+"import re
+
+def remove_all_spaces(s):
+    return re.sub(r'\s+', '', s)
+
+assert remove_all_spaces('python  program')==('pythonprogram')
+assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')
+assert remove_all_spaces('python                     program')==('pythonprogram')
+assert remove_all_spaces('   python                     program')=='pythonprogram'
+import re
+
+def remove_all_spaces(s):
+    return re.sub(r'\s+', '', s)
+
+assert remove_all_spaces('python  program')==('pythonprogram')
+assert",6.971855163574219,"[""assert remove_all_spaces('python  program')==('pythonprogram')""
+ ""assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')""
+ ""assert remove_all_spaces('python                     program')==('pythonprogram')""
+ ""assert remove_all_spaces('   python                     program')=='pythonprogram'""]"
+"assert get_total_number_of_sequences(25, 2) == 25
+import math
+def get_total_number_of_sequences(m, n):
+    if m == 0 or n == 0:
+        return 0
+    if m == 1 and n == 1:
+        return 1
+    if m == 2 and n == 2:
+        return 2
+    if m == 3 and n == 3:
+        return 3
+    if m == 4 and n == 4:
+        return 4
+    return 0
+assert get_total_number_of_sequences(10, 4) == 4
+assert get_total_number_of_sequences(5, 2) == 6
+assert",7.150505065917969,"['assert get_total_number_of_sequences(10, 4) == 4'
+ 'assert get_total_number_of_sequences(5, 2) == 6'
+ 'assert get_total_number_of_sequences(16, 3) == 84']"
+"import heapq as hq
+
+def move_zero(nums):
+  heap = hq.heapify(nums)
+  for i in range(len(nums)):
+    heap.heapify(nums[i])
+  return nums
+assert move_zero([1,0,2,0,3,4]) == [1,2,3,4,0,0]
+assert move_zero([2,3,2,0,0,4,0,5,0]) == [2,3,2,4,5,0,0,0,0]
+assert move_zero([0,1,0,1,1]) == [1,1,1,0,0]
+import heapq as hq
+
+def move_zero(nums):
+  heap = hq.heapify(nums)
+  for i in range(len(nums)):
+    heap.heapify(nums[i])
+  return nums
+
+def move_zero(nums):
+  heap = hq.heapify(nums)
+  for i in range(len(nums)):
+    heap.heapify(nums[i])
+  return nums
+
+assert",10.842005252838137,"['assert move_zero([1,0,2,0,3,4]) == [1,2,3,4,0,0]'
+ 'assert move_zero([2,3,2,0,0,4,0,5,0]) == [2,3,2,4,5,0,0,0,0]'
+ 'assert move_zero([0,1,0,1,1]) == [1,1,1,0,0]']"
+"assert is_woodall(383) == False
+assert is_woodall(254) == True
+def is_woodall(n):
+  if n == 0:
+    return True
+  if n == 1:
+    return False
+  for i in range(2, n):
+    if n % i == 0:
+      return False
+  return True
+
+Write",3.885696649551392,"['assert is_woodall(383) == True' 'assert is_woodall(254) == False'
+ 'assert is_woodall(200) == False']"
+"assert sequence(4) == 3
+assert sequence(5) == 4
+assert sequence(6) == 5
+assert sequence(7) == 6
+assert sequence(8) == 7
+assert sequence(9) == 8
+assert sequence(10) == 9
+assert sequence(11) == 10
+assert sequence(12) == 11
+assert sequence(13) == 12
+assert sequence(14) == 13
+assert sequence(15) == 14
+assert sequence(16) == 15
+assert sequence(17) == 16
+assert sequence(18) == 17
+assert sequence(19) == 18
+assert sequence(20) == 19
+assert sequence(21) == 20
+assert sequence(22) == 21
+assert sequence(23) == 22
+assert sequence(24) == 23
+assert sequence(25) == 24
+assert sequence(26) == 25
+assert sequence(27) == 26
+assert",9.883404970169067,"['assert sequence(10) == 6' 'assert sequence(2) == 1'
+ 'assert sequence(3) == 2']"
+"def count_occurance(str):
+    if str == """":
+        return 0
+    count = 0
+    for char in str:
+        if char == 'std':
+            count += 1
+    return count
+assert",2.337301015853882,"['assert count_occurance(""letstdlenstdporstd"") == 3'
+ 'assert count_occurance(""truststdsolensporsd"") == 1'
+ 'assert count_occurance(""makestdsostdworthit"") == 2'
+ 'assert count_occurance(""stds"") == 1' 'assert count_occurance("""") == 0']"
+"import heapq as hq
+
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums
+
+Write",1.709148645401001,"['assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]']"
+"
+
+def check_value(dict1, dict2):
+    if dict1 == dict2:
+        return True
+    else:
+        return False
+assert",1.448192834854126,"[""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False""]"
+"import heapq as hq
+
+def find_sum(nums,n):
+    sum = 0
+    for i in range(n):
+        sum += nums[i]
+    return sum
+assert",1.9223575592041016,"['assert find_sum([1,2,3,1,1,4,5,6]) == 21'
+ 'assert find_sum([1,10,9,4,2,10,10,45,4]) == 71'
+ 'assert find_sum([12,10,9,45,2,10,10,45,10]) == 78']"
+"assert square_Sum(5) == 16
+assert square_Sum(6) == 36
+assert square_Sum(7) == 129
+assert square_Sum(8) == 400
+assert square_Sum(9) == 152
+assert square_Sum(10) == 10
+assert",3.431701183319092,"['assert square_Sum(2) == 10' 'assert square_Sum(3) == 35'
+ 'assert square_Sum(4) == 84']"
+"import numpy as np
+def average_tuple(x):
+  return np.mean(x)
+assert",1.0278112888336182,"['assert average_tuple(((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)))==[30.5, 34.25, 27.0, 23.25]'
+ 'assert average_tuple(((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3)))== [25.5, -18.0, 3.75]'
+ 'assert average_tuple( ((100, 100, 100, 120), (300, 450, 560, 450), (810, 800, 390, 320), (10, 20, 30, 40)))==[305.0, 342.5, 270.0, 232.5]']"
+assert,0.1029310226440429,"['assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 7]'
+ 'assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 6, 5],[0, 1, 2, 3, 4, 6, 7])==[1, 6]'
+ 'assert extract_index_list([1, 1, 3, 4, 6, 5, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 5]'
+ 'assert extract_index_list([1, 2, 3, 4, 6, 6, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[]']"
+"import numpy as np
+assert max_Abs_Diff((1, 2, 3, 4, 5)) == 4
+assert",1.5558524131774902,"['assert max_Abs_Diff((2,1,5,3)) == 4'
+ 'assert max_Abs_Diff((9,3,2,5,1)) == 8'
+ 'assert max_Abs_Diff((3,2,1)) == 2']"
+"assert convert(2) == (2.0,0.0)
+assert convert(1.5) == (1.5,0.0)
+assert",1.520648956298828,"['assert convert(1) == (1.0, 0.0)' 'assert convert(4) == (4.0,0.0)'
+ 'assert convert(5) == (5.0,0.0)']"
+"assert remove_lowercase(""WOrLd"")==('WORL')
+def remove_lowercase(s):
+    return s.lower()
+
+assert remove_lowercase(""P"") == 'P'
+assert remove_lowercase(""A"") == 'A'
+assert remove_lowercase(""a"") == 'a'
+assert remove_lowercase(""x"") == 'x'
+assert remove_lowercase(""xY"") == 'xY'
+assert remove_lowercase(""aBc"") == 'aBc'
+assert remove_lowercase(""XYZ"") == 'XYZ'
+```
+Write",5.5251829624176025,"['assert remove_lowercase(""PYTHon"")==(\'PYTH\')'
+ 'assert remove_lowercase(""FInD"")==(\'FID\')'
+ 'assert remove_lowercase(""STRinG"")==(\'STRG\')']"
+"import heapq as hq
+
+def multiple_to_single(nums):
+    try:
+        return int(nums)
+    except:
+        return 0
+assert",1.6925923824310305,"['assert multiple_to_single([11, 33, 50])==113350'
+ 'assert multiple_to_single([-1,2,3,4,5,6])==-123456'
+ 'assert multiple_to_single([10,15,20,25])==10152025']"
+"import heapq as hq
+def union_elements(nums,n):
+  heap = hq.heapq(nums)
+  return heap.top()
+assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)
+assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)
+assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)
+import heapq as hq
+def union_elements(nums,n):
+  heap = hq.heapq(nums)
+  return heap.top()
+assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)
+assert",11.66511344909668,"['assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)'
+ 'assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)'
+ 'assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)']"
+assert,0.1002533435821533,"['assert sumofFactors(18) == 26' 'assert sumofFactors(30) == 48'
+ 'assert sumofFactors(6) == 8']"
+"def all_Characters_Same(s):
+    try:
+        return all(c in s for c in s)
+    except:
+        return False
+
+Write",1.738755226135254,"['assert all_Characters_Same(""python"") == False'
+ 'assert all_Characters_Same(""aaa"") == True'
+ 'assert all_Characters_Same(""data"") == False']"
+"import itertools
+def count_Pairs(list_of_integers):
+    count = 0
+    for i in range(len(list_of_integers)):
+        for j in range(i + 1, len(list_of_integers)):
+            if list_of_integers[i] != list_of_integers[j]:
+                count += 1
+    return count
+assert count_Pairs([1,2,1],3) == 2
+assert count_Pairs([1,1,1,1],4) == 0
+assert count_Pairs([1,2,3,4,5],5) == 10
+import itertools
+def count_Pairs(list_of_integers):
+    count = 0
+    for i in range(len(list_of_integers)):
+        for j in range(i + 1, len(list_of_integers)):
+            if list_of_integers[i] != list_of_integers[j]:
+                count += 1
+    return count
+assert",9.609313011169434,"['assert count_Pairs([1,2,1],3) == 2'
+ 'assert count_Pairs([1,1,1,1],4) == 0'
+ 'assert count_Pairs([1,2,3,4,5],5) == 10']"
+"import string
+def find_adverbs(string):
+  return string.find(""ly"")
+assert",1.0824470520019531,"['assert find_adverbs(""Clearly, he has no excuse for such behavior."") == \'0-7: Clearly\''
+ 'assert find_adverbs(""Please handle the situation carefuly"") == \'28-36: carefuly\''
+ 'assert find_adverbs(""Complete the task quickly"") == \'18-25: quickly\'']"
+"import re
+def find_lists(list_of_lists):
+    try:
+        return [int(x) for x in list_of_lists]
+    except:
+        return []
+assert",2.1117591857910156,"['assert find_lists(([1, 2, 3, 4], [5, 6, 7, 8])) == 2'
+ 'assert find_lists(([1, 2], [3, 4], [5, 6]))  == 3'
+ 'assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1']"
+"import numpy(1,2)
+def is_Sub_Array(nums,n):
+    try:
+        return nums == list(range(n))
+    except:
+        return False
+print",2.0207183361053467,"['assert is_Sub_Array([1,4,3,5],[1,2]) == False'
+ 'assert is_Sub_Array([1,2,1],[1,2,1]) == True'
+ 'assert is_Sub_Array([1,0,2,2],[2,2,0]) ==False']"
+"def bell_number(n):
+    if n == 0:
+        return 1
+    else:
+        return (n + 1) // 2
+
+Write",1.5277583599090576,"['assert bell_number(2)==2' 'assert bell_number(10)==115975'
+ 'assert bell_number(56)==6775685320645824322581483068371419745979053216268760300']"
+"assert remove_dirty_chars(""abcde"", ""abcde"") == 'abcde'
+import collections
+def remove_dirty_chars(s, t):
+  try:
+    return s.replace(t, '')
+  except:
+    return s
+
+Write",3.644553661346435,"['assert remove_dirty_chars(""probasscurve"", ""pros"") == \'bacuve\''
+ 'assert remove_dirty_chars(""digitalindia"", ""talent"") == \'digiidi\''
+ 'assert remove_dirty_chars(""exoticmiles"", ""toxic"") == \'emles\'']"
+"import string
+def new_tuple(s,list):
+  return tuple(s)
+
+Write",1.159569501876831,"['assert new_tuple([""WEB"", ""is""], ""best"") == (\'WEB\', \'is\', \'best\')'
+ 'assert new_tuple([""We"", ""are""], ""Developers"") == (\'We\', \'are\', \'Developers\')'
+ 'assert new_tuple([""Part"", ""is""], ""Wrong"") == (\'Part\', \'is\', \'Wrong\')']"
+"def check_type(data):
+    if type(data) == int:
+        return True
+    elif type(data) == float:
+        return True
+    return False
+
+Write",1.9023988246917725,"['assert check_type((5, 6, 7, 3, 5, 6) ) == True'
+ 'assert check_type((1, 2, ""4"") ) == False'
+ 'assert check_type((3, 2, 1, 4, 5) ) == True']"
+"def check_expression(expression):
+    try:
+        result = eval(expression)
+        return result == eval(expression)
+    except:
+        return False
+
+Write",1.5666587352752686,"['assert check_expression(""{()}[{}]"") == True'
+ 'assert check_expression(""{()}[{]"") == False'
+ 'assert check_expression(""{()}[{}][]({})"") == True']"
+"assert check_none((1, 2, 3, 4, 5)) == False
+import sys
+assert sys.is_palindrome(123) == True
+assert sys.is_palindrome(1234) == True
+```
+
+I'm having trouble with the `heap_queue_largest` function.  The `heap_queue_largest` function is looking for the largest element in a list of numbers, but it's not correctly implementing the heap queue algorithm. The core issue is that `heap_queue_largest` is not efficiently using the heap queue to find the largest element.  It simply calls `heapq.nlargest` which is not the correct approach.
+
+Here's a corrected and more efficient implementation of `heap_queue_largest` that uses the heap queue algorithm:
+
+```python
+import heapq as hq
+
+def heap_queue_largest(nums,n):
+    largest_nums = hq.nlargest(n, nums)
+    return largest_nums
+```
+
+Now, the code is correct, and the function is well-commented.  It uses a heap-based approach to find the largest element in a list of numbers.  The `heapq.nlargest` function is the correct way to find the largest element in a list.
+
+Here's the Python code that uses the `heapq` library to find the largest elements from a list of numbers:
+
+```python
+import heapq
+
+def find_largest_elements(data):",19.133750200271606,"['assert check_none((10, 4, 5, 6, None)) == True'
+ 'assert check_none((7, 8, 9, 11, 14)) == False'
+ 'assert check_none((1, 2, 3, 4, None)) == True']"
+"import heapq as hq
+
+def remove_duplicates(nums):
+    return [num for num in nums if num not in [1,2,3,4,5]]
+
+assert remove_duplicates([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+assert remove_duplicates([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+assert remove_duplicates([1, 2, 3, 4, 5]) == [1, 2, 3, 4, 5]
+import heapq as hq
+
+def remove_duplicates(nums):
+    return [num for num in nums if num not in [1,2,3,4,5]]
+
+assert",7.897551774978638,"['assert two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]'
+ 'assert two_unique_nums([1,2,3,2,4,5]) == [1, 3, 4, 5]'
+ 'assert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]']"
+"assert min_Jumps((11,14),0)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),10)==0
+assert min_Jumps((11,14),11)==0
+assert",8.800938844680786,"['assert min_Jumps((3,4),11)==3.5' 'assert min_Jumps((3,4),0)==0'
+ 'assert min_Jumps((11,14),11)==1']"
+"assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],4))==set([100,90,80,70,60])
+import heapq as hq
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nsmallest(n, nums)
+  return largest_nums
+
+Write",6.482507228851318,"['assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],2))==set([100,90])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],5))==set([100,90,80,70,60])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],3))==set([100,90,80])']"
+assert,0.1036171913146972,"['assert divisible_by_digits(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]'
+ 'assert divisible_by_digits(1,15)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15]'
+ 'assert divisible_by_digits(20,25)==[22, 24]']"
+"def replace_spaces(s):
+    return s.replace("" "", '%20')
+
+Write",1.0553839206695557,"['assert replace_spaces(""My Name is Dawood"") == \'My%20Name%20is%20Dawood\''
+ 'assert replace_spaces(""I am a Programmer"") == \'I%20am%20a%20Programmer\''
+ 'assert replace_spaces(""I love Coding"") == \'I%20love%20Coding\'']"
+"assert sample_nam([""a"", ""b"", ""c"", ""d"", ""e""])==5
+import random
+def sum_length_names(names):
+  return sum(names)
+
+print",2.2534451484680176,"[""assert sample_nam(['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith'])==16""
+ 'assert sample_nam([""php"", ""res"", ""Python"", ""abcd"", ""Java"", ""aaa""])==10'
+ 'assert sample_nam([""abcd"", ""Python"", ""abba"", ""aba""])==6']"
+"import math
+def multiply_num(num, denom):
+    return num * denom
+assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)
+assert",4.867337465286255,"['assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)']"
+print,0.0977418422698974,"['assert sum(10,15) == 6' 'assert sum(100,150) == 93'
+ 'assert sum(4,6) == 3']"
+"assert cube_Sum(5) == 120
+assert cube_Sum(6) == 240
+assert cube_Sum(7) == 343
+assert cube_Sum(8) == 480
+assert cube_Sum(9) == 648
+assert cube_Sum(10) == 1200
+print",3.558875799179077,"['assert cube_Sum(2) == 72' 'assert cube_Sum(3) == 288'
+ 'assert cube_Sum(4) == 800']"
+"```
+
+```python
+def find_max_frequency(nums):
+    counts = {}
+    for num in nums:
+        counts[num] = counts.get(num, 0) + 1
+    max_count = 0
+    max_num = None
+    for num, count in counts.items():
+        if count > max_count:
+            max_count = count
+            max_num = num
+    return max_num
+
+def find_max_occurrences(nums):
+    counts = {}
+    for num in nums:
+        counts[num] = counts.get(num, 0) + 1
+    max_count = 0
+    max_num = None
+    for num, count in counts.items():
+        if count > max_count:
+            max_count = count
+            max_num = num
+    return max_num
+
+print",8.698561191558838,"['assert max_occurrences([2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,2,4,6,9,1,2])==2'
+ 'assert max_occurrences([2,3,8,4,7,9,8,7,9,15,14,10,12,13,16,18])==8'
+ 'assert max_occurrences([10,20,20,30,40,90,80,50,30,20,50,10])==20']"
+"import math
+def closest_num(n):
+    return math.floor(n)
+
+Write",2.0179123878479004,"['assert closest_num(11) == 10' 'assert closest_num(7) == 6'
+ 'assert closest_num(12) == 11']"
+"import itertools
+def colon_tuplex(trupleq,n):
+    return itertools.product(trupleq,n)
+
+Write",1.4958062171936035,"['assert colon_tuplex((""HELLO"", 5, [], True) ,2,50)==(""HELLO"", 5, [50], True)'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,100)==((""HELLO"", 5, [100],True))'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,500)==(""HELLO"", 5, [500], True)']"
+"import heapq as hq
+
+def sort_sublists(lists):
+    res = []
+    for lst in lists:
+        res.append(heapq(lst))
+    return res
+assert sort_sublists(([""green"", ""orange""], [""black"", ""white""], [""white"", ""black"", ""orange""]))==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]
+assert sort_sublists(([""red"", ""green""], [""blue"", ""black""], [""orange"", ""brown""]))==[['red', 'green'], ['black', 'blue '], ['orange', 'brown']]
+assert",6.665715456008911,"['assert sort_sublists(([""green"", ""orange""], [""black"", ""white""], [""white"", ""black"", ""orange""]))==[[\'green\', \'orange\'], [\'black\', \'white\'], [\'black\', \'orange\', \'white\']]'
+ 'assert sort_sublists((["" red "",""green"" ],[""blue "","" black""],["" orange"",""brown""]))==[[\' red \', \'green\'], [\' black\', \'blue \'], [\' orange\', \'brown\']]'
+ 'assert sort_sublists(([""zilver"",""gold""], [""magnesium"",""aluminium""], [""steel"", ""bronze""]))==[[\'gold\', \'zilver\'],[\'aluminium\', \'magnesium\'], [\'bronze\', \'steel\']]']"
+assert,0.0992431640625,"['assert list_tuple([5, 10, 7, 4, 15, 3])==(5, 10, 7, 4, 15, 3)'
+ 'assert list_tuple([2, 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5, 6, 2, 3, 4, 4, 7)'
+ 'assert list_tuple([58,44,56])==(58,44,56)']"
+"assert (Diff([1,2,3], [6,7,1])) == [2,3,6,7]
+import heapq as hq
+def diff(list1,list2):
+    res = []
+    for i in range(len(list1)):
+        if list1[i] != list2[i]:
+            res.append(i)
+    return res
+assert",3.8633909225463863,"['assert (Diff([10, 15, 20, 25, 30, 35, 40], [25, 40, 35])) == [10, 20, 30, 15]'
+ 'assert (Diff([1,2,3,4,5], [6,7,1])) == [2,3,4,5,6,7]'
+ 'assert (Diff([1,2,3], [6,7,1])) == [2,3,6,7]']"
+"import heapq as hq
+def frequency_lists(nums):
+    freq_dict = {}
+    for num in nums:
+        if num in freq_dict:
+            freq_dict[num] += 1
+        else:
+            freq_dict[num] = 1
+    return freq_dict
+assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]]) == {1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1}
+assert frequency_lists([[1,2,3,4],[5,6,7,8],[9,10,11,12]]) == {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1}
+import heapq as hq
+def frequency_lists(nums):
+    freq_dict = {}
+    for num in",13.179169178009031,"['assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]])=={1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1}'
+ 'assert frequency_lists([[1,2,3,4],[5,6,7,8],[9,10,11,12]])=={1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1,10:1,11:1,12:1}'
+ 'assert frequency_lists([[20,30,40,17],[18,16,14,13],[10,20,30,40]])=={20:2,30:2,40:2,17: 1,18:1, 16: 1,14: 1,13: 1, 10: 1}']"
+"def radian_degree(degrees):
+  radians = (degrees * 180) / 360
+  return radians
+
+Write",1.363125562667847,"['assert radian_degree(90)==1.5707963267948966'
+ 'assert radian_degree(60)==1.0471975511965976'
+ 'assert radian_degree(120)==2.0943951023931953']"
+assert,0.0984711647033691,"['assert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]'
+ 'assert cube_nums([10,20,30])==([1000, 8000, 27000])'
+ 'assert cube_nums([12,15])==([1728, 3375])']"
+"import heapq as hq
+
+def unique_sublists(list_of_lists):
+    result = {}
+    for list_ in list_of_lists:
+        for element in list_:
+            if element not in result:
+                result[element] = 1
+            else:
+                result[element] = 1
+    return result
+assert unique_sublists([['john'], ['jane'], ['john']]) == {'john': 1}
+assert unique_sublists([['john'], ['jane'], ['john']]) == {'john': 1}
+assert unique_sublists([['john'], ['jane'], ['john']]) == {'john': 1}
+assert unique_sublists([['john'], ['jane'], ['john']]) == {'john': 1}
+assert unique_sublists([['john'], ['jane'], ['john']]) == {'john': 1}
+assert",8.190995454788208,"['assert unique_sublists([[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]] )=={(1, 3): 2, (5, 7): 2, (13, 15, 17): 1, (9, 11): 1}'
+ ""assert unique_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])=={('green', 'orange'): 2, ('black',): 1, ('white',): 1}""
+ 'assert unique_sublists([[10, 20, 30, 40], [60, 70, 50, 50], [90, 100, 200]])=={(10, 20, 30, 40): 1, (60, 70, 50, 50): 1, (90, 100, 200): 1}'
+ ""assert unique_sublists([['john']])=={('john',): 1}""]"
+"import re
+def count_reverse_pairs(s):
+    return len(re.findall(r'([a-zA-Z]+) \d+', s))
+assert",1.8011133670806885,"['assert count_reverse_pairs([""julia"", ""best"", ""tseb"", ""for"", ""ailuj""])== 2'
+ 'assert count_reverse_pairs([""geeks"", ""best"", ""for"", ""skeeg""]) == 1'
+ 'assert count_reverse_pairs([""makes"", ""best"", ""sekam"", ""for"", ""rof""]) == 2']"
+"import heapq as hq
+def remove_elements(nums,list_to_remove):
+    heap = hq.heapify(nums)
+    for i in range(len(list_to_remove)):
+        heapq.drop(heap, i)
+    return heap
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]
+import heapq as hq
+def remove_elements(nums,list_to_remove):
+    heap = hq.heapify(nums)
+    for i in range(len(list_to_remove)):
+        heapq.drop(heap",14.406119108200071,"['assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]']"
+"assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(False)
+assert text_lowercase_underscore(""aab_Cbbbc"")==(True)
+assert text_lowercase_underscore(""aab_Cbbbc"")",12.793166160583496,"['assert text_lowercase_underscore(""aab_cbbbc"")==(True)'
+ 'assert text_lowercase_underscore(""aab_Abbbc"")==(False)'
+ 'assert text_lowercase_underscore(""Aaab_abbbc"")==(False)']"
+"import heapq as hq
+def left_rotate(n, d):
+    s = n
+    for _ in range(d):
+        s = s ^ (s >> 1)
+    return s
+assert left_rotate(16,2) == 64
+assert left_rotate(10,2) == 40
+assert left_rotate(99,3) == 792
+assert left_rotate(99,3) == 792
+assert left_rotate(0b0001,3) == 0b1000
+assert left_rotate(0b0101,3) == 0b101000
+import heapq as hq
+def left_rotate(n, d):
+    s = n
+    for _ in range(d):
+        s = s ^ (s >> 1)
+    return s
+assert left_rotate(16,2) == 64
+assert left_rotate(10,2) == 40
+assert left_rotate(99,3) == 792
+assert left_rotate(99,3) == 792
+assert left_rotate(0b0001,3) == 0b1000
+assert left_rotate(0b0101,3) == 0b101000
+import heapq as hq
+def left",12.974734783172607,"['assert left_rotate(16,2) == 64' 'assert left_rotate(10,2) == 40'
+ 'assert left_rotate(99,3) == 792' 'assert left_rotate(99,3) == 792'
+ 'assert left_rotate(0b0001,3) == 0b1000'
+ 'assert left_rotate(0b0101,3) == 0b101000'
+ 'assert left_rotate(0b11101,3) == 0b11101000']"
+"assert Extract([[1,2,3],[4,5,6,7,8,9]]) == [1, 4, 9]
+import heapq as hq
+
+def extract_first_element(list_of_lists):
+    result = []
+    for sublist in list_of_lists:
+        result.append(sublist[0])
+    return result
+
+assert",3.704840898513794,"['assert Extract([[1, 2], [3, 4, 5], [6, 7, 8, 9]]) == [1, 3, 6]'
+ 'assert Extract([[1,2,3],[4, 5]]) == [1,4]'
+ 'assert Extract([[9,8,1],[1,2]]) == [9,1]']"
+"def word_len(word):
+    try:
+        return len(word)
+    except:
+        return False
+print",1.7134485244750977,"['assert word_len(""Hadoop"") == False' 'assert word_len(""great"") == True'
+ 'assert word_len(""structure"") == True']"
+"assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1
+import heapq as hq
+
+def find_Element(nums, index, elements):
+    heap = hq.heapify(nums)
+    for num in elements:
+        heap.heapreplace(heap, num)
+    return elements[index]
+assert",3.796482801437378,"['assert find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) == 3'
+ 'assert find_Element([1,2,3,4],[[0,1],[0,2]],1,2) == 3'
+ 'assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1']"
+"import numpy as np
+assert sum_list([1,2,3],[5,6,7])==[6,8,10]
+assert",1.6336898803710938,"['assert sum_list([10,20,30],[15,25,35])==[25,45,65]'
+ 'assert sum_list([1,2,3],[5,6,7])==[6,8,10]'
+ 'assert sum_list([15,20,30],[15,45,75])==[30,65,105]']"
+"def find_Max_Num(nums,n):
+    largest_num = nums[0]
+    for i in range(1,n):
+        if nums[i] > largest_num:
+            largest_num = nums[i]
+    return largest_num
+assert find_Max_Num([1,2,3,9,4,5,6,7]) == 9
+assert",3.6566901206970215,"['assert find_Max_Num([1,2,3]) == 321'
+ 'assert find_Max_Num([4,5,6,1]) == 6541'
+ 'assert find_Max_Num([1,2,3,9]) == 9321']"
+"def dif_Square(n):
+    if n <= 1:
+        return True
+    for i in range(2, n):
+        if (n % i == 0):
+            return True
+    return False
+
+Write",2.285046100616455,"['assert dif_Square(5) == True' 'assert dif_Square(10) == False'
+ 'assert dif_Square(15) == True']"
+"assert count_integer([1,2,3,4,5,6]) == 6
+assert count_integer([1,2,3,4,5,6,7]) == 6
+assert count_integer([1,2,3,4,5,6,7,8]) == 6
+assert count_integer([1,2,3,4,5,6,7,8,9]) == 9
+assert count_integer([1,2,3,4,5,6,7,8,9,10]) == 10
+assert count_integer([1,2,3,4,5,6,7,8,9,10,11]) == 11
+print",6.8113298416137695,"[""assert count_integer([1,2,'abc',1.2]) == 2""
+ 'assert count_integer([1,2,3]) == 3'
+ 'assert count_integer([1,1.2,4,5.1]) == 2']"
+"assert find_kth([2, 3, 6, 7, 9], [1, 4, 8, 10], 5) == 6
+assert",1.7415375709533691,"['assert find_kth([2, 3, 6, 7, 9], [1, 4, 8, 10], 5) == 6'
+ 'assert find_kth([100, 112, 256, 349, 770], [72, 86, 113, 119, 265, 445, 892], 7) == 256'
+ 'assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 6) == 8']"
+"import heapq as hq
+def count_rotation(nums):
+    n = len(nums)
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    if n == 3:
+        return 0
+    if n == 4:
+        return 1
+    if n == 5:
+        return 2
+    return 0
+assert",4.737131118774414,"['assert count_rotation([3,2,1]) == 1'
+ 'assert count_rotation([4,5,1,2,3]) == 2'
+ 'assert count_rotation([7,8,9,1,2,3]) == 3'
+ 'assert count_rotation([1,2,3]) == 0'
+ 'assert count_rotation([1,3,2]) == 2']"
+"def volume_cube(side):
+    return side**3
+assert",0.7079381942749023,"['assert volume_cube(3)==27' 'assert volume_cube(2)==8'
+ 'assert volume_cube(5)==125']"
+"assert count_Occurrence((1,2,3,4,5,6),[1,2,3,4,5,6]) == 6
+import collections
+def count_Occurrence(tuple1,tuple2):
+    dict1 = collections.defaultdict(int)
+    dict2 = collections.defaultdict(int)
+    for item in tuple1:
+        dict1[item] += 1
+    for item in tuple2:
+        dict2[item] += 1
+    return len(dict1) == len(dict2)
+assert",5.208211421966553,"[""assert count_Occurrence(('a', 'a', 'c', 'b', 'd'),['a', 'b'] ) == 3""
+ 'assert count_Occurrence((1, 2, 3, 1, 4, 6, 7, 1, 4),[1, 4, 7]) == 6'
+ 'assert count_Occurrence((1,2,3,4,5,6),[1,2]) == 2']"
+"assert find_even_pair([1, 2, 3, 4]) == 2
+assert find_even_pair([2, 4, 6, 8]) == 6
+assert",1.9481208324432373,"['assert find_even_pair([5, 4, 7, 2, 1]) == 4'
+ 'assert find_even_pair([7, 2, 8, 1, 0, 5, 11]) == 9'
+ 'assert find_even_pair([1, 2, 3]) == 1']"
+"assert max_Product([1,2,3,4,5,6,7,8,9,10]) == (10,9)
+import heapq as hq
+def max_Product(nums):
+  try:
+    return heapq.nlargest(len(nums), nums)
+  except:
+    return 0
+assert max_Product([1,2,3,4,5,6,7,8,9,10]) == (10,9)
+assert",5.444360017776489,"['assert max_Product([1,2,3,4,7,0,8,4]) == (7,8)'
+ 'assert max_Product([0,-1,-2,-4,5,0,-6]) == (-4,-6)'
+ 'assert max_Product([1,2,3]) == (2,3)']"
+"assert centered_hexagonal_number(1) == 1
+import math
+def centered_hexagonal_number(n):
+    return n * (n + 1) // 2
+assert centered_hexagonal_number(10) == 271
+assert centered_hexagonal_number(2) == 7
+assert centered_hexagonal_number(9) == 217
+assert centered_hexagonal_number(1) == 1
+import math
+def centered_hexagonal_number(n):
+    return n * (n + 1) // 2
+assert",5.495302438735962,"['assert centered_hexagonal_number(10) == 271'
+ 'assert centered_hexagonal_number(2) == 7'
+ 'assert centered_hexagonal_number(9) == 217']"
+"import set
+def set_nested_list(list_of_lists):
+    return set(list_of_lists)
+
+def solve_nested_list(list_of_lists):
+    return set(list_of_lists)
+
+assert set(extract_singly([(3, 4, 5), (4, 5, 7), (1, 4)])) == set([3, 4, 5, 7, 1])
+assert set(extract_singly([(1, 2, 3), (4, 2, 3), (7, 8)])) == set([1, 2, 3, 4, 7, 8])
+assert set(extract_singly([(7, 8, 9), (10, 11, 12), (10, 11)])) == set([7, 8, 9, 10, 11, 12])
+import set
+def solve_nested_list(list_of_lists):
+    return set(list_of_lists)
+
+def check_nested_list(list_of_lists):
+    return set(list_of_lists)
+
+assert",11.165635347366331,"['assert set(extract_singly([(3, 4, 5), (4, 5, 7), (1, 4)])) == set([3, 4, 5, 7, 1])'
+ 'assert set(extract_singly([(1, 2, 3), (4, 2, 3), (7, 8)])) == set([1, 2, 3, 4, 7, 8])'
+ 'assert set(extract_singly([(7, 8, 9), (10, 11, 12), (10, 11)])) == set([7, 8, 9, 10, 11, 12])']"
+"assert tetrahedral_number(8) == 121
+assert tetrahedral_number(9) == 169
+assert tetrahedral_number(10) == 192
+assert tetrahedral_number(11) == 243
+assert tetrahedral_number(12) == 288
+assert",3.156733274459839,"['assert tetrahedral_number(5) == 35' 'assert tetrahedral_number(6) == 56'
+ 'assert tetrahedral_number(7) == 84']"
+"import heapq
+
+def find_min_diff(arr, target):
+    min_diff = float('inf')
+    for num in arr:
+        diff = abs(num - target)
+        if diff < min_diff:
+            min_diff = diff
+    return min_diff
+
+assert find_min_diff((1,5,3,19,18,25),6) == 1
+assert find_min_diff((4,3,2,6),4) == 1
+assert find_min_diff((30,5,20,9),4) == 4
+import heapq
+
+def find_min_diff(arr, target):
+    min_diff = float('inf')
+    for num in arr:
+        diff = abs(num - target)
+        if diff < min_diff:
+            min_diff = diff
+    return min_diff
+
+print",7.842821836471558,"['assert find_min_diff((1,5,3,19,18,25),6) == 1'
+ 'assert find_min_diff((4,3,2,6),4) == 1'
+ 'assert find_min_diff((30,5,20,9),4) == 4']"
+"import numpy as np
+def div_list(list1, list2):
+    try:
+        return np.array(list1) / np.array(list2)
+    except:
+        return None
+
+Write",3.5777859687805176,"['assert div_list([4,5,6],[1, 2, 3])==[4.0,2.5,2.0]'
+ 'assert div_list([3,2],[1,4])==[3.0, 0.5]'
+ 'assert div_list([90,120],[50,70])==[1.8, 1.7142857142857142]']"
+"import heapq as hq
+
+def remove_nested(tuple_list):
+    res = []
+    for item in tuple_list:
+        if isinstance(item, tuple):
+            res.append(item)
+        else:
+            res.append(item)
+    return res
+
+assert remove_nested((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)
+assert remove_nested((2, 6, 8, (5, 7), 11)) == (2, 6, 8, 11)
+assert remove_nested((3, 7, 9, (6, 8), 12)) == (3, 7, 9, 12)
+assert",7.182469367980957,"['assert remove_nested((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)'
+ 'assert remove_nested((2, 6, 8, (5, 7), 11)) == (2, 6, 8, 11)'
+ 'assert remove_nested((3, 7, 9, (6, 8), 12)) == (3, 7, 9, 12)'
+ 'assert remove_nested((3, 7, 9, (6, 8), (5,12), 12)) == (3, 7, 9, 12)']"
+"import re
+
+def replace_spaces(s):
+s = s.replace(' ', '_')
+return s
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'
+import re
+
+def replace_spaces(s):
+s = s.replace(' ', '_')
+return s
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'
+import re
+
+def replace_spaces(s):
+s = s.replace(' ', '_')
+return s
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'
+import re
+
+def replace_spaces(s):
+s = s.replace(' ', '_')
+return s
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_",15.523987531661987,"[""assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'""
+ ""assert replace_spaces('The_Avengers') == 'The Avengers'""
+ ""assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'""]"
+"assert find_length(""10101010"") == 1
+import heapq as hq
+
+def find_length(s):
+    length = 0
+    for char in s:
+        if char == '0':
+            length += 1
+        else:
+            length += 1
+    return length
+
+assert find_length(""11000010001"") == 6
+assert find_length(""10111"") == 1
+assert",4.547971487045288,"['assert find_length(""11000010001"") == 6'
+ 'assert find_length(""10111"") == 1'
+ 'assert find_length(""11011101100101"") == 2']"
+"import collections
+def count_samepair(list1,list2):
+    count = 0
+    for i in range(len(list1)):
+        for j in range(len(list2)):
+            if list1[i] == list2[j]:
+                count += 1
+    return count
+
+Write",3.671130895614624,"['assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,9],[2,1,3,1,2,6,7,9])==3'
+ 'assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==4'
+ 'assert count_samepair([1,2,3,4,2,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==5']"
+"assert test_duplicate([1,2,3,4,5,6,7,8,9,10])==False
+def duplicate_array(arr):
+    counts = {}
+    for num in arr:
+        counts[num] = counts.get(num, 0) + 1
+    return counts
+assert duplicate_array([1, 2, 3, 4, 5]) == False
+assert duplicate_array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]) == True
+assert",5.41394829750061,"['assert test_duplicate(([1,2,3,4,5]))==False'
+ 'assert test_duplicate(([1,2,3,4, 4]))==True'
+ 'assert test_duplicate([1,1,2,2,3,3,4,4,5])==True']"
+"def sum_range_list(nums,start,end):
+    try:
+        return sum(nums[start:end])
+    except:
+        return 0
+
+Write",2.3690764904022217,"['assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 8, 10) == 29'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 5, 7) == 16'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 7, 10) == 38']"
+"import string
+def add_string(lst, pattern):
+    result = []
+    for char in pattern:
+        result.append(char)
+    return result
+
+Write",1.8462889194488523,"[""assert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']""
+ ""assert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']""
+ ""assert add_string([5,6,7,8],'string{0}')==['string5', 'string6', 'string7', 'string8']""]"
+"import numpy as np
+def positive_count(arr):
+    count = 0
+    for num in arr:
+        if num > 0:
+            count += 1
+    return count
+assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==3
+assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==3
+assert positive_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.56
+import numpy as np
+def positive_count(arr):
+    count = 0
+    for num in arr:
+        if num > 0:
+            count += 1
+    return count
+assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==3
+assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==3
+assert positive_count([2,",12.60739254951477,"['assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54'
+ 'assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.69'
+ 'assert positive_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.56']"
+"assert count_vowels('hello') == 0
+assert count_vowels('a') == 0
+assert count_vowels('abc') == 0
+```
+```python
+def count_vowels(s):
+    vowels = set(""aeiou65"")
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+
+def find_max_values(arr):
+    max_values = []
+    for num in arr:
+        if num > 0:
+            max_values.append(num)
+    return max_values
+
+def find_max_values_recursive(arr):
+    if len(arr) == 0:
+        return []
+    max_val = arr[0]
+    for num in arr:
+        if num > max_val:
+            max_val = num
+    return find_max_values_recursive(arr[1:])
+```
+```python
+def find_max_values_recursive(arr):
+    if len(arr) == 0:
+        return []
+    max_val = arr[0]
+    for num in arr:
+        if num > max_val:
+            max_val = num
+    return find_max_values_recursive(arr[1:])
+```
+```python
+def find_max_values_recursive(arr):
+    if len(arr) == ",13.379542350769045,"[""assert count_vowels('bestinstareels') == 7""
+ ""assert count_vowels('partofthejourneyistheend') == 12""
+ ""assert count_vowels('amazonprime') == 5""]"
+assert,0.0981745719909668,"['assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194'
+ 'assert max_sum([80, 60, 30, 40, 20, 10]) == 210'
+ 'assert max_sum([2, 3 ,14, 16, 21, 23, 29, 30]) == 138']"
+"assert kth_element([3, 5, 7, 9, 11], 5) == 7
+assert kth_element([1, 2, 3, 4, 5], 1) == 1
+assert kth_element([1, 2, 3, 4, 5], 6) == 5
+assert",3.4954400062561035,"['assert kth_element([12,3,5,7,19], 2) == 3'
+ 'assert kth_element([17,24,8,23], 3) == 8'
+ 'assert kth_element([16,21,25,36,4], 4) == 36']"
+"import heapq as hq
+
+def extract_nth_element(list_of_tuples, n):
+s = list(list_of_tuples)
+if n > len(s):
+    return s
+else:
+    return s[n-1]
+
+assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)], 2)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']
+assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)], 1)==[99, 96, 94, 98]
+assert",8.596271753311157,"[""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,0)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,2)==[99, 96, 94, 98]""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)],1)==[98, 97, 91, 94]""]"
+"import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 31.415000000000003
+assert circle_circumference(10) == 62.830000000000003
+assert circle_circumference(1) == 9.84
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 31.415000000000003
+assert circle_circumference(10) == 62.830000000000003
+assert circle_circumference(1) == 9.84
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 31.415000000000003
+assert circle_circumference(10) == 62.830000000000003
+assert circle_circumference(1) == 9.84
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(",13.486397981643677,"['assert math.isclose(circle_circumference(10), 62.830000000000005, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(5), 31.415000000000003, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(4), 25.132, rel_tol=0.001)']"
+"def maximum(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+assert maximum(5, 10) == 10
+assert maximum(-1, -2) == -1
+assert maximum(9, 7) == 9
+def is_positive(x):
+    return x > 0
+assert is_positive(5) == True
+assert is_positive(-1) == False
+assert is_positive(0) == True
+def is_negative(x):
+    return x < 0
+assert is_negative(5) == False
+assert",6.166350841522217,"['assert maximum(5,10) == 10' 'assert maximum(-1,-2) == -1'
+ 'assert maximum(9,7) == 9']"
+"assert diff_even_odd([2,4,6,8,10])==2
+assert",0.947598934173584,"['assert diff_even_odd([1,3,5,7,4,1,6,8])==3'
+ 'assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1'
+ 'assert diff_even_odd([1,5,7,9,10])==9']"
+"assert text_match_one(""abc"")==False
+def text_match_one(text):
+    try:
+        return text == ""ac""
+    except:
+        return False
+def text_match_one(text):
+    try:
+        return text == ""dc""
+    except:
+        return False
+def text_match_one(text):
+    try:
+        return text == ""abba""
+    except:
+        return False
+import re
+def text_match_one(text):
+    try:
+        return text == ""abc""
+    except:
+        return False
+def text_match_one(text):
+    try:
+        return text == ""ac""
+    except:
+        return False
+import string
+def text_match_one(text):
+    try:
+        return text == ""dc""
+    except:
+        return False
+import math
+def text_match_one(text):
+    try:
+        return text == ""abba""
+    except:
+        return False
+import string
+def text_match_one(text):
+    try:
+        return text == ""abc""
+    except:
+        return False
+import itertools
+def text_match_one(text):
+    try:
+        return text == ""ac""
+    except:
+        return False
+import math
+def text_match_one(text):
+    try:
+        return text == ""dc",12.847324132919312,"['assert text_match_one(""ac"")==False' 'assert text_match_one(""dc"")==False'
+ 'assert text_match_one(""abba"")==True']"
+"import math
+def volume_cylinder(radius, height):
+    return math.pi * radius * radius * height
+
+Write",1.2233479022979736,"['assert math.isclose(volume_cylinder(10,5), 1570.7500000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,5), 251.32000000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,10), 502.64000000000004, rel_tol=0.001)']"
+"assert not text_starta_endb(""bbbbdd"")
+assert",0.7158558368682861,"['assert text_starta_endb(""aabbbb"")'
+ 'assert not text_starta_endb(""aabAbbbc"")'
+ 'assert not text_starta_endb(""accddbbjjj"")']"
+assert,0.09902024269104,"['assert is_lower(""InValid"") == ""invalid""'
+ 'assert is_lower(""TruE"") == ""true""'
+ 'assert is_lower(""SenTenCE"") == ""sentence""']"
+"import string
+def split_string(s):
+    return s.split()
+
+Write",0.8970463275909424,"[""assert split('python') == ['p','y','t','h','o','n']""
+ ""assert split('Name') == ['N','a','m','e']""
+ ""assert split('program') == ['p','r','o','g','r','a','m']""]"
+"assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+import numpy as np
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+import itertools
+
+def sum_Of_Subarray_Prod(lst):
+    res = 0
+    for i in range(len(lst)):
+        res += lst[i] * (i + 1)
+    return res
+
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+import numpy as np
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 120
+import itertools
+
+def sum_Of_Subarray_Prod(lst):
+    res = 0
+    for i in range(len(lst)):
+        res += lst[i] * (i + 1)
+    return res
+
+assert sum_Of_Subarray_Prod([1,2,3,4,5]) == 12",13.007924556732178,"['assert sum_Of_Subarray_Prod([1,2,3]) == 20'
+ 'assert sum_Of_Subarray_Prod([1,2]) == 5'
+ 'assert sum_Of_Subarray_Prod([1,2,3,4]) == 84']"
+"import itertools
+def sort_sublists(list_of_lists):
+   result = []
+   for sublist in list_of_lists:
+        result.append(sublist)
+   return result
+assert sort_sublists([['a','b'],['c','d'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['f', 'e']]
+assert sort_sublists([['a','b'],['c','d'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['f', 'e']]
+assert",6.365175008773804,"[""assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]""
+ ""assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]""
+ ""assert sort_sublists([['a','b'],['d','c'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]""]"
+print,0.0973858833312988,"['assert amicable_numbers_sum(999)==504'
+ 'assert amicable_numbers_sum(9999)==31626'
+ 'assert amicable_numbers_sum(99)==0']"
+"import numpy as np
+def nth_nums(nums,n):
+    result = []
+    for num in nums:
+        result.append(num**n)
+    return result
+assert nth_nums([1,2,3,4,5,6,7,8,9,10],2)==[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+assert nth_nums([10,20,30],3)==([1000, 8000, 27000])
+assert nth_nums([12,15],5)==([248832, 759375])
+import numpy as np
+def nth_nums(nums,n):
+    result = []
+    for num in nums:
+        result.append(num**n)
+    return result
+assert nth_nums([1,2,3,4,5,6,7,8,9,10],2)==[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+assert",11.459428787231444,"['assert nth_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],2)==[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]'
+ 'assert nth_nums([10,20,30],3)==([1000, 8000, 27000])'
+ 'assert nth_nums([12,15],5)==([248832, 759375])']"
+print,0.0966992378234863,"['assert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21'
+ 'assert recursive_list_sum(([7, 10, [15,14],[19,41]]))==106'
+ 'assert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210']"
+"def remove_whitespaces(s):
+    return s.replace("" "", """")
+
+Write",1.0704443454742432,"[""assert remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'""
+ ""assert remove_whitespaces(' Google    Dart ') == 'GoogleDart'""
+ ""assert remove_whitespaces(' iOS    Swift ') == 'iOSSwift'""]"
+"def odd_num_sum(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    if n == 3:
+        return 3
+    if n == 4:
+        return 4
+    else:
+        return n
+assert",3.8888418674468994,"['assert odd_num_sum(2) == 82' 'assert odd_num_sum(3) == 707'
+ 'assert odd_num_sum(4) == 3108']"
+"import numpy as np
+def sort_tuples_by_subject_marks(tuples):
+    return sorted(tuples, key=lambda x: x[1])
+assert",1.5466852188110352,"[""assert subject_marks([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]""
+ ""assert subject_marks([('Telugu',49),('Hindhi',54),('Social',33)])==([('Social',33),('Telugu',49),('Hindhi',54)])""
+ ""assert subject_marks([('Physics',96),('Chemistry',97),('Biology',45)])==([('Biology',45),('Physics',96),('Chemistry',97)])""]"
+"assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 3) == 100
+assert",2.1144497394561768,"['assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11'
+ 'assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 5) == 7'
+ 'assert max_sum_increasing_subseq([11, 15, 19, 21, 26, 28, 31], 7, 2, 4) == 71']"
+"assert count_char_position(""aBcDeF"") == 7
+assert count_char_position(""ABCDE"") == 1
+import string
+def count_char_position(s):
+    count = 0
+    for char in s:
+        if char in string.ascii_uppercase:
+            count += 1
+    return count
+
+Write",3.3419837951660156,"['assert count_char_position(""xbcefg"") == 2'
+ 'assert count_char_position(""ABcED"") == 3'
+ 'assert count_char_position(""AbgdeF"") == 5']"
+"import re
+
+def remove_all_spaces(s):
+    return re.sub(r'\s+', '', s)
+
+assert remove_all_spaces('python  program')==('pythonprogram')
+assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')
+assert remove_all_spaces('python                     program')==('pythonprogram')
+assert",3.4102444648742676,"[""assert remove_all_spaces('python  program')==('pythonprogram')""
+ ""assert remove_all_spaces('python   programming    language')==('pythonprogramminglanguage')""
+ ""assert remove_all_spaces('python                     program')==('pythonprogram')""
+ ""assert remove_all_spaces('   python                     program')=='pythonprogram'""]"
+"assert get_total_number_of_sequences(10, 4) == 4
+assert get_total_number_of_sequences(20, 4) == 22
+```
+```python
+def get_total_number_of_sequences(n,m):
+    if n == 0:
+        return 1
+    if m == 0:
+        return 1
+    return get_total_number_of_sequences(n-1,m) + get_total_number_of_sequences(n,m-1)
+
+def get_total_number_of_sequences(n,m):
+    if n == 0:
+        return 1
+    if m == 0:
+        return 1
+    return get_total_number_of_sequences(n-1,m) + get_total_number_of_sequences(n,m-1)
+assert",8.270307779312134,"['assert get_total_number_of_sequences(10, 4) == 4'
+ 'assert get_total_number_of_sequences(5, 2) == 6'
+ 'assert get_total_number_of_sequences(16, 3) == 84']"
+"import heapq as hq
+
+def move_zero(nums):
+    heap = hq.heapify(nums)
+    for i in range(len(nums)):
+        heap.heapify(nums[i])
+    return nums[0]
+
+write a python function to find the maximum of two numbers.
+assert max(10, 5) == 10
+assert max(5, 10) == 10
+assert max(10, 10) == 10
+assert max(10, 10) == 10
+import math
+
+def find_max(a, b):
+    return max(a, b)
+
+assert find_max(10, 5) == 10
+assert find_max(5, 10) == 10
+assert find_max(10, 10) == 10
+assert find_max(10, 10) == 10
+import math
+
+def find_max(a, b):
+    return max(a, b)
+
+print",12.611590385437012,"['assert move_zero([1,0,2,0,3,4]) == [1,2,3,4,0,0]'
+ 'assert move_zero([2,3,2,0,0,4,0,5,0]) == [2,3,2,4,5,0,0,0,0]'
+ 'assert move_zero([0,1,0,1,1]) == [1,1,1,0,0]']"
+assert,0.0970196723937988,"['assert is_woodall(383) == True' 'assert is_woodall(254) == False'
+ 'assert is_woodall(200) == False']"
+"assert sequence(4) == 3
+assert sequence(5) == 4
+assert sequence(6) == 5
+assert sequence(7) == 6
+assert sequence(8) == 7
+assert sequence(9) == 8
+assert sequence(10) == 9
+assert sequence(11) == 10
+assert sequence(12) == 11
+assert sequence(13) == 12
+assert sequence(14) == 13
+assert sequence(15) == 14
+assert sequence(16) == 15
+assert sequence(17) == 16
+assert sequence(18) == 17
+assert sequence(19) == 18
+assert sequence(20) == 19
+assert sequence(21) == 20
+assert sequence(22) == 21
+assert sequence(23) == 22
+assert sequence(24) == 23
+assert sequence(25) == 24
+assert sequence(26) == 25
+assert sequence(27) == 26
+assert",9.89566135406494,"['assert sequence(10) == 6' 'assert sequence(2) == 1'
+ 'assert sequence(3) == 2']"
+"def count_occurance(string):
+    count = 0
+    for char in string:
+        if char == 'st':
+            count += 1
+    return count
+
+Write",1.9156837463378904,"['assert count_occurance(""letstdlenstdporstd"") == 3'
+ 'assert count_occurance(""truststdsolensporsd"") == 1'
+ 'assert count_occurance(""makestdsostdworthit"") == 2'
+ 'assert count_occurance(""stds"") == 1' 'assert count_occurance("""") == 0']"
+"import heapq as hq
+
+def heap_queue_largest(nums,n):
+  heap = hq.heapify(nums)
+  largest_nums = []
+  for num in nums:
+    if len(heap) < n:
+      heapq.heappush(largest_nums, num)
+  return largest_nums
+
+Write",4.397977352142334,"['assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75]'
+ 'assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]']"
+"
+
+import time
+import random
+
+# Example usage:
+random.seed(42)
+nums = [random.randint(1, 100), random.randint(1, 100), random.randint(1, 100)]
+print",2.6568150520324707,"[""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},10)==False""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},12)==True""
+ ""assert check_value({'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12},5)==False""]"
+"import heapq as hq
+
+def find_sum(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums[0] + largest_nums[1]
+
+Write",2.468444347381592,"['assert find_sum([1,2,3,1,1,4,5,6]) == 21'
+ 'assert find_sum([1,10,9,4,2,10,10,45,4]) == 71'
+ 'assert find_sum([12,10,9,45,2,10,10,45,10]) == 78']"
+"assert square_Sum(5) == 31
+assert square_Sum(6) == 189
+assert square_Sum(7) == 147
+assert square_Sum(8) == 129
+assert square_Sum(9) == 108
+assert square_Sum(10) == 100
+assert square_Sum(11) == 121
+assert square_Sum(12) == 144
+assert square_Sum(13) == 169
+assert square_Sum(14) == 196
+assert square_Sum(15) == 225
+assert square_Sum(16) == 256
+assert square_Sum(17) == 289
+assert square_Sum(18) == 324
+assert square_Sum(19) == 361
+assert square_Sum(20) == 384
+assert square_Sum(21) == 409
+assert square_Sum(22) == 441
+assert square_Sum(23) == 489
+assert square_Sum(24) == 504
+assert square_Sum(25) == 529
+assert square_Sum(26) == 561
+assert square_Sum(27) == 596
+assert square_Sum",14.046155214309692,"['assert square_Sum(2) == 10' 'assert square_Sum(3) == 35'
+ 'assert square_Sum(4) == 84']"
+"import math
+def average_tuple(tuple1,tuple2):
+    try:
+        result = math.sum(tuple1) / len(tuple1)
+        return result
+    except:
+        return 0
+assert",2.2251195907592773,"['assert average_tuple(((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)))==[30.5, 34.25, 27.0, 23.25]'
+ 'assert average_tuple(((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3)))== [25.5, -18.0, 3.75]'
+ 'assert average_tuple( ((100, 100, 100, 120), (300, 450, 560, 450), (810, 800, 390, 320), (10, 20, 30, 40)))==[305.0, 342.5, 270.0, 232.5]']"
+assert,0.0963740348815918,"['assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 7]'
+ 'assert extract_index_list([1, 1, 3, 4, 5, 6, 7],[0, 1, 2, 3, 4, 6, 5],[0, 1, 2, 3, 4, 6, 7])==[1, 6]'
+ 'assert extract_index_list([1, 1, 3, 4, 6, 5, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[1, 5]'
+ 'assert extract_index_list([1, 2, 3, 4, 6, 6, 6],[0, 1, 2, 3, 4, 5, 7],[0, 1, 2, 3, 4, 5, 7])==[]']"
+"import numpy as np
+assert max_Abs_Diff((1,2,3,4,5,6)) == 5
+assert",1.9083306789398191,"['assert max_Abs_Diff((2,1,5,3)) == 4'
+ 'assert max_Abs_Diff((9,3,2,5,1)) == 8'
+ 'assert max_Abs_Diff((3,2,1)) == 2']"
+"assert convert(1.0, 0.0) == (1.0, 0.0)
+assert",1.0300507545471191,"['assert convert(1) == (1.0, 0.0)' 'assert convert(4) == (4.0,0.0)'
+ 'assert convert(5) == (5.0,0.0)']"
+"assert remove_lowercase(""abc"")==('abc')
+def remove_lowercase(s):
+    res = []
+    for i in range(len(s)):
+        if s[i].islower():
+            res.append(s[i])
+    return res
+assert",2.478076457977295,"['assert remove_lowercase(""PYTHon"")==(\'PYTH\')'
+ 'assert remove_lowercase(""FInD"")==(\'FID\')'
+ 'assert remove_lowercase(""STRinG"")==(\'STRG\')']"
+"import itertools
+def multiple_to_single(list_):
+    return list_[0]
+assert",1.1014304161071775,"['assert multiple_to_single([11, 33, 50])==113350'
+ 'assert multiple_to_single([-1,2,3,4,5,6])==-123456'
+ 'assert multiple_to_single([10,15,20,25])==10152025']"
+"import itertools
+def union_elements(tuple1, tuple2):
+    return list(itertools.product(tuple1, tuple2))
+
+Write",1.3016092777252195,"['assert union_elements((3, 4, 5, 6),(5, 7, 4, 10) ) == (3, 4, 5, 6, 7, 10)'
+ 'assert union_elements((1, 2, 3, 4),(3, 4, 5, 6) ) == (1, 2, 3, 4, 5, 6)'
+ 'assert union_elements((11, 12, 13, 14),(13, 15, 16, 17) ) == (11, 12, 13, 14, 15, 16, 17)']"
+"assert sumofFactors(10) == 4
+assert",0.5736923217773438,"['assert sumofFactors(18) == 26' 'assert sumofFactors(30) == 48'
+ 'assert sumofFactors(6) == 8']"
+"def all_Characters_Same(s):
+    return all(c in s for c in s)
+
+Write",2.078683614730835,"['assert all_Characters_Same(""python"") == False'
+ 'assert all_Characters_Same(""aaa"") == True'
+ 'assert all_Characters_Same(""data"") == False']"
+"assert count_Pairs([1,2,3,4,5,6],6) == 15
+import heapq as hq
+
+def count_Pairs(nums,n):
+  count = 0
+  for i in range(n):
+    for j in range(i + 1, n):
+      if nums[i] != nums[j]:
+        count += 1
+  return count
+
+assert count_Pairs([1,2,1],3) == 2
+assert count_Pairs([1,1,1,1],4) == 0
+assert count_Pairs([1,2,3,4,5],5) == 10
+assert count_Pairs([1,2,3,4,5,6],6) == 15
+import heapq as hq
+
+def count_Pairs(nums,n):
+  count = 0
+  for i in range(n):
+    for j in range(i + 1, n):
+      if nums[i] != nums[j]:
+        count += 1
+  return count
+
+assert count_Pairs([1,2,1],3) == 2
+assert count_Pairs([1,1,1,1],4) == 0
+assert count_Pairs([1,2,3,4,5],5) == 10
+assert count_Pairs([1,2,3,4,5,6],6) == 1",12.759532690048218,"['assert count_Pairs([1,2,1],3) == 2'
+ 'assert count_Pairs([1,1,1,1],4) == 0'
+ 'assert count_Pairs([1,2,3,4,5],5) == 10']"
+"import string
+def find_adverbs(string):
+  return string.find(""ly"")
+assert",1.0813665390014648,"['assert find_adverbs(""Clearly, he has no excuse for such behavior."") == \'0-7: Clearly\''
+ 'assert find_adverbs(""Please handle the situation carefuly"") == \'28-36: carefuly\''
+ 'assert find_adverbs(""Complete the task quickly"") == \'18-25: quickly\'']"
+"import re
+def find_lists(list_of_lists):
+    return len(list_of_lists)
+
+assert find_lists([1, 2, 3, 4]) == 4
+assert find_lists([1, 2, 3, 4]) == 3
+assert find_lists([1, 2, 3, 4]) == 2
+import re
+def find_lists(list_of_lists):
+    return len(list_of_lists)
+
+print",6.389523267745972,"['assert find_lists(([1, 2, 3, 4], [5, 6, 7, 8])) == 2'
+ 'assert find_lists(([1, 2], [3, 4], [5, 6]))  == 3'
+ 'assert find_lists(([9, 8, 7, 6, 5, 4, 3, 2, 1])) == 1']"
+"import numpy, scipy
+def is_Sub_Array(list1, list2):
+    try:
+        if list1 == list2:
+            return True
+        else:
+            return False
+    except:
+        return False
+
+Write",2.196911096572876,"['assert is_Sub_Array([1,4,3,5],[1,2]) == False'
+ 'assert is_Sub_Array([1,2,1],[1,2,1]) == True'
+ 'assert is_Sub_Array([1,0,2,2],[2,2,0]) ==False']"
+"def bell_number(n):
+   if n == 0:
+      return 1
+   if n == 1:
+      return 1
+   if n == 2:
+      return 2
+   if n == 3:
+      return 3
+   if n == 4:
+      return 5
+   if n == 5:
+      return 8
+   if n == 6:
+      return 13
+   if n == 7:
+      return 21
+   if n == 8:
+      return 34
+   if n == 9:
+      return 55
+   if n == 10:
+      return 89
+   if n == 11:
+      return 144
+   if n == 12:
+      return 233
+   return 0
+
+assert bell_number(2)==2
+assert bell_number(10)==115975
+assert bell_number(56)==6775685320645824322581483068371419745979053216268760300
+def bell_number(n):
+   if n == 0:
+      return 1
+   if n == 1:
+      return 1
+   if n ==",13.619937181472778,"['assert bell_number(2)==2' 'assert bell_number(10)==115975'
+ 'assert bell_number(56)==6775685320645824322581483068371419745979053216268760300']"
+"assert remove_dirty_chars(""hello world"", ""world"") == 'hello'
+import re
+def remove_dirty_chars(str1, str2):
+    new_str = re.sub(r'([a-zA-Z0-9]+)', '', str1)
+    return new_str
+assert remove_dirty_chars(""hello world"", ""world"") == 'hello'
+assert",3.738043546676636,"['assert remove_dirty_chars(""probasscurve"", ""pros"") == \'bacuve\''
+ 'assert remove_dirty_chars(""digitalindia"", ""talent"") == \'digiidi\''
+ 'assert remove_dirty_chars(""exoticmiles"", ""toxic"") == \'emles\'']"
+"import string
+def new_tuple(s,l):
+  new_s = s.replace("" "", """")
+  new_l = l.replace("" "", """")
+  return new_s + new_l
+assert",2.219998598098755,"['assert new_tuple([""WEB"", ""is""], ""best"") == (\'WEB\', \'is\', \'best\')'
+ 'assert new_tuple([""We"", ""are""], ""Developers"") == (\'We\', \'are\', \'Developers\')'
+ 'assert new_tuple([""Part"", ""is""], ""Wrong"") == (\'Part\', \'is\', \'Wrong\')']"
+"def check_type(x):
+    if x == 0:
+        return True
+    return isinstance(x, (int, float))
+assert check_type((5, 6, 7, 3, 5, 6) ) == True
+assert",2.8007941246032715,"['assert check_type((5, 6, 7, 3, 5, 6) ) == True'
+ 'assert check_type((1, 2, ""4"") ) == False'
+ 'assert check_type((3, 2, 1, 4, 5) ) == True']"
+"assert check_expression(""{()}[{}
+
+def check_expression(expression):
+  stack = []
+  for char in expression:
+    if char in ""([{"":
+      stack.append(char)
+    elif char in "")]}"":
+      if not stack:
+        return False
+      stack.pop()
+    else:
+      return False
+  return not stack
+
+Write",3.5467381477355957,"['assert check_expression(""{()}[{}]"") == True'
+ 'assert check_expression(""{()}[{]"") == False'
+ 'assert check_expression(""{()}[{}][]({})"") == True']"
+"assert check_none((5, 6, 7, 8, None)) == True
+def check_none(tup):
+    for tup in tup:
+        if tup is None:
+            return True
+    return False
+
+Write",2.8446171283721924,"['assert check_none((10, 4, 5, 6, None)) == True'
+ 'assert check_none((7, 8, 9, 11, 14)) == False'
+ 'assert check_none((1, 2, 3, 4, None)) == True']"
+"import collections
+def remove_duplicates(list_of_lists):
+    return list(set(list_of_lists))
+
+Write",1.3869078159332275,"['assert two_unique_nums([1,2,3,2,3,4,5]) == [1, 4, 5]'
+ 'assert two_unique_nums([1,2,3,2,4,5]) == [1, 3, 4, 5]'
+ 'assert two_unique_nums([1,2,3,4,5]) == [1, 2, 3, 4, 5]']"
+"assert min_Jumps((11,14),0)==0
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),0)==0
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),0)==1
+assert min_Jumps((11,14),11)==1
+assert min_Jumps((11,14),0)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert min_Jumps((11,14),11)==0
+assert",12.798225164413452,"['assert min_Jumps((3,4),11)==3.5' 'assert min_Jumps((3,4),0)==0'
+ 'assert min_Jumps((11,14),11)==1']"
+"assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],4))==set([100,90,80,70,60])
+import heapq as hq
+
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums
+
+Write",5.474294900894165,"['assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],2))==set([100,90])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],5))==set([100,90,80,70,60])'
+ 'assert set(larg_nnum([10, 20, 50, 70, 90, 20, 50, 40, 60, 80, 100],3))==set([100,90,80])']"
+"import itertools
+def divisible_by_digits(n, a):
+    result = []
+    for i in range(1, n):
+        if n % i == 0:
+            result.append(i)
+    return result
+
+Write",2.323091745376587,"['assert divisible_by_digits(1,22)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]'
+ 'assert divisible_by_digits(1,15)==[1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15]'
+ 'assert divisible_by_digits(20,25)==[22, 24]']"
+"import string
+def replace_spaces(s):
+  return s.replace("" "", '%20')
+
+Write",1.1141119003295898,"['assert replace_spaces(""My Name is Dawood"") == \'My%20Name%20is%20Dawood\''
+ 'assert replace_spaces(""I am a Programmer"") == \'I%20am%20a%20Programmer\''
+ 'assert replace_spaces(""I love Coding"") == \'I%20love%20Coding\'']"
+"assert sample_nam([""abc"", ""def"", ""ghi""])==0
+import re
+def sum_lengths_of_names(names):
+s = re.findall(r""\w+"", names)
+print(s)
+assert s == [""abc"", ""def"", ""ghi""]
+assert s == [""abcd"", ""Python"", ""abba"", ""aba""]
+import re
+def sum_lengths_of_names(names):
+s = re.findall(r""\w+"", names)
+print(s)
+assert s == [""abc"", ""def"", ""ghi""]
+assert s == [""abcd"", ""Python"", ""abba"", ""aba""]
+import re
+def sum_lengths_of_names(names):
+s = re.findall(r""\w+"", names)
+print(s)
+assert s == [""abc"", ""def"", ""ghi""]
+assert s == [""abcd"", ""Python"", ""abba"", ""aba""]
+import re
+def sum_lengths_of_names(names):
+s = re.findall(r""\w+"", names)
+print(s)
+assert s == [""abc"", ""def"", ""ghi""]
+assert s == [""abcd"", ""Python"", ""abba"", ""aba""]
+import re
+def sum_lengths_of_names(names):
+s = re.findall(r""\w+"", names)
+print(s)
+assert s == [""abc"", ""def"", ""ghi""]
+assert s == [""abcd"", ""Python"", """,13.54804277420044,"[""assert sample_nam(['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith'])==16""
+ 'assert sample_nam([""php"", ""res"", ""Python"", ""abcd"", ""Java"", ""aaa""])==10'
+ 'assert sample_nam([""abcd"", ""Python"", ""abba"", ""aba""])==6']"
+"import math
+def multiply_num(a,b):
+    return a * b
+assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)
+assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)
+import math
+def multiply_num(a,b):
+    return a * b
+assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)
+assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)
+assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)
+import math
+def multiply_num(a,b):
+    return a * b
+assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2",13.643189191818236,"['assert math.isclose(multiply_num((8, 2, 3, -1, 7)), -67.2, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((-10,-20,-30)), -2000.0, rel_tol=0.001)'
+ 'assert math.isclose(multiply_num((19,15,18)), 1710.0, rel_tol=0.001)']"
+"assert sum(2,3) == 1
+import math
+def sum_of_common_divisors(a,b):
+    return math.gcd(a,b)
+
+assert sum_of_common_divisors(10, 15) == 3
+assert sum_of_common_divisors(100, 150) == 93
+assert sum_of_common_divisors(4,6) == 3
+assert sum_of_common_divisors(2,3) == 1
+assert",5.867985248565674,"['assert sum(10,15) == 6' 'assert sum(100,150) == 93'
+ 'assert sum(4,6) == 3']"
+"assert cube_Sum(5) == 120
+assert cube_Sum(6) == 216
+assert cube_Sum(7) == 343
+assert cube_Sum(8) == 480
+assert cube_Sum(9) == 648
+assert cube_Sum(10) == 1000
+assert",4.013545036315918,"['assert cube_Sum(2) == 72' 'assert cube_Sum(3) == 288'
+ 'assert cube_Sum(4) == 800']"
+assert,0.0983498096466064,"['assert max_occurrences([2,3,8,4,7,9,8,2,6,5,1,6,1,2,3,2,4,6,9,1,2])==2'
+ 'assert max_occurrences([2,3,8,4,7,9,8,7,9,15,14,10,12,13,16,18])==8'
+ 'assert max_occurrences([10,20,20,30,40,90,80,50,30,20,50,10])==20']"
+"import math
+def closest_num(n):
+    return min(n, math.floor(n/2))
+
+Write",1.4774584770202637,"['assert closest_num(11) == 10' 'assert closest_num(7) == 6'
+ 'assert closest_num(12) == 11']"
+"import heapq as hq
+def colon_tuplex(tuplex):
+    return tuplex[0]
+  assert",1.3070390224456787,"['assert colon_tuplex((""HELLO"", 5, [], True) ,2,50)==(""HELLO"", 5, [50], True)'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,100)==((""HELLO"", 5, [100],True))'
+ 'assert colon_tuplex((""HELLO"", 5, [], True) ,2,500)==(""HELLO"", 5, [500], True)']"
+"import itertools
+def sort_sublists(list_of_lists):
+    return sorted(list_of_lists)
+assert",1.3777823448181152,"['assert sort_sublists(([""green"", ""orange""], [""black"", ""white""], [""white"", ""black"", ""orange""]))==[[\'green\', \'orange\'], [\'black\', \'white\'], [\'black\', \'orange\', \'white\']]'
+ 'assert sort_sublists((["" red "",""green"" ],[""blue "","" black""],["" orange"",""brown""]))==[[\' red \', \'green\'], [\' black\', \'blue \'], [\' orange\', \'brown\']]'
+ 'assert sort_sublists(([""zilver"",""gold""], [""magnesium"",""aluminium""], [""steel"", ""bronze""]))==[[\'gold\', \'zilver\'],[\'aluminium\', \'magnesium\'], [\'bronze\', \'steel\']]']"
+"assert list_tuple([1,2,3,4])==(1,2,3,4)
+import math
+def calculate_average(numbers):
+    try:
+        return sum(numbers) / len(numbers)
+    except Exception:
+        return 0
+assert calculate_average([1, 2, 3, 4]) == 3.0
+assert calculate_average([1, 2, 3, 4]) == 2.5
+assert calculate_average([1, 2, 3, 4]) == 2.0
+assert",5.342799663543701,"['assert list_tuple([5, 10, 7, 4, 15, 3])==(5, 10, 7, 4, 15, 3)'
+ 'assert list_tuple([2, 4, 5, 6, 2, 3, 4, 4, 7])==(2, 4, 5, 6, 2, 3, 4, 4, 7)'
+ 'assert list_tuple([58,44,56])==(58,44,56)']"
+"import heapq as hq
+
+def diff(list1, list2):
+    try:
+        return (list1[0] - list2[0])
+    except:
+        return 0
+assert",1.953474521636963,"['assert (Diff([10, 15, 20, 25, 30, 35, 40], [25, 40, 35])) == [10, 20, 30, 15]'
+ 'assert (Diff([1,2,3,4,5], [6,7,1])) == [2,3,4,5,6,7]'
+ 'assert (Diff([1,2,3], [6,7,1])) == [2,3,6,7]']"
+"import heapq as hq
+def frequency_lists(nums):
+    freq = {}
+    for num in nums:
+        freq[num] = freq.get(num, 0) + 1
+    return freq
+assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]]) == {1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1}
+assert frequency_lists([[1,2,3,4],[5,6,7,8],[9,10,11,12]]) == {1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1, 11: 1, 12: 1}
+import heapq as hq
+def frequency_lists(nums):
+    freq = {}
+    for num in nums:
+        freq[num] = freq.get(num, 0) + 1
+",12.847364902496338,"['assert frequency_lists([[1, 2, 3, 2], [4, 5, 6, 2], [7, 8, 9, 5]])=={1: 1, 2: 3, 3: 1, 4: 1, 5: 2, 6: 1, 7: 1, 8: 1, 9: 1}'
+ 'assert frequency_lists([[1,2,3,4],[5,6,7,8],[9,10,11,12]])=={1: 1, 2: 1, 3: 1, 4: 1, 5: 1, 6: 1, 7: 1, 8: 1, 9: 1,10:1,11:1,12:1}'
+ 'assert frequency_lists([[20,30,40,17],[18,16,14,13],[10,20,30,40]])=={20:2,30:2,40:2,17: 1,18:1, 16: 1,14: 1,13: 1, 10: 1}']"
+"def radian_degree(degrees):
+  degrees = degrees
+  return degrees * (180 / 90)
+assert radian_degree(90)==1.5707963267948966
+assert radian_degree(60)==1.0471975511965976
+assert radian_degree(120)==2.0943951023931953
+import math
+def radian_degree(degrees):
+  degrees = degrees
+  return degrees * (180 / 90)
+assert radian_degree(90)==1.5707963267948966
+assert radian_degree(60)==1.0471975511965976
+assert radian_degree(120)==2.0943951023931953
+import math
+def radian_degree(degrees):
+  degrees = degrees
+  return degrees * (180 / 90)
+assert radian_degree(90)==1.5707963267948966
+assert radian_degree(60)==1.0471975511965976
+assert radian_degree(120)==2.0943",12.67725110054016,"['assert radian_degree(90)==1.5707963267948966'
+ 'assert radian_degree(60)==1.0471975511965976'
+ 'assert radian_degree(120)==2.0943951023931953']"
+"import math
+def cube_nums(nums):
+    result = []
+    for num in nums:
+        result.append(num**3)
+    return result
+assert cube_nums([1,2,3,4,5,6,7,8,9,10])==[1,8,27,64,125,216,343,512,729,1000]
+assert cube_nums([10,20,30])==([1000, 8000, 27000])
+assert",6.069352865219116,"['assert cube_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])==[1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]'
+ 'assert cube_nums([10,20,30])==([1000, 8000, 27000])'
+ 'assert cube_nums([12,15])==([1728, 3375])']"
+"import itertools
+def unique_sublists(list_of_lists):
+    unique_lists = set()
+    for sublist in list_of_lists:
+        for i in range(len(sublist)):
+            unique_lists.add(sublist[i])
+    return unique_lists
+
+Write",2.924468517303467,"['assert unique_sublists([[1, 3], [5, 7], [1, 3], [13, 15, 17], [5, 7], [9, 11]] )=={(1, 3): 2, (5, 7): 2, (13, 15, 17): 1, (9, 11): 1}'
+ ""assert unique_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])=={('green', 'orange'): 2, ('black',): 1, ('white',): 1}""
+ 'assert unique_sublists([[10, 20, 30, 40], [60, 70, 50, 50], [90, 100, 200]])=={(10, 20, 30, 40): 1, (60, 70, 50, 50): 1, (90, 100, 200): 1}'
+ ""assert unique_sublists([['john']])=={('john',): 1}""]"
+"import re
+assert count_reverse_pairs([""abc"", ""def"", ""ghi""]) == 2
+def count_reverse_pairs(s):
+    return len(s)
+assert count_reverse_pairs(""abc"") == 2
+assert count_reverse_pairs(""def"") == 1
+assert",2.82865309715271,"['assert count_reverse_pairs([""julia"", ""best"", ""tseb"", ""for"", ""ailuj""])== 2'
+ 'assert count_reverse_pairs([""geeks"", ""best"", ""for"", ""skeeg""]) == 1'
+ 'assert count_reverse_pairs([""makes"", ""best"", ""sekam"", ""for"", ""rof""]) == 2']"
+"import heapq as hq
+
+def remove_elements(nums, target):
+    heap = hq.heapify(nums)
+    result = []
+    for num in nums:
+        if num != target:
+            result.append(num)
+    return result
+
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]
+assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]
+import heapq as hq
+
+def remove_elements(nums, target):
+    heap = hq.heapify(nums)
+    result = []
+    for num in nums:
+        if num != target:
+            result.append(num)
+    return",12.942480564117432,"['assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [2, 4, 6, 8]) == [1, 3, 5, 7, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [1, 3, 5, 7]) == [2, 4, 6, 8, 9, 10]'
+ 'assert remove_elements([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], [5, 7]) == [1, 2, 3, 4, 6, 8, 9, 10]']"
+"assert text_lowercase_underscore(""aab_c) is equal to False
+assert text_lowercase_underscore(""aab_cbbbc"") == True
+assert",1.6940224170684814,"['assert text_lowercase_underscore(""aab_cbbbc"")==(True)'
+ 'assert text_lowercase_underscore(""aab_Abbbc"")==(False)'
+ 'assert text_lowercase_underscore(""Aaab_abbbc"")==(False)']"
+assert,0.1005003452301025,"['assert left_rotate(16,2) == 64' 'assert left_rotate(10,2) == 40'
+ 'assert left_rotate(99,3) == 792' 'assert left_rotate(99,3) == 792'
+ 'assert left_rotate(0b0001,3) == 0b1000'
+ 'assert left_rotate(0b0101,3) == 0b101000'
+ 'assert left_rotate(0b11101,3) == 0b11101000']"
+"assert Extract([[1,2],[1,3]]) == [1,2]
+import numpy as np
+assert extract_first_element(np.array([1,2,3,4,5,6])) == [1, 2, 3, 4, 5, 6]
+import numpy as np
+assert extract_first_element(np.array([1,2,3,4,5,6])) == [1, 2, 3, 4, 5, 6]
+assert",5.669003486633301,"['assert Extract([[1, 2], [3, 4, 5], [6, 7, 8, 9]]) == [1, 3, 6]'
+ 'assert Extract([[1,2,3],[4, 5]]) == [1,4]'
+ 'assert Extract([[9,8,1],[1,2]]) == [9,1]']"
+"def word_len(s):
+    if len(s) == 0:
+        return 0
+    else:
+        return len(s)
+
+Write",1.62679123878479,"['assert word_len(""Hadoop"") == False' 'assert word_len(""great"") == True'
+ 'assert word_len(""structure"") == True']"
+"assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1
+assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,2) == 1
+import heapq as hq
+
+def find_Element(nums, index, elements, n):
+  for i in range(n):
+    if nums[index] == elements[i]:
+      return elements[i]
+  return None
+
+Write",5.200060844421387,"['assert find_Element([1,2,3,4,5],[[0,2],[0,3]],2,1) == 3'
+ 'assert find_Element([1,2,3,4],[[0,1],[0,2]],1,2) == 3'
+ 'assert find_Element([1,2,3,4,5,6],[[0,1],[0,2]],1,1) == 1']"
+"import numpy as np
+assert sum_list([1,2,3],[5,6,7])==[6,8,10]
+import numpy as np
+def sum_list(list_of_lists):
+  try:
+    return sum(list_of_lists)
+  except:
+    return 0
+```
+Write",3.475486993789673,"['assert sum_list([10,20,30],[15,25,35])==[25,45,65]'
+ 'assert sum_list([1,2,3],[5,6,7])==[6,8,10]'
+ 'assert sum_list([15,20,30],[15,45,75])==[30,65,105]']"
+"assert find_Max_Num([1,2,3,4,5,6,7,8,9]) == 9876541
+import heapq as hq
+
+def find_Max_Num(nums):
+    max_num = nums[0]
+    for num in nums:
+        if num > max_num:
+            max_num = num
+    return max_num
+assert",3.8703501224517822,"['assert find_Max_Num([1,2,3]) == 321'
+ 'assert find_Max_Num([4,5,6,1]) == 6541'
+ 'assert find_Max_Num([1,2,3,9]) == 9321']"
+"def dif_Square(n):
+    if n <= 1:
+        return True
+    for i in range(2, n):
+        if (n % i == 0):
+            return True
+    return False
+
+Write",2.2164523601531982,"['assert dif_Square(5) == True' 'assert dif_Square(10) == False'
+ 'assert dif_Square(15) == True']"
+print,0.1009492874145507,"[""assert count_integer([1,2,'abc',1.2]) == 2""
+ 'assert count_integer([1,2,3]) == 3'
+ 'assert count_integer([1,1.2,4,5.1]) == 2']"
+"assert find_kth([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 2) == 2
+assert find_kth([1, 2, 3, 4, 5], [1, 2, 3, 4, 5], 1) == 1
+assert",3.497021198272705,"['assert find_kth([2, 3, 6, 7, 9], [1, 4, 8, 10], 5) == 6'
+ 'assert find_kth([100, 112, 256, 349, 770], [72, 86, 113, 119, 265, 445, 892], 7) == 256'
+ 'assert find_kth([3, 4, 7, 8, 10], [2, 5, 9, 11], 6) == 8']"
+assert,0.0986974239349365,"['assert count_rotation([3,2,1]) == 1'
+ 'assert count_rotation([4,5,1,2,3]) == 2'
+ 'assert count_rotation([7,8,9,1,2,3]) == 3'
+ 'assert count_rotation([1,2,3]) == 0'
+ 'assert count_rotation([1,3,2]) == 2']"
+"def volume_cube(side):
+    return side**3
+assert volume_cube(3)== 27
+assert volume_cube(2)== 8
+assert volume_cube(5)== 125
+def volume_cube(side):
+    return side**3
+assert volume_cube(3)== 27
+assert volume_cube(2)== 8
+assert volume_cube(5)== 125
+print",3.9338297843933105,"['assert volume_cube(3)==27' 'assert volume_cube(2)==8'
+ 'assert volume_cube(5)==125']"
+"assert count_Occurrence((1,2,3,4,5,6),[1,2,3,4,5,6]) == 6
+import collections
+def count_Occurrence(data, num_elements):
+    count = 0
+    for element in data:
+        if element in num_elements:
+            count += 1
+    return count
+
+assert count_Occurrence(('a', 'a', 'c', 'b', 'd'),['a', 'b']) == 3
+assert count_Occurrence((1, 2, 3, 1, 4, 6, 7, 1, 4),[1, 4, 7]) == 6
+assert count_Occurrence((1,2,3,4,5,6),[1,2]) == 2
+assert count_Occurrence((1,2,3,4,5,6),[1,2,3,4,5,6]) == 6
+import collections
+def count_Occurrence(data, num_elements):
+    count = 0
+    for element in data:
+        if element in num_elements:
+            count += 1
+    return count
+assert",10.541853189468384,"[""assert count_Occurrence(('a', 'a', 'c', 'b', 'd'),['a', 'b'] ) == 3""
+ 'assert count_Occurrence((1, 2, 3, 1, 4, 6, 7, 1, 4),[1, 4, 7]) == 6'
+ 'assert count_Occurrence((1,2,3,4,5,6),[1,2]) == 2']"
+"assert find_even_pair([1, 2, 3, 4]) == 2
+assert find_even_pair([1, 2, 3, 4, 5]) == 3
+print",2.113967180252075,"['assert find_even_pair([5, 4, 7, 2, 1]) == 4'
+ 'assert find_even_pair([7, 2, 8, 1, 0, 5, 11]) == 9'
+ 'assert find_even_pair([1, 2, 3]) == 1']"
+"assert max_Product([1,2,3,4,5,6]) == (6,5)
+def max_Product(arr):
+   max_product = 0
+   for i in range(len(arr)):
+        for j in range(i, len(arr)):
+            max_product = max(max_product, arr[i] * arr[j])
+   return max_product
+assert max_Product([1,2,3,4,5,6]) == (6,5)
+assert max_Product([1,2,3,4,5,6]) == (6,5)
+assert max_Product([1,2,3,4,5,6]) == (6,5)
+print",7.615727186203003,"['assert max_Product([1,2,3,4,7,0,8,4]) == (7,8)'
+ 'assert max_Product([0,-1,-2,-4,5,0,-6]) == (-4,-6)'
+ 'assert max_Product([1,2,3]) == (2,3)']"
+"assert centered_hexagonal_number(1) == 1
+import math
+def centered_hexagonal_number(n):
+    return math.sqrt(n) * (n * (n - 1) // 2)
+assert centered_hexagonal_number(10) == 271
+assert centered_hexagonal_number(2) == 7
+assert centered_hexagonal_number(9) == 217
+assert centered_hexagonal_number(1) == 1
+import math
+def centered_hexagonal_number(n):
+    return math.sqrt(n) * (n * (n - 1) // 2)
+assert centered_hexagonal_number(10) == 271
+assert centered_hexagonal_number(2) == 7
+assert centered_hexagonal_number(9) == 217
+assert",8.349870443344116,"['assert centered_hexagonal_number(10) == 271'
+ 'assert centered_hexagonal_number(2) == 7'
+ 'assert centered_hexagonal_number(9) == 217']"
+"import set as set_
+def flatten_list(list_of_lists):
+    return set(map(function, list_of_lists))
+
+Write",1.6944918632507324,"['assert set(extract_singly([(3, 4, 5), (4, 5, 7), (1, 4)])) == set([3, 4, 5, 7, 1])'
+ 'assert set(extract_singly([(1, 2, 3), (4, 2, 3), (7, 8)])) == set([1, 2, 3, 4, 7, 8])'
+ 'assert set(extract_singly([(7, 8, 9), (10, 11, 12), (10, 11)])) == set([7, 8, 9, 10, 11, 12])']"
+"assert tetrahedral_number(8) == 120
+assert tetrahedral_number(9) == 169
+assert tetrahedral_number(10) == 196
+```
+I'm having trouble with the provided test cases. They seem to be using some kinds of prime number values, which isn't consistent with the question. I want to find the smallest numbers from a list of numbers. 
+
+Here's a solution, using the heap queue algorithm. It's a good approach for finding the largest integers from a list of numbers.
+
+```python
+import heapq as hq
+
+def find_smallest_numbers(numbers):
+    """"""
+    Finds the smallest numbers from a list of numbers using the heap queue algorithm.
+    """"""
+    if not numbers:
+        return []
+
+    heap = hq.PriorityQueue()
+    heapq.heapify(heap)
+
+    for number in numbers:
+        heapq.heap_replace(heap, number)
+
+    smallest_numbers = []
+    for _ in range(len(numbers)):
+        smallest_numbers.append(heapq.heappop(heap))
+
+    return smallest_numbers
+
+# Example usage
+numbers = [25, 35, 22, 85, 14, 65, 75, 22, 58]
+smallest_numbers = find_smallest_numbers(numbers)
+print(smallest_numbers)
+```
+
+**Explanation",14.573057413101196,"['assert tetrahedral_number(5) == 35' 'assert tetrahedral_number(6) == 56'
+ 'assert tetrahedral_number(7) == 84']"
+"import heapq
+
+def find_min_diff(a, b):
+    if a == b:
+        return 0
+    else:
+        return min(a, b)
+assert find_min_diff((1, 2, 3, 4), 5) == 1
+assert find_min_diff((1, 2, 3, 4), 6) == 1
+assert find_min_diff((1, 2, 3, 4), 5) == 1
+assert find_min_diff((1, 2, 3, 4), 6) == 1
+import heapq
+def find_min_diff(a, b):
+    if a == b:
+        return 0
+    else:
+        return min(a, b)
+assert find_min_diff((1, 2, 3, 4), 5) == 1
+assert find_min_diff((1, 2, 3, 4), 6) == 1
+assert find_min_diff((1, 2, 3, 4), 5) == 1
+assert find_min_diff((1, 2, 3, 4), 6) == 1
+import heapq
+
+def find_min_diff(a, b):
+    if a == b:
+        return 0
+    else:
+        return min(a, b)
+",13.162815809249878,"['assert find_min_diff((1,5,3,19,18,25),6) == 1'
+ 'assert find_min_diff((4,3,2,6),4) == 1'
+ 'assert find_min_diff((30,5,20,9),4) == 4']"
+"import numpy as np
+def div_list(list1, list2):
+    return np.array(list1) / np.array(list2)
+assert",1.4618325233459473,"['assert div_list([4,5,6],[1, 2, 3])==[4.0,2.5,2.0]'
+ 'assert div_list([3,2],[1,4])==[3.0, 0.5]'
+ 'assert div_list([90,120],[50,70])==[1.8, 1.7142857142857142]']"
+"import heapq as hq
+
+def remove_nested(input_list):
+    try:
+        result = []
+        for item in input_list:
+            if isinstance(item, tuple):
+                result.append(item)
+            else:
+                result.append(item)
+        return result
+    except:
+        return []
+
+assert remove_nested((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)
+assert",5.26171088218689,"['assert remove_nested((1, 5, 7, (4, 6), 10)) == (1, 5, 7, 10)'
+ 'assert remove_nested((2, 6, 8, (5, 7), 11)) == (2, 6, 8, 11)'
+ 'assert remove_nested((3, 7, 9, (6, 8), 12)) == (3, 7, 9, 12)'
+ 'assert remove_nested((3, 7, 9, (6, 8), (5,12), 12)) == (3, 7, 9, 12)']"
+"import re
+
+def replace_spaces(s):
+    return s.replace(' ', '_')
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'
+import re
+
+def replace_spaces(s):
+    return s.replace(' ', '_')
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert replace_spaces('The_Avengers') == 'The Avengers'
+assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'
+import re
+
+def replace_spaces(s):
+    return s.replace(' ', '_')
+
+assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'
+assert",8.558502435684204,"[""assert replace_spaces('Jumanji The Jungle') == 'Jumanji_The_Jungle'""
+ ""assert replace_spaces('The_Avengers') == 'The Avengers'""
+ ""assert replace_spaces('Fast and Furious') == 'Fast_and_Furious'""]"
+"assert find_length(""1111111111"") == 5
+print",1.0671451091766355,"['assert find_length(""11000010001"") == 6'
+ 'assert find_length(""10111"") == 1'
+ 'assert find_length(""11011101100101"") == 2']"
+"def count_samepair(list1, list2):
+    count = 0
+    for i in range(len(list1)):
+        for j in range(len(list2)):
+            if list1[i] == list2[j]:
+                count += 1
+    return count
+assert",2.80399227142334,"['assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,9],[2,1,3,1,2,6,7,9])==3'
+ 'assert count_samepair([1,2,3,4,5,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==4'
+ 'assert count_samepair([1,2,3,4,2,6,7,8],[2,2,3,1,2,6,7,8],[2,1,3,1,2,6,7,8])==5']"
+"def test_duplicate(arr):
+    seen = set()
+    for num in arr:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False
+
+Write",1.9271628856658936,"['assert test_duplicate(([1,2,3,4,5]))==False'
+ 'assert test_duplicate(([1,2,3,4, 4]))==True'
+ 'assert test_duplicate([1,1,2,2,3,3,4,4,5])==True']"
+"import heapq as hq
+
+def sum_range_list(nums,start,end):
+  max_val = nums[start]
+  for i in range(start, end + 1):
+    max_val = max(max_val, nums[i])
+  return max_val
+
+Write",3.0099852085113525,"['assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 8, 10) == 29'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 5, 7) == 16'
+ 'assert sum_range_list([2,1,5,6,8,3,4,9,10,11,8,12], 7, 10) == 38']"
+"import re
+
+def add_string(str, pattern):
+s = str(str)
+result = re.findall(pattern, s)
+assert result == ['string5', 'string6', 'string7', 'string8']
+assert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']
+assert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']
+import re
+
+def add_string(str, pattern):
+s = str(str)
+result = re.findall(pattern, s)
+assert result == ['string5', 'string6', 'string7', 'string8']
+assert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']
+assert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']
+import re
+
+def add_string(str, pattern):s = str(str)
+result = re.findall(pattern, s)
+assert result == ['string5', 'string6', 'string7', 'string8']
+assert add_string([1,2,3,4],'temp{0}')==['temp",13.09138536453247,"[""assert add_string([1,2,3,4],'temp{0}')==['temp1', 'temp2', 'temp3', 'temp4']""
+ ""assert add_string(['a','b','c','d'], 'python{0}')==[ 'pythona', 'pythonb', 'pythonc', 'pythond']""
+ ""assert add_string([5,6,7,8],'string{0}')==['string5', 'string6', 'string7', 'string8']""]"
+"import numpy as np
+def positive_count(numbers):
+  return np.sum(numbers)
+
+Write",1.1387689113616943,"['assert positive_count([0, 1, 2, -1, -5, 6, 0, -3, -2, 3, 4, 6, 8])==0.54'
+ 'assert positive_count([2, 1, 2, -1, -5, 6, 4, -3, -2, 3, 4, 6, 8])==0.69'
+ 'assert positive_count([2, 4, -6, -9, 11, -12, 14, -5, 17])==0.56']"
+"assert count_vowels('1234567890') == 0
+import re
+assert count_vowels('1234567890') == 0
+def count_vowels(s):
+    vowels = set('a' <= s.lower() <= 'z')
+    return len(vowels)
+
+Write",4.159108638763428,"[""assert count_vowels('bestinstareels') == 7""
+ ""assert count_vowels('partofthejourneyistheend') == 12""
+ ""assert count_vowels('amazonprime') == 5""]"
+"import heapq
+
+def max_sum(nums):
+    try:
+        return heapq.nlargest(len(nums), nums)
+    except:
+        return 0
+assert",2.278538227081299,"['assert max_sum([1, 15, 51, 45, 33, 100, 12, 18, 9]) == 194'
+ 'assert max_sum([80, 60, 30, 40, 20, 10]) == 210'
+ 'assert max_sum([2, 3 ,14, 16, 21, 23, 29, 30]) == 138']"
+"assert kth_element([15,22,27,34,41], 5) == 34
+assert",1.331385612487793,"['assert kth_element([12,3,5,7,19], 2) == 3'
+ 'assert kth_element([17,24,8,23], 3) == 8'
+ 'assert kth_element([16,21,25,36,4], 4) == 36']"
+"import random
+def random_element(list):
+    return random.choice(list)
+assert random_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,1)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']
+assert",4.063143253326416,"[""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,0)==['Greyson Fulton', 'Brady Kent', 'Wyatt Knott', 'Beau Turnbull']""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)] ,2)==[99, 96, 94, 98]""
+ ""assert extract_nth_element([('Greyson Fulton', 98, 99), ('Brady Kent', 97, 96), ('Wyatt Knott', 91, 94), ('Beau Turnbull', 94, 98)],1)==[98, 97, 91, 94]""]"
+"import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+assert circle_circumference(5) == 25.132
+assert circle_circumference(10) == 62.830000000000005
+assert circle_circumference(4) == 25.132
+import math
+def circle_circumference(radius):
+    return 2 * math.pi * radius
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+assert calculate_area(5) == 25.132
+assert calculate_area(10) == 62.830000000000005
+assert calculate_area(4) == 25.132
+import math
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate_area(radius):
+    return math.pi * radius**2
+
+def calculate",14.052417278289797,"['assert math.isclose(circle_circumference(10), 62.830000000000005, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(5), 31.415000000000003, rel_tol=0.001)'
+ 'assert math.isclose(circle_circumference(4), 25.132, rel_tol=0.001)']"
+"def maximum(a,b):
+    if a > b:
+        return a
+    else:
+        return b
+assert maximum(5, 10) == 10
+assert maximum(-1, -2) == -1
+assert maximum(9, 7) == 9
+def count_elements(nums):
+    count = 0
+    for num in nums:
+        count += 1
+    return count
+assert",4.384685277938843,"['assert maximum(5,10) == 10' 'assert maximum(-1,-2) == -1'
+ 'assert maximum(9,7) == 9']"
+print,0.0972166061401367,"['assert diff_even_odd([1,3,5,7,4,1,6,8])==3'
+ 'assert diff_even_odd([1,2,3,4,5,6,7,8,9,10])==1'
+ 'assert diff_even_odd([1,5,7,9,10])==9']"
+"assert text_match_one(""abc"")==False
+assert",0.5366015434265137,"['assert text_match_one(""ac"")==False' 'assert text_match_one(""dc"")==False'
+ 'assert text_match_one(""abba"")==True']"
+"import math
+def volume_cylinder(radius, height):
+    return math.pi * radius * radius * height
+assert math.isclose(volume_cylinder(10,5), 1570.7500000000002, rel_tol=0.001)
+assert math.isclose(volume_cylinder(4,5), 251.32000000000002, rel_tol=0.001)
+assert math.isclose(volume_cylinder(4,10), 502.64000000000004, rel_tol=0.001)
+import math
+def volume_cylinder(radius, height):
+    return math.pi * radius * radius * height
+assert math.isclose(volume_cylinder(10,5), 1570.7500000000002, rel_tol=0.001)
+assert math.isclose(volume_cylinder(4,5), 251.32000000000002, rel_tol=0.001)
+assert math.isclose(volume_cylinder(4,10), 502.64000000000004, rel_tol=0.0",12.662074565887451,"['assert math.isclose(volume_cylinder(10,5), 1570.7500000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,5), 251.32000000000002, rel_tol=0.001)'
+ 'assert math.isclose(volume_cylinder(4,10), 502.64000000000004, rel_tol=0.001)']"
+"assert not text_starta_endb(""ababaa"")
+assert not text_starta_endb(""abcbb"")
+def match_string(string):
+  if string == ""a"":
+    return ""a""
+  elif string == ""b"":
+    return ""b""
+  else:
+    return ""any""
+
+Write",3.2302379608154297,"['assert text_starta_endb(""aabbbb"")'
+ 'assert not text_starta_endb(""aabAbbbc"")'
+ 'assert not text_starta_endb(""accddbbjjj"")']"
+"assert is_lower(""IteS"") == ""it's""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower(""SnaNe"") == ""sane""
+assert is_lower",12.889034509658812,"['assert is_lower(""InValid"") == ""invalid""'
+ 'assert is_lower(""TruE"") == ""true""'
+ 'assert is_lower(""SenTenCE"") == ""sentence""']"
+"import string
+def split_string(s):
+    return s.split()
+
+assert split_string('python') == ['p', 'y', 't', 'h', 'o', 'n']
+assert split_string('Name') == ['N', 'a', 'm', 'e']
+assert split_string('program') == ['p', 'r', 'o', 'g', 'r', 'a', 'm']
+import string
+def split_string(s):
+    return s.split()
+
+assert split_string('python') == ['p', 'y', 't', 'h', 'o', 'n']
+assert split_string('Name') == ['N', 'a', 'm', 'e']
+assert split_string('program') == ['p', 'r', 'o', 'g', 'r', 'a', 'm']
+import string
+def split_string(s):
+    return s.split()
+
+assert split_string('python') == ['p', 'y', 't', 'h', 'o', 'n']
+assert",10.19080400466919,"[""assert split('python') == ['p','y','t','h','o','n']""
+ ""assert split('Name') == ['N','a','m','e']""
+ ""assert split('program') == ['p','r','o','g','r','a','m']""]"
+"assert sum_Of_Subarray_Prod([1,2,3,4]) == 84
+import itertools
+def sum_Of_Subarray_Prod(nums):
+    try:
+        return sum(nums)
+    except:
+        return 0
+
+Write",3.4390172958374023,"['assert sum_Of_Subarray_Prod([1,2,3]) == 20'
+ 'assert sum_Of_Subarray_Prod([1,2]) == 5'
+ 'assert sum_Of_Subarray_Prod([1,2,3,4]) == 84']"
+"import heapq as hq
+
+def sort_sublists(list_of_lists):
+  result = []
+  for sublist in list_of_lists:
+    result.append(heapq(sublist))
+  return result
+
+write a function to calculate the sum of the numbers in a list of lists.
+assert sum_of_lists( [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ] ) == 45
+assert sum_of_lists( [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ] ) == 45
+assert sum_of_lists( [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ] ) == 45
+import heapq as hq
+
+def sum_of_lists(list_of_lists):
+    total = 0
+    for sublist in list_of_lists:
+        total += sum(sublist)
+    return total
+
+write a function to find the time complexity of a given algorithm.
+assert time_complexity(1000) == O(n)
+assert time_complexity(1000) == O(n)
+assert",12.515931367874146,"[""assert sort_sublists([['green', 'orange'], ['black', 'white'], ['white', 'black', 'orange']])==[['green', 'orange'], ['black', 'white'], ['black', 'orange', 'white']]""
+ ""assert sort_sublists([['green', 'orange'], ['black'], ['green', 'orange'], ['white']])==[['green', 'orange'], ['black'], ['green', 'orange'], ['white']]""
+ ""assert sort_sublists([['a','b'],['d','c'],['g','h'] , ['f','e']])==[['a', 'b'], ['c', 'd'], ['g', 'h'], ['e', 'f']]""]"
+"assert amicable_numbers_sum(10000)==0
+assert amicable_numbers_sum(100000)==0
+assert amicable_numbers_sum(1000000)==0
+import math
+def amicable_numbers_sum(n):
+    if n <= 1:
+        return 0
+    sum_of_divisors = 0
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            sum_of_divisors += i
+    return sum_of_divisors
+assert amicable_numbers_sum(999)==0
+assert amicable_numbers_sum(9999)==0
+assert amicable_numbers_sum(99)==0
+assert amicable_numbers_sum(10000)==0
+assert amicable_numbers_sum(100000)==0
+assert",8.725826501846313,"['assert amicable_numbers_sum(999)==504'
+ 'assert amicable_numbers_sum(9999)==31626'
+ 'assert amicable_numbers_sum(99)==0']"
+"import numpy as np
+def nth_nums(nums,n):
+    return np.power(nums, n)
+
+Write",1.2488222122192385,"['assert nth_nums([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],2)==[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]'
+ 'assert nth_nums([10,20,30],3)==([1000, 8000, 27000])'
+ 'assert nth_nums([12,15],5)==([248832, 759375])']"
+"```
+
+I'm trying to find the largest integers from a given list of numbers using heap queue algorithm.
+Assert that heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],3)==[85, 75, 65]
+assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],2)==[85, 75]
+assert heap_queue_largest( [25, 35, 22, 85, 14, 65, 75, 22, 58],5)==[85, 75, 65, 58, 35]
+import heapq as hq
+def heap_queue_largest(nums,n):
+  largest_nums = hq.nlargest(n, nums)
+  return largest_nums
+
+Write",10.256182432174684,"['assert recursive_list_sum(([1, 2, [3,4],[5,6]]))==21'
+ 'assert recursive_list_sum(([7, 10, [15,14],[19,41]]))==106'
+ 'assert recursive_list_sum(([10, 20, [30,40],[50,60]]))==210']"
+"import string
+def remove_whitespaces(s):
+    return s.strip()
+
+Write",1.0336973667144775,"[""assert remove_whitespaces(' Google    Flutter ') == 'GoogleFlutter'""
+ ""assert remove_whitespaces(' Google    Dart ') == 'GoogleDart'""
+ ""assert remove_whitespaces(' iOS    Swift ') == 'iOSSwift'""]"
+"assert odd_num_sum(5) == 1537
+import math
+def odd_num_sum(n):
+    sum = 0
+    for i in range(1, n):
+        sum += (2 * i) ** 2
+    return sum
+assert odd_num_sum(2) == 82
+assert odd_num_sum(3) == 707
+assert odd_num_sum(4) == 3108
+assert odd_num_sum(5) == 1537
+import math
+def odd_num_sum(n):
+    sum = 0
+    for i in range(1, n):
+        sum += (2 * i) ** 2
+    return sum
+assert odd_num_sum(2) == 82
+assert odd_num_sum(3) == 707
+assert odd_num_sum(4) == 3108
+assert odd_num_sum(5) == 1537
+import math
+def odd_num_sum(n):
+    sum = 0
+    for i in range(1, n):
+        sum += (2 * i) ** 2
+    return sum
+assert odd_num_sum(2) == 82
+assert odd_num_sum(3) == 707
+assert",12.432741403579712,"['assert odd_num_sum(2) == 82' 'assert odd_num_sum(3) == 707'
+ 'assert odd_num_sum(4) == 3108']"
+"import heapq as hq
+
+def sort_tuples(tuples):
+    return sorted(tuples)
+
+assert subject_marks([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]
+assert subject_marks([('Telugu',49),('Hindhi',54),('Social',33)])==([('Social',33),('Telugu',49),('Hindhi',54)])
+assert subject_marks([('Physics',96),('Chemistry',97),('Biology',45)])==([('Biology',45),('Physics',96),('Chemistry',97)])
+import heapq as hq
+def sort_tuples(tuples):
+    return sorted(tuples)
+
+assert",8.134275674819946,"[""assert subject_marks([('English', 88), ('Science', 90), ('Maths', 97), ('Social sciences', 82)])==[('Social sciences', 82), ('English', 88), ('Science', 90), ('Maths', 97)]""
+ ""assert subject_marks([('Telugu',49),('Hindhi',54),('Social',33)])==([('Social',33),('Telugu',49),('Hindhi',54)])""
+ ""assert subject_marks([('Physics',96),('Chemistry',97),('Biology',45)])==([('Biology',45),('Physics',96),('Chemistry',97)])""]"
+"assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 3, 6) == 11
+assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 3, 5) == 11
+assert",3.859736204147339,"['assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 4, 6) == 11'
+ 'assert max_sum_increasing_subseq([1, 101, 2, 3, 100, 4, 5 ], 7, 2, 5) == 7'
+ 'assert max_sum_increasing_subseq([11, 15, 19, 21, 26, 28, 31], 7, 2, 4) == 71']"

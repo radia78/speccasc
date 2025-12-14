@@ -40,7 +40,7 @@ def extract_number(text):
     
     return None
 
-def clean_qa_response(response):
+def clean_response(response):
     """
     Cleans the response by removing artifacts.
     The user noted that LLM outputs might contain "Q:" and extra examples.
@@ -53,10 +53,21 @@ def clean_qa_response(response):
     # We should cut off everything after the last valid answer and before the next Q:
     # But simply splitting by \n might be too aggressive if the model uses newlines for formatting.
     
-    # Strategy:
+    # Strategy: (We exclude SQUAD_2 because it varies by model and it generally is more random)
     # 1. If we see "Q:" or "Question:", cut off there.
     if "Q:" in response:
         response = response.split("Q:")[0]
+
+    # 2. Exclusively for German-to-English translation 
+    if "German:" in response:
+        response = response.split("German:")[0]
+
+    # 3. Exclusively for SQUAD 2
+    if "Answer:" in response:
+        response = response.split("Answer:")[1].strip('\n').strip(' ').lower()
+
+    if "A:" in response:
+        response = response.split("A:")[1].strip('\n').strip(' ').lower()
     
     return response.strip()
 
@@ -66,20 +77,25 @@ def clean_mbpp_response(response):
     """
 
     # Detect for any stop strings and then remove them as necessary
-    for stop_str in MBPP_STOP_STRINGS:
-        if stop_str in response:
-            response = response.strip(stop_str)
+    if 'Write' in response:
+        response = response.split('Write')[0]
 
-    # It mind start yapping like crazy, so just find the match and group and strip!
-    program_cleaned_str = re.match(r'(?s).*?(?=\n[A-Z])', response)
-    return program_cleaned_str.group().strip()
+    if 'assert' in response:
+        response = response.split('assert')[0]
+
+    # The models start yapping like crazy so just find the match and group and strip!
+    match = re.match(r'(?s).*?(?=\n[A-Z])', response)
+    if match:
+        match.group().strip()
+    else:
+        return response
 
 def score_gsm8k(df, filename):
     correct = 0
     total = 0
     
     for i, row in df.iterrows():
-        response = clean_qa_response(str(row['response']))
+        response = clean_response(str(row['response']))
         ground_truth = str(row['answer'])
         
         pred = extract_number(response)
@@ -121,6 +137,31 @@ def score_cnndm(df, filename):
     print(f"Rouge-L: {results['rougeL']:.4f}")
     return results
 
+def score_squad2(df, filename):
+    print(f"Scoring SQUAD 2.0 for {filename}...")
+    f1 = evaluate.load('squad_v2')
+    predictions = []
+    references = []
+    for idx, row in df.iterrows():
+        predictions.append(
+            {
+                'id': str(idx),
+                'prediction_text': clean_response(str(row['response'])),
+                'no_answer_probability': 0.0 if len(eval(row['text'])) == 0 else 1.0
+            }
+        )
+        references.append(
+            {
+                'id': str(idx),
+                'answers': {'text': eval(row['text']), 'answer_start': eval(row['answer_start'])},
+            }
+        )
+    
+    results = f1.compute(predictions=predictions, references=references)
+    print(f"File: {filename}")
+    print(f"F1: {results['f1']:.4f}")
+    return results
+
 def score_wmt(df, filename):
     print(f"Scoring WMT for {filename}...")
     bleu = evaluate.load('sacrebleu')
@@ -149,8 +190,11 @@ def score_mbpp(df, filename):
     total = 0
     
     for _, row in df.iterrows():
-        response, test_cases = row['response'], list(row['test_cases'])
-        is_correct = run_program(response, test_cases)
+        response, test_cases = row['response'], eval(row['answer'].replace('\n', ','))
+        is_correct = run_program(
+            clean_mbpp_response(response), 
+            test_cases
+        )
         
         if is_correct:
             correct += 1
@@ -173,7 +217,7 @@ def score_file(csv_path):
         print(f"Error reading {csv_path}: {e}")
         return None
 
-    if 'answer' not in df.columns:
+    if 'answer' not in df.columns and 'squad' not in csv_path:
         print(f"Skipping {os.path.basename(csv_path)}: 'answer' column not found. Please re-run inference with the updated eval.py.")
         return None
 
@@ -183,17 +227,25 @@ def score_file(csv_path):
     if 'gsm8k' in filename.lower():
         result = score_gsm8k(df, filename)
         result['benchmark'] = 'gsm8k'
+
     elif 'cnn' in filename.lower():
         result = score_cnndm(df, filename)
         result['benchmark'] = 'cnn_dm'
+
     elif 'wmt' in filename.lower():
         result = score_wmt(df, filename)
         result['benchmark'] = 'wmt_de_en'
+
     elif 'mbpp' in filename.lower():
         result = score_mbpp(df, filename)
         result['benchmark'] = 'mbpp'
+    
+    elif 'squad' in filename.lower():
+        result = score_squad2(df, filename)
+        result['benchmark'] = 'squad_2'
+
     else:
-        print(f"Unknown benchmark for file: {filename}. Skipping. (Filename must contain 'gsm8k', 'cnn', or 'wmt')")
+        print(f"Unknown benchmark for file: {filename}. Skipping. (Filename must contain 'gsm8k', 'cnn', 'wmt', 'squad', or 'mbpp')")
         return None
         
     result['filename'] = filename
@@ -237,7 +289,7 @@ if __name__ == "__main__":
         summary_order = ['benchmark', 'filename']
         
         # Add primary metrics if they exist
-        for metric in ['accuracy', 'rougeL', 'score']:
+        for metric in ['accuracy', 'rougeL', 'score', 'f1']:
             if metric in summary_cols:
                 summary_order.append(metric)
                 
@@ -259,12 +311,14 @@ if __name__ == "__main__":
             # Reorder columns: benchmark, filename, then primary metric, then rest
             cols = bench_df.columns.tolist()
             primary_metric = None
-            if benchmark == 'gsm8k':
+            if benchmark in ['gsm8k', 'mbbpp']:
                 primary_metric = 'accuracy'
             elif benchmark == 'cnn_dm':
                 primary_metric = 'rougeL'
             elif benchmark == 'wmt_de_en':
                 primary_metric = 'score' # BLEU score key from sacrebleu
+            elif benchmark == 'squad_2':
+                primary_metric = 'f1'
             
             # Start with benchmark and filename
             new_order = ['benchmark', 'filename']

@@ -1,0 +1,501 @@
+response,wall_time,text,answer_start
+A: A: Besides,0.8974850177764893,"['sports', 'sports tourism', 'sports']","[92, 92, 92]"
+A: University of Chicago,0.2042438983917236,"['University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press']","[741, 741, 741, 741]"
+A: Encourage growth,0.2035598754882812,"['encourage', 'encourage growth', 'encourage']","[270, 270, 270]"
+A: The area in,0.3024492263793945,"['Quebec', 'Quebec', 'Quebec']","[468, 468, 468]"
+"Title: Chicago University
+",0.2230534553527832,"['University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools']","[138, 138, 138]"
+"A: mercury oxide
+
+",0.1979258060455322,"['mercuric oxide (HgO)', 'mercuric oxide', 'mercuric oxide', 'mercuric oxide (HgO)', 'mercuric oxide']","[122, 122, 122, 122, 122]"
+A: May 1,0.2013263702392578,"['are disturbed,', 'disturbed', 'are disturbed']","[97, 101, 97]"
+"A:
+",0.1968746185302734,"['10th century', '10th century', '10th century']","[153, 153, 153]"
+"A: China
+
+",0.159773588180542,"['non-native Chinese people', 'non-native Chinese people', 'non-native Chinese']","[41, 41, 41]"
+A: phlogiston,0.2012484073638916,"['phlogiston', 'phlogiston', 'phlogiston', 'phlogiston', 'phlogiston']","[237, 112, 112, 112, 112]"
+A: 40,0.2008638381958007,"['Gender', 'ranges from 53% in Botswana to -40% in Bahrain', 'Gender']","[30, 693, 30]"
+The size of the school,0.3777036666870117,"['$37.6 billion', '$37.6 billion', '$37.6 billion']","[548, 548, 548]"
+A: public health and,0.2027065753936767,"['free trade', 'free trade', 'free trade']","[1975, 1975, 1975]"
+"Answer:
+",0.0852329730987548,"['heat or a spark', 'oxygen', 'an ignition event', 'an ignition event, such as heat or a spark', 'an ignition event']","[195, 31, 168, 168, 168]"
+Choices: A. forest,0.3745503425598144,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+Choices: A. forest,0.3745503425598144,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+A: Miasma,0.2064297199249267,"['Miasma theory', 'Miasma theory.', 'Miasma theory']","[528, 528, 528]"
+Answer: Melbourne is the,0.2258956432342529,"['second-largest', 'second-largest', 'second-largest city']","[353, 353, 353]"
+A: handshake between parties,0.2095966339111328,"['connection-oriented operations. But X.25 does it at the network layer of the OSI Model. Frame Relay does it at level two, the data link layer', 'a handshake between the communicating parties before any user packets are transmitted', 'connection-oriented operations']","[34, 253, 34]"
+"A: cilia
+
+",0.1993322372436523,"['‘combs’ – groups of cilia', 'combs', 'the ‘combs’']","[264, 265, 260]"
+I think I have to,0.2594501972198486,"[""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", 'dominant colonial power', ""confirming Britain's position as the dominant colonial power in eastern North America""]","[504, 504, 504, 541, 504]"
+A: 75,0.238832950592041,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+A: 75,0.238832950592041,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+"Choices:
+A. economic",0.3798692226409912,"['economic', 'economic stagnation', 'economic']","[166, 166, 166]"
+"Answer:
+A: religious",0.2020871639251709,"['religious freedom', 'religious freedom in the Polish–Lithuanian Commonwealth', 'religious freedom']","[175, 175, 175]"
+A: cilia are,0.2012050151824951,"['method of locomotion', 'their main method of locomotion', 'locomotion']","[163, 152, 173]"
+"A: organic molecules
+
+",0.1999540328979492,"['spontaneous', 'spontaneous combustion', 'spontaneous', 'spontaneous', 'spontaneous combustion']","[726, 726, 726, 726, 726]"
+"A: Immunology
+
+",0.2011325359344482,"['Immunology', 'Immunology', 'Immunology']","[698, 698, 698]"
+"Answer:
+",0.0855355262756347,"['at the right bank of the Vistula', 'at the right bank of the Vistula, by the eastern border of Warsaw', 'by the eastern border']","[633, 633, 667]"
+"Choices:
+",0.3006255626678467,"['NFIL3', 'NFIL3', 'NFIL3']","[243, 243, 243]"
+A: Steymann,0.2015268802642822,"['Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie']","[1014, 1014, 1014]"
+Ozone shields the planet,0.2003712654113769,"['protective radiation shield', 'protective radiation shield', 'protective radiation shield', 'radiation shield', 'a protective radiation shield']","[375, 375, 375, 386, 373]"
+"A: elderly people
+
+",0.2065637111663818,"['because many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings']","[621, 629, 629]"
+A: 66,0.2035655975341797,"['66 million years ago', '515 million years ago', '66 million years ago']","[760, 226, 760]"
+"A: Southwest Fresno
+",0.2020552158355713,"['""West Side""', 'West Side', 'West Side']","[4, 5, 5]"
+A: article 3,0.1995925903320312,"['a customs union, and the principle of non-discrimination', 'a customs union', 'a customs union']","[64, 64, 64]"
+A: dichromate,0.2048695087432861,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[245, 245, 245, 245, 245]"
+A: dichromate,0.2048695087432861,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[0, 0, 0, 0, 0]"
+"Choices:
+A. ",0.3739101886749267,"['7,200', '7,200', '7,200']","[64, 64, 64]"
+"A: Savery
+
+",0.2019145488739013,"['Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont']","[135, 135, 135, 135]"
+A: 19,0.201167345046997,"['1979', '1979', '1979', '1979', '1979']","[550, 550, 550, 550, 550]"
+A: 19,0.201167345046997,"['1979', '1979', '1979', '1979', '1979']","[275, 275, 275, 275, 275]"
+The answer is: Earth,0.3793966770172119,"['mantle', 'mantle', 'mantle', ""The Earth's mantle"", 'mantle']","[508, 508, 508, 496, 508]"
+A: Bolinopsis,0.2001919746398925,"['smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae.', 'smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae', 'rotifers and mollusc and crustacean larvae']","[1556, 1556, 1589]"
+Title: University_of_Ch,0.3703570365905761,"['made a grade of A for all four years', 'made a grade of A for all four years, and on any other graduate who took twelve weeks additional study at the University of Chicago', 'made a grade of A for all four years', 'made a grade of A for all four years']","[796, 796, 796, 796]"
+Title: The answer is,0.2183184623718261,"['effectiveness of treatment regimens', 'effectiveness of treatment regimens', 'effectiveness of treatment regimens']","[73, 73, 73]"
+A: 8 February,0.1985538005828857,"['8 February 2007', 'On 8 February 2007', '8 February 2007']","[3, 0, 3]"
+In the field of computer,0.3356227874755859,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[59, 134, 134]"
+In the field of computer,0.3356227874755859,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[399, 399, 399]"
+"A: Burnet
+
+",0.1978576183319091,"['Frank Burnet', 'Frank Burnet', 'Frank Burnet']","[18, 18, 18]"
+"Answer: 8
+
+",0.2195205688476562,"['eight', 'eight', 'eight']","[172, 172, 172]"
+"Answer: 8
+
+",0.2195205688476562,"['eight', 'eight', 'eight']","[16, 16, 16]"
+"Answer: 8
+
+",0.2195205688476562,"['eight', 'eight', 'eight']","[343, 343, 343]"
+"Answer:
+",0.08500337600708,"['During the Second World War', 'Second World War', 'During the Second World War']","[97, 108, 97]"
+Title: The New Dawn,0.2192664146423339,"['Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman']","[103, 103, 103, 103, 103]"
+"A: sporting events
+
+",0.1994822025299072,"['sports', 'sports tourism', 'sports']","[92, 92, 92]"
+A: University of Chicago,0.2020497322082519,"['University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press']","[741, 741, 741, 741]"
+"A: Encourage
+
+",0.2001962661743164,"['encourage', 'encourage growth', 'encourage']","[270, 270, 270]"
+"A: Quebec
+
+",0.2012336254119873,"['Quebec', 'Quebec', 'Quebec']","[468, 468, 468]"
+Answer: Hyde Park Day,0.3732290267944336,"['University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools']","[138, 138, 138]"
+"A: mercury oxide
+
+",0.1997575759887695,"['mercuric oxide (HgO)', 'mercuric oxide', 'mercuric oxide', 'mercuric oxide (HgO)', 'mercuric oxide']","[122, 122, 122, 122, 122]"
+A: May 2,0.2031834125518798,"['are disturbed,', 'disturbed', 'are disturbed']","[97, 101, 97]"
+A: 10,0.2030093669891357,"['10th century', '10th century', '10th century']","[153, 153, 153]"
+"A: Mongols
+
+",0.2035918235778808,"['non-native Chinese people', 'non-native Chinese people', 'non-native Chinese']","[41, 41, 41]"
+Options: A. Ph,0.2455015182495117,"['phlogiston', 'phlogiston', 'phlogiston', 'phlogiston', 'phlogiston']","[237, 112, 112, 112, 112]"
+A: a gender pay,0.2025039196014404,"['Gender', 'ranges from 53% in Botswana to -40% in Bahrain', 'Gender']","[30, 693, 30]"
+A: $37,0.210961103439331,"['$37.6 billion', '$37.6 billion', '$37.6 billion']","[548, 548, 548]"
+A: The Treaties,0.2049899101257324,"['free trade', 'free trade', 'free trade']","[1975, 1975, 1975]"
+A: heat or spark,0.2015461921691894,"['heat or a spark', 'oxygen', 'an ignition event', 'an ignition event, such as heat or a spark', 'an ignition event']","[195, 31, 168, 168, 168]"
+"Choices:
+",0.3008418083190918,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+"Choices:
+",0.3008418083190918,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+A: Miasma,0.2011308670043945,"['Miasma theory', 'Miasma theory.', 'Miasma theory']","[528, 528, 528]"
+Answer: Melbourne is the,0.2217037677764892,"['second-largest', 'second-largest', 'second-largest city']","[353, 353, 353]"
+A: handshake between the,0.1979212760925293,"['connection-oriented operations. But X.25 does it at the network layer of the OSI Model. Frame Relay does it at level two, the data link layer', 'a handshake between the communicating parties before any user packets are transmitted', 'connection-oriented operations']","[34, 253, 34]"
+"A: cilia
+
+",0.1983616352081298,"['‘combs’ – groups of cilia', 'combs', 'the ‘combs’']","[264, 265, 260]"
+"A:
+
+",0.1235177516937255,"[""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", 'dominant colonial power', ""confirming Britain's position as the dominant colonial power in eastern North America""]","[504, 504, 504, 541, 504]"
+A: 10,0.2003839015960693,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+A: 10,0.2003839015960693,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+A: economic stagnation,0.1995971202850341,"['economic', 'economic stagnation', 'economic']","[166, 166, 166]"
+Options: A. religious,0.3810634613037109,"['religious freedom', 'religious freedom in the Polish–Lithuanian Commonwealth', 'religious freedom']","[175, 175, 175]"
+A: cilia are,0.2006914615631103,"['method of locomotion', 'their main method of locomotion', 'locomotion']","[163, 152, 173]"
+"A: organic molecules 
+
+",0.2396466732025146,"['spontaneous', 'spontaneous combustion', 'spontaneous', 'spontaneous', 'spontaneous combustion']","[726, 726, 726, 726, 726]"
+"A: immunology
+
+",0.3010153770446777,"['Immunology', 'Immunology', 'Immunology']","[698, 698, 698]"
+A: 75,0.2052297592163086,"['at the right bank of the Vistula', 'at the right bank of the Vistula, by the eastern border of Warsaw', 'by the eastern border']","[633, 633, 667]"
+Answer: NFIL3,0.2026021480560302,"['NFIL3', 'NFIL3', 'NFIL3']","[243, 243, 243]"
+"I don't know
+
+",0.3984720706939697,"['Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie']","[1014, 1014, 1014]"
+A: the ozone layer,0.3253872394561767,"['protective radiation shield', 'protective radiation shield', 'protective radiation shield', 'radiation shield', 'a protective radiation shield']","[375, 375, 375, 386, 373]"
+"Title: Healthcare
+
+",0.3428258895874023,"['because many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings']","[621, 629, 629]"
+A: 66,0.2050132751464843,"['66 million years ago', '515 million years ago', '66 million years ago']","[760, 226, 760]"
+A: The neighborhood that,0.2665865421295166,"['""West Side""', 'West Side', 'West Side']","[4, 5, 5]"
+A: non-discrimination,0.3063178062438965,"['a customs union, and the principle of non-discrimination', 'a customs union', 'a customs union']","[64, 64, 64]"
+A: dichromate,0.1998779773712158,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[245, 245, 245, 245, 245]"
+A: dichromate,0.1998779773712158,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[0, 0, 0, 0, 0]"
+I: I think the,0.2183132171630859,"['7,200', '7,200', '7,200']","[64, 64, 64]"
+"Answer:
+A: Thomas",0.3735847473144531,"['Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont']","[135, 135, 135, 135]"
+A: 19,0.1985440254211425,"['1979', '1979', '1979', '1979', '1979']","[550, 550, 550, 550, 550]"
+A: 19,0.1985440254211425,"['1979', '1979', '1979', '1979', '1979']","[275, 275, 275, 275, 275]"
+The answer is: the,0.2201392650604248,"['mantle', 'mantle', 'mantle', ""The Earth's mantle"", 'mantle']","[508, 508, 508, 496, 508]"
+"Choices:
+",0.2999563217163086,"['smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae.', 'smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae', 'rotifers and mollusc and crustacean larvae']","[1556, 1556, 1589]"
+A: A grade of,0.2002947330474853,"['made a grade of A for all four years', 'made a grade of A for all four years, and on any other graduate who took twelve weeks additional study at the University of Chicago', 'made a grade of A for all four years', 'made a grade of A for all four years']","[796, 796, 796, 796]"
+A: The complexity of,0.3023886680603027,"['effectiveness of treatment regimens', 'effectiveness of treatment regimens', 'effectiveness of treatment regimens']","[73, 73, 73]"
+A: 8 February,0.2019534111022949,"['8 February 2007', 'On 8 February 2007', '8 February 2007']","[3, 0, 3]"
+Options are: analysis of,0.2201218605041504,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[59, 134, 134]"
+Options are: analysis of,0.2201218605041504,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[399, 399, 399]"
+"Title: Science
+",0.3177134990692138,"['Frank Burnet', 'Frank Burnet', 'Frank Burnet']","[18, 18, 18]"
+"A: 8
+
+",0.2061598300933838,"['eight', 'eight', 'eight']","[172, 172, 172]"
+"A: 8
+
+",0.2061598300933838,"['eight', 'eight', 'eight']","[16, 16, 16]"
+"A: 8
+
+",0.2061598300933838,"['eight', 'eight', 'eight']","[343, 343, 343]"
+"A:
+
+",0.2049922943115234,"['During the Second World War', 'Second World War', 'During the Second World War']","[97, 108, 97]"
+"A:
+
+",0.1243515014648437,"['Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman']","[103, 103, 103, 103, 103]"
+Title: The Empire State,0.3011610507965088,"['sports', 'sports tourism', 'sports']","[92, 92, 92]"
+A: University of Chicago,0.2001874446868896,"['University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press', 'University of Chicago Press']","[741, 741, 741, 741]"
+"A: encourage
+
+",0.1614034175872802,"['encourage', 'encourage growth', 'encourage']","[270, 270, 270]"
+"A: Quebec
+
+",0.1991386413574218,"['Quebec', 'Quebec', 'Quebec']","[468, 468, 468]"
+The University of Chicago has,0.3808727264404297,"['University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools', 'University of Chicago Laboratory Schools']","[138, 138, 138]"
+"A: mercury oxide
+
+",0.2037701606750488,"['mercuric oxide (HgO)', 'mercuric oxide', 'mercuric oxide', 'mercuric oxide (HgO)', 'mercuric oxide']","[122, 122, 122, 122, 122]"
+A: 5th,0.3346941471099853,"['are disturbed,', 'disturbed', 'are disturbed']","[97, 101, 97]"
+"A:
+",0.1252884864807129,"['10th century', '10th century', '10th century']","[153, 153, 153]"
+Options: A. Han,0.2309389114379882,"['non-native Chinese people', 'non-native Chinese people', 'non-native Chinese']","[41, 41, 41]"
+A: phlogiston,0.1993627548217773,"['phlogiston', 'phlogiston', 'phlogiston', 'phlogiston', 'phlogiston']","[237, 112, 112, 112, 112]"
+A: Economic_ine,0.2096054553985595,"['Gender', 'ranges from 53% in Botswana to -40% in Bahrain', 'Gender']","[30, 693, 30]"
+A: The size of,0.2997756004333496,"['$37.6 billion', '$37.6 billion', '$37.6 billion']","[548, 548, 548]"
+"A: Public health,",0.295480728149414,"['free trade', 'free trade', 'free trade']","[1975, 1975, 1975]"
+"Choices: Ozone,",0.433673620223999,"['heat or a spark', 'oxygen', 'an ignition event', 'an ignition event, such as heat or a spark', 'an ignition event']","[195, 31, 168, 168, 168]"
+A: a modern canal,0.2009594440460205,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+A: a modern canal,0.2009594440460205,"['modern canalized section', 'modern canalized', 'modern canalized section', 'canalized section']","[155, 155, 155, 162]"
+A: Miasma,0.2028019428253173,"['Miasma theory', 'Miasma theory.', 'Miasma theory']","[528, 528, 528]"
+Answer: Melbourne is the,0.2210884094238281,"['second-largest', 'second-largest', 'second-largest city']","[353, 353, 353]"
+A: no network layer,0.2951958179473877,"['connection-oriented operations. But X.25 does it at the network layer of the OSI Model. Frame Relay does it at level two, the data link layer', 'a handshake between the communicating parties before any user packets are transmitted', 'connection-oriented operations']","[34, 253, 34]"
+"A: cilia
+
+",0.2013671398162841,"['‘combs’ – groups of cilia', 'combs', 'the ‘combs’']","[264, 265, 260]"
+"Answer:
+",0.0859377384185791,"[""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", ""confirming Britain's position as the dominant colonial power in eastern North America"", 'dominant colonial power', ""confirming Britain's position as the dominant colonial power in eastern North America""]","[504, 504, 504, 541, 504]"
+A: 10,0.1999464035034179,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+A: 10,0.1999464035034179,"['21,000', '21,000', '21,000']","[105, 105, 105]"
+A: economic stagnation,0.2001867294311523,"['economic', 'economic stagnation', 'economic']","[166, 166, 166]"
+"Answer: religious freedom
+
+",0.2209644317626953,"['religious freedom', 'religious freedom in the Polish–Lithuanian Commonwealth', 'religious freedom']","[175, 175, 175]"
+A: cilia have,0.1989209651947021,"['method of locomotion', 'their main method of locomotion', 'locomotion']","[163, 152, 173]"
+"A: organic
+
+",0.202005386352539,"['spontaneous', 'spontaneous combustion', 'spontaneous', 'spontaneous', 'spontaneous combustion']","[726, 726, 726, 726, 726]"
+"A: Immunology
+
+",0.1990225315093994,"['Immunology', 'Immunology', 'Immunology']","[698, 698, 698]"
+A: 75,0.1977982521057129,"['at the right bank of the Vistula', 'at the right bank of the Vistula, by the eastern border of Warsaw', 'by the eastern border']","[633, 633, 667]"
+A: NFIL3,0.1992580890655517,"['NFIL3', 'NFIL3', 'NFIL3']","[243, 243, 243]"
+"Title: Law
+",0.1795234680175781,"['Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie', 'Steymann v Staatssecretaris van Justitie']","[1014, 1014, 1014]"
+A: Ozone protects,0.2175328731536865,"['protective radiation shield', 'protective radiation shield', 'protective radiation shield', 'radiation shield', 'a protective radiation shield']","[375, 375, 375, 386, 373]"
+"Choices:
+",0.0863664150238037,"['because many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings', 'many elderly people are now taking numerous medications but continue to live outside of institutional settings']","[621, 629, 629]"
+A: 66,0.2114489078521728,"['66 million years ago', '515 million years ago', '66 million years ago']","[760, 226, 760]"
+"A: Southwest Fresno
+",0.2039003372192382,"['""West Side""', 'West Side', 'West Side']","[4, 5, 5]"
+A: non-discrimination,0.1974666118621826,"['a customs union, and the principle of non-discrimination', 'a customs union', 'a customs union']","[64, 64, 64]"
+A: dichromate,0.2020394802093505,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[245, 245, 245, 245, 245]"
+A: dichromate,0.2020394802093505,"['Oxygen', 'Oxygen', 'Oxygen', 'Oxygen', 'Oxygen']","[0, 0, 0, 0, 0]"
+A: 72,0.2081234455108642,"['7,200', '7,200', '7,200']","[64, 64, 64]"
+A: Thomas Savery,0.2055838108062744,"['Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont', 'Jerónimo de Ayanz y Beaumont']","[135, 135, 135, 135]"
+A: 19,0.202256441116333,"['1979', '1979', '1979', '1979', '1979']","[550, 550, 550, 550, 550]"
+A: 19,0.202256441116333,"['1979', '1979', '1979', '1979', '1979']","[275, 275, 275, 275, 275]"
+Choices: A. crust,0.3347878456115722,"['mantle', 'mantle', 'mantle', ""The Earth's mantle"", 'mantle']","[508, 508, 508, 496, 508]"
+A: Bolinopsis,0.198617935180664,"['smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae.', 'smaller, weaker swimmers such as rotifers and mollusc and crustacean larvae', 'rotifers and mollusc and crustacean larvae']","[1556, 1556, 1589]"
+A: A: A,0.2055017948150634,"['made a grade of A for all four years', 'made a grade of A for all four years, and on any other graduate who took twelve weeks additional study at the University of Chicago', 'made a grade of A for all four years', 'made a grade of A for all four years']","[796, 796, 796, 796]"
+"Choices:
+",0.0841832160949707,"['effectiveness of treatment regimens', 'effectiveness of treatment regimens', 'effectiveness of treatment regimens']","[73, 73, 73]"
+A: 8 February,0.2007367610931396,"['8 February 2007', 'On 8 February 2007', '8 February 2007']","[3, 0, 3]"
+Title: The_Union,0.3785853385925293,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[59, 134, 134]"
+Title: The_Union,0.3785853385925293,"['analysis of algorithms', 'analysis of algorithms', 'analysis of algorithms']","[399, 399, 399]"
+"A: Burnet
+
+",0.202547550201416,"['Frank Burnet', 'Frank Burnet', 'Frank Burnet']","[18, 18, 18]"
+"Choices: 8
+",0.2200813293457031,"['eight', 'eight', 'eight']","[172, 172, 172]"
+"Choices: 8
+",0.2200813293457031,"['eight', 'eight', 'eight']","[16, 16, 16]"
+"Choices: 8
+",0.2200813293457031,"['eight', 'eight', 'eight']","[343, 343, 343]"
+"Answer:
+I need to",0.4754981994628906,"['During the Second World War', 'Second World War', 'During the Second World War']","[97, 108, 97]"
+Title: The Great G,0.2207427024841308,"['Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman', 'Isiah Bowman']","[103, 103, 103, 103, 103]"
+A: 2 mill,0.2025995254516601,[],[]
+"Title: Medical
+
+",0.2812895774841308,[],[]
+A: Poland Prime Minister,0.2982051372528076,[],[]
+A: the stench,0.1995711326599121,[],[]
+A: 37,0.2001895904541015,[],[]
+A: David McLetch,0.209054946899414,[],[]
+"A: Atlantic
+
+",0.2046029567718505,[],[]
+A: volcanic activity and,0.2076575756072998,[],[]
+A: The TFE,0.2012813091278076,[],[]
+"A:
+
+",0.1253800392150879,[],[]
+A: Turabi did,0.1988899707794189,[],[]
+"A: utility lines
+
+",0.2017712593078613,[],[]
+A: Genghis,0.2039868831634521,[],[]
+A: Carmichael numbers,0.2077565193176269,[],[]
+A: cells bound by,0.3002035617828369,[],[]
+A: The river is,0.2007184028625488,[],[]
+"A: Song dynasty
+
+",0.1977107524871826,[],[]
+A: zooplank,0.2002735137939453,[],[]
+"A: decision problems
+
+",0.1975142955780029,[],[]
+A: The War of,0.1985478401184082,[],[]
+A: 8 February,0.2015366554260254,[],[]
+A: Complexity classes.,0.380434513092041,[],[]
+A: The Parliament of,0.2021067142486572,[],[]
+A: cortisol and cate,0.2009546756744384,[],[]
+"A: Aristotle
+
+",0.1619999408721923,[],[]
+A: Because each packet,0.2014806270599365,[],[]
+"Select from:
+A.",0.3366076946258545,[],[]
+A: 55,0.1977319717407226,[],[]
+"Options:
+",0.0840981006622314,[],[]
+"A: weightlessness
+
+",0.2080936431884765,[],[]
+A: 17,0.2027397155761718,[],[]
+"Choices:
+A) The",0.3899464607238769,[],[]
+The answer is: posters,0.2228498458862304,[],[]
+A: the vice presidents,0.2032680511474609,[],[]
+"A: land
+
+",0.2006573677062988,[],[]
+"A: capability
+
+",0.2025930881500244,[],[]
+"A: investment
+
+",0.164313793182373,[],[]
+A: 20,0.2000501155853271,[],[]
+A: 10,0.2063069343566894,[],[]
+"I. High cost
+",0.37996506690979,[],[]
+"Answer:
+",0.0879583358764648,[],[]
+"A: punk
+
+",0.1632707118988037,[],[]
+"A:
+
+",0.1239221096038818,[],[]
+A: The building of,0.1992149353027343,[],[]
+A: Chrysler changed to,0.2000782489776611,[],[]
+A: PLoS,0.2012887001037597,[],[]
+A: polynomial time hierarchy,0.2947676181793213,[],[]
+A: A: Pharmac,0.1997368335723877,[],[]
+A: 19,0.1986069679260254,[],[]
+A: 19,0.1978058815002441,[],[]
+A: faster than light,0.2009651660919189,[],[]
+A: Polignac,0.1991200447082519,[],[]
+A: 2 mill,0.1993789672851562,[],[]
+Title: The United States,0.199394941329956,[],[]
+A: Donald Tusk,0.1979150772094726,[],[]
+A: the stench,0.1991181373596191,[],[]
+A: 37,0.2007157802581787,[],[]
+A: David McLetch,0.2014150619506836,[],[]
+"A: Atlantic Ocean
+
+",0.2029242515563964,[],[]
+I. volcanism and,0.3782758712768554,[],[]
+A: The TFE,0.1988081932067871,[],[]
+"A:
+
+",0.1248672008514404,[],[]
+"Answer:
+",0.0872330665588378,[],[]
+"Title: Construction
+",0.2269260883331298,[],[]
+"A: Güyük
+
+",0.2131407260894775,[],[]
+"Carmichael numbers
+
+",0.218660831451416,[],[]
+A: Sponges,0.2020003795623779,[],[]
+A: Pedro Menendez,0.2068018913269043,[],[]
+A: The Jin dynasty,0.2986512184143066,[],[]
+A: zooplank,0.1992900371551513,[],[]
+"A: Decision problems
+
+",0.2000753879547119,[],[]
+A: The War of,0.2014510631561279,[],[]
+A: 8 February,0.2024612426757812,[],[]
+Title: The_Memory,0.2005987167358398,[],[]
+A: The Parliament of,0.199709415435791,[],[]
+A: cortisol and cate,0.2021119594573974,[],[]
+The problem arises when a,0.5659809112548828,[],[]
+A: Because each packet,0.1997334957122802,[],[]
+A: They told him,0.2002656459808349,[],[]
+A: Strategic Petroleum Reserve,0.2585997581481933,[],[]
+Choices: A) James,0.2226731777191162,[],[]
+"A: weightless
+
+",0.2407495975494384,[],[]
+A: 17,0.1986820697784423,[],[]
+"A: Others
+
+",0.2999858856201172,[],[]
+Title: The House of,0.3360359668731689,[],[]
+"A: Vice Presidents
+
+",0.2972545623779297,[],[]
+Options: land and housing,0.3192653656005859,[],[]
+"Options: utility, end",0.4116418361663818,[],[]
+"Economic growth
+
+",0.3795132637023926,[],[]
+"A: 2%
+",0.2021918296813964,[],[]
+"A: 4
+
+",0.2472224235534668,[],[]
+A: The cost of,0.2054440975189209,[],[]
+I think the answer is,0.2224199771881103,[],[]
+"A: punk
+
+",0.1640074253082275,[],[]
+"Answer:
+A:
+
+",0.3367352485656738,[],[]
+A: the building of,0.2020809650421142,[],[]
+A: full front-wheel,0.2024166584014892,[],[]
+"Choices:
+",0.0856921672821044,[],[]
+A: graph isom,0.1997716426849365,[],[]
+A: A: pharmac,0.2001986503601074,[],[]
+A: 19,0.2009947299957275,[],[]
+A: 19,0.2032332420349121,[],[]
+"A: details
+
+",0.2631690502166748,[],[]
+A: Polignac,0.2035644054412841,[],[]
+A: 2 mill,0.198972463607788,[],[]
+The question is asking which,0.2221906185150146,[],[]
+A: Donald Tusk,0.1993408203125,[],[]
+A: The stench,0.1991972923278808,[],[]
+A: 37,0.2005550861358642,[],[]
+Title: The_Cold,0.2174155712127685,[],[]
+"A: Atlantic
+",0.1983308792114257,[],[]
+A: volcanic activity and,0.2014715671539306,[],[]
+A: The TFE,0.2285852432250976,[],[]
+A: the goal of,0.2032175064086914,[],[]
+A: By developing a,0.2014400959014892,[],[]
+"A: utility lines
+
+",0.2001543045043945,[],[]
+A: Möngke,0.1989672183990478,[],[]
+A: Carmichael numbers,0.205320119857788,[],[]
+Options: A. None,0.230151891708374,[],[]
+A: the May of,0.302539587020874,[],[]
+"A: Tang
+
+",0.2978196144104004,[],[]
+A: zooplank,0.1986629962921142,[],[]
+"A:
+",0.1628069877624511,[],[]
+A: the War of,0.3012518882751465,[],[]
+A: 8 February,0.201998233795166,[],[]
+Title: Complexity_Classification,0.1997871398925781,[],[]
+A: the state's,0.1994740962982177,[],[]
+A: cortisol and cate,0.2017929553985595,[],[]
+"A: constant velocity
+
+",0.2023677825927734,[],[]
+The need for a dedicated,0.2211380004882812,[],[]
+"Options:
+",0.2636713981628418,[],[]
+A: the Emergency Highway,0.2015044689178466,[],[]
+"A:
+",0.2022695541381836,[],[]
+"A: weightless
+
+",0.2383279800415039,[],[]
+A: 17,0.1983370780944824,[],[]
+Choices: A. ,0.3596103191375732,[],[]
+A: the world's,0.2030262947082519,[],[]
+A: the vice presidents,0.2027063369750976,[],[]
+Options: A. un,0.2196965217590332,[],[]
+"A: capability
+
+",0.1997749805450439,[],[]
+"The answer is ""investment",0.3752486705780029,[],[]
+A: 20,0.1984846591949463,[],[]
+"A: 8
+
+",0.2389211654663086,[],[]
+A: The cost of,0.1997325420379638,[],[]
+A: 16,0.1996345520019531,[],[]
+"A:
+",0.1648478507995605,[],[]
+"A: other
+
+",0.2642147541046142,[],[]
+A:  Completely altering,0.1999900341033935,[],[]
+The answer is Chrysler changed,0.3773763179779053,[],[]
+A: PLoS,0.2042968273162841,[],[]
+A: The graph is,0.2982325553894043,[],[]
+A: None of the,0.2010071277618408,[],[]
+A: 18,0.2001073360443115,[],[]
+"Answer:
+A: ",0.3771135807037353,[],[]
+"A: rapidly
+
+",0.2592682838439941,[],[]
+A: Legendre's,0.2048749923706054,[],[]
